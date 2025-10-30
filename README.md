@@ -2,6 +2,12 @@
 
 Una aplicación web completa para gestionar tu plan de dieta y entrenamiento, con seguimiento de progreso y recomendaciones personalizadas.
 
+## 🌐 Demo en Vivo
+
+**Accede a la aplicación aquí:** [https://carlosos22.github.io/FitTrack/](https://carlosos22.github.io/FitTrack/)
+
+La aplicación se despliega automáticamente en GitHub Pages cada vez que se hace push a la rama principal.
+
 ## Características
 
 ### 🏠 Página de Inicio
@@ -165,6 +171,21 @@ La aplicación es completamente responsive y se adapta a:
 - [ ] Modo oscuro
 - [ ] Exportar plan semanal a PDF
 - [ ] Notificaciones de recordatorio
+
+## 🚀 Despliegue en GitHub Pages
+
+La aplicación se despliega automáticamente usando GitHub Actions. El workflow se activa:
+- Automáticamente al hacer push a la rama `main` o `master`
+- Manualmente desde la pestaña "Actions" en GitHub
+
+### Pasos para habilitar GitHub Pages:
+
+1. Ve a la configuración del repositorio en GitHub
+2. En el menú lateral, selecciona "Pages"
+3. En "Source", selecciona "GitHub Actions"
+4. El workflow `.github/workflows/deploy.yml` se ejecutará automáticamente
+
+La aplicación estará disponible en: `https://carlosos22.github.io/FitTrack/`
 
 ## Licencia
 
