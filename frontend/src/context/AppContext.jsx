@@ -35,12 +35,16 @@ export const AppProvider = ({ children }) => {
   // Recipe suggestions
   const [recipeSuggestions, setRecipeSuggestions] = useState([]);
 
+  // Shopping list
+  const [shoppingList, setShoppingList] = useState([]);
+
   // Cargar datos cuando el usuario inicie sesión
   useEffect(() => {
     if (isAuthenticated && currentUser) {
       loadUserData();
       loadWeeklyPlan();
       loadProgress();
+      loadShoppingList();
     } else {
       // Limpiar datos cuando no hay sesión
       setUserData(null);
@@ -54,6 +58,7 @@ export const AppProvider = ({ children }) => {
         Domingo: { recipes: [], exercises: [] },
       });
       setProgressData([]);
+      setShoppingList([]);
     }
   }, [isAuthenticated, currentUser]);
 
@@ -274,6 +279,124 @@ export const AppProvider = ({ children }) => {
     }, { protein: 0, carbs: 0, fat: 0, calories: 0 });
   };
 
+  // ========== SHOPPING LIST ==========
+
+  // Load shopping list
+  const loadShoppingList = async () => {
+    if (!isAuthenticated || !currentUser) return;
+
+    try {
+      const response = await api.shoppingList.get(currentUser.id);
+      if (response.success) {
+        setShoppingList(response.shoppingList);
+      }
+    } catch (error) {
+      console.error('Error cargando lista de compra:', error);
+    }
+  };
+
+  // Add item to shopping list
+  const addToShoppingList = async (ingredient, quantity = null) => {
+    if (!isAuthenticated || !currentUser) return;
+
+    try {
+      const response = await api.shoppingList.add(currentUser.id, ingredient, quantity);
+      if (response.success) {
+        await loadShoppingList();
+      }
+      return response;
+    } catch (error) {
+      console.error('Error añadiendo a lista de compra:', error);
+      throw error;
+    }
+  };
+
+  // Update shopping list item
+  const updateShoppingItem = async (itemId, updates) => {
+    if (!isAuthenticated || !currentUser) return;
+
+    try {
+      const response = await api.shoppingList.update(currentUser.id, itemId, updates);
+      if (response.success) {
+        await loadShoppingList();
+      }
+      return response;
+    } catch (error) {
+      console.error('Error actualizando item de compra:', error);
+      throw error;
+    }
+  };
+
+  // Remove item from shopping list
+  const removeFromShoppingList = async (itemId) => {
+    if (!isAuthenticated || !currentUser) return;
+
+    try {
+      const response = await api.shoppingList.remove(currentUser.id, itemId);
+      if (response.success) {
+        await loadShoppingList();
+      }
+      return response;
+    } catch (error) {
+      console.error('Error eliminando de lista de compra:', error);
+      throw error;
+    }
+  };
+
+  // Generate shopping list from weekly plan
+  const generateShoppingListFromPlan = async () => {
+    if (!isAuthenticated || !currentUser) return;
+
+    try {
+      // Recopilar todos los ingredientes de todas las recetas del plan semanal
+      const allIngredients = [];
+
+      Object.keys(weeklyPlan).forEach(day => {
+        const dayPlan = weeklyPlan[day];
+        if (dayPlan && dayPlan.recipes) {
+          dayPlan.recipes.forEach(recipe => {
+            const recipeData = recipe.recipe_data || recipe;
+            if (recipeData.ingredients && Array.isArray(recipeData.ingredients)) {
+              recipeData.ingredients.forEach(ingredient => {
+                allIngredients.push(ingredient);
+              });
+            }
+          });
+        }
+      });
+
+      // Agrupar ingredientes similares (simplificado)
+      const ingredientMap = {};
+      allIngredients.forEach(ing => {
+        // Normalizar el ingrediente (minúsculas, sin espacios extras)
+        const normalized = ing.toLowerCase().trim();
+        if (ingredientMap[normalized]) {
+          ingredientMap[normalized].count++;
+        } else {
+          ingredientMap[normalized] = {
+            ingredient: ing,
+            count: 1
+          };
+        }
+      });
+
+      // Añadir todos los ingredientes a la lista de compra
+      for (const key in ingredientMap) {
+        const item = ingredientMap[key];
+        const quantity = item.count > 1 ? `x${item.count}` : null;
+        await api.shoppingList.add(currentUser.id, item.ingredient, quantity);
+      }
+
+      // Recargar la lista
+      await loadShoppingList();
+
+      return { success: true, message: `${Object.keys(ingredientMap).length} ingredientes añadidos` };
+    } catch (error) {
+      console.error('Error generando lista de compra:', error);
+      throw error;
+    }
+  };
+
   const value = {
     userData,
     setUserData: saveUserData,
@@ -282,6 +405,7 @@ export const AppProvider = ({ children }) => {
     progressData,
     setProgressData,
     recipeSuggestions,
+    shoppingList,
     addRecipeToWeeklyPlan,
     addExerciseToWeeklyPlan,
     removeRecipeFromWeeklyPlan,
@@ -292,7 +416,12 @@ export const AppProvider = ({ children }) => {
     calculateDailyMacros,
     loadUserData,
     loadWeeklyPlan,
-    loadProgress
+    loadProgress,
+    loadShoppingList,
+    addToShoppingList,
+    updateShoppingItem,
+    removeFromShoppingList,
+    generateShoppingListFromPlan
   };
 
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;

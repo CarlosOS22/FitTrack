@@ -172,6 +172,53 @@ export const recipeSuggestionsAPI = {
   },
 };
 
+// ========== LISTA DE LA COMPRA ==========
+
+export const shoppingListAPI = {
+  // Obtener lista de compra
+  get: async (userId) => {
+    return fetchAPI(`/shopping-list.php?user_id=${userId}`, {
+      method: 'GET',
+    });
+  },
+
+  // Añadir ingrediente
+  add: async (userId, ingredient, quantity = null) => {
+    return fetchAPI('/shopping-list.php', {
+      method: 'POST',
+      body: JSON.stringify({ user_id: userId, ingredient, quantity, checked: false }),
+    });
+  },
+
+  // Actualizar ingrediente (marcar como comprado/no comprado)
+  update: async (userId, itemId, updates) => {
+    return fetchAPI('/shopping-list.php', {
+      method: 'PUT',
+      body: JSON.stringify({ user_id: userId, id: itemId, ...updates }),
+    });
+  },
+
+  // Eliminar ingrediente
+  remove: async (userId, itemId) => {
+    return fetchAPI('/shopping-list.php', {
+      method: 'DELETE',
+      body: JSON.stringify({ user_id: userId, id: itemId }),
+    });
+  },
+
+  // Limpiar items comprados
+  clearChecked: async (userId, checkedIds) => {
+    // Eliminar múltiples items comprados
+    const promises = checkedIds.map(id =>
+      fetchAPI('/shopping-list.php', {
+        method: 'DELETE',
+        body: JSON.stringify({ user_id: userId, id }),
+      })
+    );
+    return Promise.all(promises);
+  },
+};
+
 // Exportar todo
 const api = {
   auth: authAPI,
@@ -179,6 +226,7 @@ const api = {
   weeklyPlan: weeklyPlanAPI,
   progress: progressAPI,
   recipeSuggestions: recipeSuggestionsAPI,
+  shoppingList: shoppingListAPI,
 };
 
 export default api;

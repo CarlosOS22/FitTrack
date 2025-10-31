@@ -7,6 +7,7 @@ import Recipes from './pages/Recipes';
 import Exercises from './pages/Exercises';
 import WeeklyPlan from './pages/WeeklyPlan';
 import Progress from './pages/Progress';
+import ShoppingList from './pages/ShoppingList';
 import Login from './pages/Login';
 import Register from './pages/Register';
 
@@ -23,6 +24,7 @@ function App() {
               <Route path="/exercises" element={<Exercises />} />
               <Route path="/weekly-plan" element={<WeeklyPlan />} />
               <Route path="/progress" element={<Progress />} />
+              <Route path="/shopping-list" element={<ShoppingList />} />
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
             </Routes>
