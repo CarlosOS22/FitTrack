@@ -13,7 +13,7 @@ export const recipes = [
     id: 1,
     name: 'Tortilla de Claras con Verduras',
     category: 'Desayuno',
-    image: 'https://source.unsplash.com/400x300/?omelette,vegetables',
+    image: 'https://images.unsplash.com/photo-1525351484163-7529414344d8?w=400&h=300&fit=crop',
     calories: 180,
     macros: {
       protein: 20,
@@ -45,7 +45,7 @@ export const recipes = [
     id: 2,
     name: 'Avena con Frutas y Proteína',
     category: 'Desayuno',
-    image: 'https://source.unsplash.com/400x300/?oatmeal,fruits,berries',
+    image: 'https://images.unsplash.com/photo-1517673132405-a56a62b18caf?w=400&h=300&fit=crop',
     calories: 320,
     macros: {
       protein: 25,
@@ -77,7 +77,7 @@ export const recipes = [
     id: 3,
     name: 'Tostadas de Aguacate y Huevo Pochado',
     category: 'Desayuno',
-    image: 'https://source.unsplash.com/400x300/?avocado,toast,egg',
+    image: 'https://images.unsplash.com/photo-1541519227354-08fa5d50c44d?w=400&h=300&fit=crop',
     calories: 350,
     macros: {
       protein: 18,
@@ -110,7 +110,7 @@ export const recipes = [
     id: 4,
     name: 'Pancakes Proteicos de Plátano',
     category: 'Desayuno',
-    image: 'https://source.unsplash.com/400x300/?protein,pancakes,banana',
+    image: 'https://images.unsplash.com/photo-1506084868230-bb9d95c24759?w=400&h=300&fit=crop',
     calories: 290,
     macros: {
       protein: 28,
@@ -142,7 +142,7 @@ export const recipes = [
     id: 5,
     name: 'Bol de Yogur con Granola Casera',
     category: 'Desayuno',
-    image: 'https://source.unsplash.com/400x300/?yogurt,granola,berries',
+    image: 'https://images.unsplash.com/photo-1488477304112-4944851de03d?w=400&h=300&fit=crop',
     calories: 380,
     macros: {
       protein: 22,
@@ -174,7 +174,7 @@ export const recipes = [
     id: 6,
     name: 'Revuelto de Claras con Salmón Ahumado',
     category: 'Desayuno',
-    image: 'https://source.unsplash.com/400x300/?scrambled,eggs,salmon',
+    image: 'https://images.unsplash.com/photo-1525351326368-efbb5cb6814d?w=400&h=300&fit=crop',
     calories: 260,
     macros: {
       protein: 32,
@@ -206,7 +206,7 @@ export const recipes = [
     id: 7,
     name: 'Burrito Bowl de Desayuno',
     category: 'Desayuno',
-    image: 'https://source.unsplash.com/400x300/?breakfast,bowl,burrito',
+    image: 'https://images.unsplash.com/photo-1626082927389-6ac5b8408e44?w=400&h=300&fit=crop',
     calories: 420,
     macros: {
       protein: 30,
@@ -239,7 +239,7 @@ export const recipes = [
     id: 8,
     name: 'Smoothie Bowl Tropical',
     category: 'Desayuno',
-    image: 'https://source.unsplash.com/400x300/?smoothie,bowl,tropical',
+    image: 'https://images.unsplash.com/photo-1590301157890-4810ed352733?w=400&h=300&fit=crop',
     calories: 310,
     macros: {
       protein: 20,
@@ -269,7 +269,7 @@ export const recipes = [
     id: 9,
     name: 'Tortitas de Avena y Manzana',
     category: 'Desayuno',
-    image: 'https://source.unsplash.com/400x300/?oat,pancakes,apple',
+    image: 'https://images.unsplash.com/photo-1506084868230-bb9d95c24759?w=400&h=300&fit=crop',
     calories: 280,
     macros: {
       protein: 16,
@@ -301,7 +301,7 @@ export const recipes = [
     id: 10,
     name: 'Creps de Proteína Rellenos',
     category: 'Desayuno',
-    image: 'https://source.unsplash.com/400x300/?protein,crepes,strawberry',
+    image: 'https://images.unsplash.com/photo-1519915212116-7cfef71f1d3e?w=400&h=300&fit=crop',
     calories: 340,
     macros: {
       protein: 35,
@@ -334,7 +334,7 @@ export const recipes = [
     id: 11,
     name: 'Pollo a la Plancha con Arroz Integral',
     category: 'Almuerzo',
-    image: 'https://source.unsplash.com/400x300/?grilled,chicken,rice',
+    image: 'https://images.unsplash.com/photo-1598103442097-8b74394b95c6?w=400&h=300&fit=crop',
     calories: 450,
     macros: {
       protein: 45,
@@ -366,7 +366,7 @@ export const recipes = [
     id: 12,
     name: 'Ensalada de Atún con Quinoa',
     category: 'Almuerzo',
-    image: 'https://source.unsplash.com/400x300/?tuna,salad,quinoa',
+    image: 'https://images.unsplash.com/photo-1546793665-c74683f339c1?w=400&h=300&fit=crop',
     calories: 380,
     macros: {
       protein: 30,
@@ -399,7 +399,7 @@ export const recipes = [
     id: 13,
     name: 'Wrap de Hummus y Verduras',
     category: 'Almuerzo',
-    image: 'https://source.unsplash.com/400x300/?hummus,wrap,vegetables',
+    image: 'https://images.unsplash.com/photo-1626700051175-6818013e1d4f?w=400&h=300&fit=crop',
     calories: 300,
     macros: {
       protein: 12,
@@ -431,7 +431,7 @@ export const recipes = [
     id: 14,
     name: 'Pasta Integral con Pesto de Espinacas y Pollo',
     category: 'Almuerzo',
-    image: 'https://source.unsplash.com/400x300/?pasta,pesto,chicken',
+    image: 'https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=400&h=300&fit=crop',
     calories: 480,
     macros: {
       protein: 38,
@@ -464,7 +464,7 @@ export const recipes = [
     id: 15,
     name: 'Bowl de Arroz con Teriyaki de Pollo',
     category: 'Almuerzo',
-    image: 'https://source.unsplash.com/400x300/?teriyaki,chicken,bowl',
+    image: 'https://images.unsplash.com/photo-1546069901-5ec6a79120b0?w=400&h=300&fit=crop',
     calories: 465,
     macros: {
       protein: 42,
@@ -497,7 +497,7 @@ export const recipes = [
     id: 16,
     name: 'Ensalada César con Pollo a la Parrilla',
     category: 'Almuerzo',
-    image: 'https://source.unsplash.com/400x300/?caesar,salad,chicken',
+    image: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&h=300&fit=crop',
     calories: 380,
     macros: {
       protein: 40,
@@ -529,7 +529,7 @@ export const recipes = [
     id: 17,
     name: 'Lentejas con Verduras al Curry',
     category: 'Almuerzo',
-    image: 'https://source.unsplash.com/400x300/?lentils,curry,vegetables',
+    image: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&h=300&fit=crop',
     calories: 360,
     macros: {
       protein: 20,
@@ -562,7 +562,7 @@ export const recipes = [
     id: 18,
     name: 'Fajitas de Pavo con Pimientos',
     category: 'Almuerzo',
-    image: 'https://source.unsplash.com/400x300/?turkey,fajitas,peppers',
+    image: 'https://images.unsplash.com/photo-1574672280600-4accfa5b6f98?w=400&h=300&fit=crop',
     calories: 395,
     macros: {
       protein: 38,
@@ -595,7 +595,7 @@ export const recipes = [
     id: 19,
     name: 'Buddha Bowl Mediterráneo',
     category: 'Almuerzo',
-    image: 'https://source.unsplash.com/400x300/?buddha,bowl,mediterranean',
+    image: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&h=300&fit=crop',
     calories: 420,
     macros: {
       protein: 22,
@@ -630,7 +630,7 @@ export const recipes = [
     id: 20,
     name: 'Poke Bowl de Atún',
     category: 'Almuerzo',
-    image: 'https://source.unsplash.com/400x300/?poke,bowl,tuna',
+    image: 'https://images.unsplash.com/photo-1546793665-c74683f339c1?w=400&h=300&fit=crop',
     calories: 440,
     macros: {
       protein: 35,
@@ -665,7 +665,7 @@ export const recipes = [
     id: 21,
     name: 'Wok de Ternera con Vegetales',
     category: 'Almuerzo',
-    image: 'https://source.unsplash.com/400x300/?beef,wok,vegetables',
+    image: 'https://images.unsplash.com/photo-1588168178854-f40ddb24fc5c?w=400&h=300&fit=crop',
     calories: 455,
     macros: {
       protein: 40,
@@ -700,7 +700,7 @@ export const recipes = [
     id: 22,
     name: 'Ensalada de Garbanzos Especiados',
     category: 'Almuerzo',
-    image: 'https://source.unsplash.com/400x300/?chickpea,salad,spiced',
+    image: 'https://images.unsplash.com/photo-1505253758473-96b7015fcd40?w=400&h=300&fit=crop',
     calories: 370,
     macros: {
       protein: 18,
@@ -736,7 +736,7 @@ export const recipes = [
     id: 23,
     name: 'Salmón con Batata y Espárragos',
     category: 'Cena',
-    image: 'https://source.unsplash.com/400x300/?salmon,sweet,potato,asparagus',
+    image: 'https://images.unsplash.com/photo-1467003909815-7e27162cc58d?w=400&h=300&fit=crop',
     calories: 420,
     macros: {
       protein: 35,
@@ -769,7 +769,7 @@ export const recipes = [
     id: 24,
     name: 'Tacos de Pavo con Vegetales',
     category: 'Cena',
-    image: 'https://source.unsplash.com/400x300/?turkey,tacos,vegetables',
+    image: 'https://images.unsplash.com/photo-1574672280600-4accfa5b6f98?w=400&h=300&fit=crop',
     calories: 340,
     macros: {
       protein: 35,
@@ -802,7 +802,7 @@ export const recipes = [
     id: 25,
     name: 'Merluza al Horno con Verduras',
     category: 'Cena',
-    image: 'https://source.unsplash.com/400x300/?baked,fish,vegetables',
+    image: 'https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=400&h=300&fit=crop',
     calories: 310,
     macros: {
       protein: 38,
@@ -837,7 +837,7 @@ export const recipes = [
     id: 26,
     name: 'Pechuga de Pollo Rellena de Espinacas',
     category: 'Cena',
-    image: 'https://source.unsplash.com/400x300/?stuffed,chicken,spinach',
+    image: 'https://images.unsplash.com/photo-1598103442097-8b74394b95c6?w=400&h=300&fit=crop',
     calories: 380,
     macros: {
       protein: 45,
@@ -871,7 +871,7 @@ export const recipes = [
     id: 27,
     name: 'Revuelto de Claras con Champiñones',
     category: 'Cena',
-    image: 'https://source.unsplash.com/400x300/?scrambled,eggs,mushrooms',
+    image: 'https://images.unsplash.com/photo-1525351326368-efbb5cb6814d?w=400&h=300&fit=crop',
     calories: 190,
     macros: {
       protein: 24,
@@ -905,7 +905,7 @@ export const recipes = [
     id: 28,
     name: 'Hamburguesa de Pavo con Ensalada',
     category: 'Cena',
-    image: 'https://source.unsplash.com/400x300/?turkey,burger,healthy',
+    image: 'https://images.unsplash.com/photo-1574672280600-4accfa5b6f98?w=400&h=300&fit=crop',
     calories: 360,
     macros: {
       protein: 40,
@@ -939,7 +939,7 @@ export const recipes = [
     id: 29,
     name: 'Dorada a la Sal con Verduras Asadas',
     category: 'Cena',
-    image: 'https://source.unsplash.com/400x300/?grilled,fish,vegetables',
+    image: 'https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=400&h=300&fit=crop',
     calories: 350,
     macros: {
       protein: 42,
@@ -973,7 +973,7 @@ export const recipes = [
     id: 30,
     name: 'Berenjena Rellena de Carne Magra',
     category: 'Cena',
-    image: 'https://source.unsplash.com/400x300/?stuffed,eggplant,meat',
+    image: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&h=300&fit=crop',
     calories: 320,
     macros: {
       protein: 32,
@@ -1007,7 +1007,7 @@ export const recipes = [
     id: 31,
     name: 'Pollo al Limón con Brócoli',
     category: 'Cena',
-    image: 'https://source.unsplash.com/400x300/?lemon,chicken,broccoli',
+    image: 'https://images.unsplash.com/photo-1598103442097-8b74394b95c6?w=400&h=300&fit=crop',
     calories: 330,
     macros: {
       protein: 42,
@@ -1041,7 +1041,7 @@ export const recipes = [
     id: 32,
     name: 'Tortilla de Calabacín al Horno',
     category: 'Cena',
-    image: 'https://source.unsplash.com/400x300/?zucchini,frittata,baked',
+    image: 'https://images.unsplash.com/photo-1525351484163-7529414344d8?w=400&h=300&fit=crop',
     calories: 240,
     macros: {
       protein: 20,
@@ -1075,7 +1075,7 @@ export const recipes = [
     id: 33,
     name: 'Bacalao con Tomate y Aceitunas',
     category: 'Cena',
-    image: 'https://source.unsplash.com/400x300/?cod,fish,tomato,olives',
+    image: 'https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=400&h=300&fit=crop',
     calories: 290,
     macros: {
       protein: 38,
@@ -1110,7 +1110,7 @@ export const recipes = [
     id: 34,
     name: 'Pimientos Rellenos de Quinoa y Verduras',
     category: 'Cena',
-    image: 'https://source.unsplash.com/400x300/?stuffed,peppers,quinoa',
+    image: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&h=300&fit=crop',
     calories: 280,
     macros: {
       protein: 14,
@@ -1147,7 +1147,7 @@ export const recipes = [
     id: 35,
     name: 'Yogur Griego con Frutos Secos',
     category: 'Merienda',
-    image: 'https://source.unsplash.com/400x300/?greek,yogurt,nuts,berries',
+    image: 'https://images.unsplash.com/photo-1488477304112-4944851de03d?w=400&h=300&fit=crop',
     calories: 220,
     macros: {
       protein: 18,
@@ -1177,7 +1177,7 @@ export const recipes = [
     id: 36,
     name: 'Tostadas de Arroz con Mantequilla de Cacahuete',
     category: 'Merienda',
-    image: 'https://source.unsplash.com/400x300/?rice,cakes,peanut,butter',
+    image: 'https://images.unsplash.com/photo-1587576932284-2ad2d9987d5f?w=400&h=300&fit=crop',
     calories: 250,
     macros: {
       protein: 12,
@@ -1205,7 +1205,7 @@ export const recipes = [
     id: 37,
     name: 'Hummus con Crudités',
     category: 'Merienda',
-    image: 'https://source.unsplash.com/400x300/?hummus,vegetables,dip',
+    image: 'https://images.unsplash.com/photo-1632334154548-1da4c960e75f?w=400&h=300&fit=crop',
     calories: 180,
     macros: {
       protein: 8,
@@ -1233,7 +1233,7 @@ export const recipes = [
     id: 38,
     name: 'Batido de Proteína con Frutas',
     category: 'Merienda',
-    image: 'https://source.unsplash.com/400x300/?protein,shake,smoothie',
+    image: 'https://images.unsplash.com/photo-1553530666-6f4b6d5d1edc?w=400&h=300&fit=crop',
     calories: 200,
     macros: {
       protein: 25,
@@ -1259,7 +1259,7 @@ export const recipes = [
     id: 39,
     name: 'Rollitos de Pavo y Queso',
     category: 'Merienda',
-    image: 'https://source.unsplash.com/400x300/?turkey,roll,ups,cheese',
+    image: 'https://images.unsplash.com/photo-1574672280600-4accfa5b6f98?w=400&h=300&fit=crop',
     calories: 160,
     macros: {
       protein: 22,
@@ -1288,7 +1288,7 @@ export const recipes = [
     id: 40,
     name: 'Energy Balls de Dátiles',
     category: 'Merienda',
-    image: 'https://source.unsplash.com/400x300/?energy,balls,dates',
+    image: 'https://images.unsplash.com/photo-1608424188994-ae1e2b4c3c91?w=400&h=300&fit=crop',
     calories: 180,
     macros: {
       protein: 6,
@@ -1318,7 +1318,7 @@ export const recipes = [
     id: 41,
     name: 'Requesón con Fruta Fresca',
     category: 'Merienda',
-    image: 'https://source.unsplash.com/400x300/?cottage,cheese,fruit',
+    image: 'https://images.unsplash.com/photo-1488477304112-4944851de03d?w=400&h=300&fit=crop',
     calories: 150,
     macros: {
       protein: 16,
@@ -1347,7 +1347,7 @@ export const recipes = [
     id: 42,
     name: 'Crackers Integrales con Aguacate',
     category: 'Merienda',
-    image: 'https://source.unsplash.com/400x300/?crackers,avocado,healthy',
+    image: 'https://images.unsplash.com/photo-1541519227354-08fa5d50c44d?w=400&h=300&fit=crop',
     calories: 210,
     macros: {
       protein: 6,
@@ -1379,7 +1379,7 @@ export const recipes = [
     id: 43,
     name: 'Batido Proteico de Chocolate y Plátano',
     category: 'Batidos',
-    image: 'https://source.unsplash.com/400x300/?chocolate,banana,smoothie',
+    image: 'https://images.unsplash.com/photo-1579722820308-d74e571900a9?w=400&h=300&fit=crop',
     calories: 280,
     macros: {
       protein: 30,
@@ -1409,7 +1409,7 @@ export const recipes = [
     id: 44,
     name: 'Batido Verde Detox',
     category: 'Batidos',
-    image: 'https://source.unsplash.com/400x300/?green,smoothie,detox',
+    image: 'https://images.unsplash.com/photo-1610970881699-44a5587cabec?w=400&h=300&fit=crop',
     calories: 160,
     macros: {
       protein: 8,
@@ -1440,7 +1440,7 @@ export const recipes = [
     id: 45,
     name: 'Batido de Fresas y Vainilla',
     category: 'Batidos',
-    image: 'https://source.unsplash.com/400x300/?strawberry,smoothie,vanilla',
+    image: 'https://images.unsplash.com/photo-1553530666-6f4b6d5d1edc?w=400&h=300&fit=crop',
     calories: 240,
     macros: {
       protein: 28,
@@ -1469,7 +1469,7 @@ export const recipes = [
     id: 46,
     name: 'Batido Tropical Energético',
     category: 'Batidos',
-    image: 'https://source.unsplash.com/400x300/?tropical,smoothie,mango',
+    image: 'https://images.unsplash.com/photo-1622597467836-f3285f2131b7?w=400&h=300&fit=crop',
     calories: 250,
     macros: {
       protein: 22,
@@ -1500,7 +1500,7 @@ export const recipes = [
     id: 47,
     name: 'Batido de Café y Chocolate',
     category: 'Batidos',
-    image: 'https://source.unsplash.com/400x300/?coffee,chocolate,smoothie',
+    image: 'https://images.unsplash.com/photo-1579722820308-d74e571900a9?w=400&h=300&fit=crop',
     calories: 200,
     macros: {
       protein: 26,
@@ -1530,7 +1530,7 @@ export const recipes = [
     id: 48,
     name: 'Batido de Arándanos y Avena',
     category: 'Batidos',
-    image: 'https://source.unsplash.com/400x300/?blueberry,smoothie,oatmeal',
+    image: 'https://images.unsplash.com/photo-1553530666-6f4b6d5d1edc?w=400&h=300&fit=crop',
     calories: 290,
     macros: {
       protein: 24,
@@ -1563,7 +1563,7 @@ export const recipes = [
     id: 49,
     name: 'Brownie Proteico Saludable',
     category: 'Postre Saludable',
-    image: 'https://source.unsplash.com/400x300/?protein,brownie,healthy',
+    image: 'https://images.unsplash.com/photo-1606312619070-892a6f11e4e3?w=400&h=300&fit=crop',
     calories: 180,
     macros: {
       protein: 15,
@@ -1596,7 +1596,7 @@ export const recipes = [
     id: 50,
     name: 'Mousse de Chocolate Proteico',
     category: 'Postre Saludable',
-    image: 'https://source.unsplash.com/400x300/?chocolate,mousse,healthy',
+    image: 'https://images.unsplash.com/photo-1578985545062-46c8b362c061?w=400&h=300&fit=crop',
     calories: 150,
     macros: {
       protein: 18,
@@ -1628,7 +1628,7 @@ export const recipes = [
     id: 51,
     name: 'Mug Cake de Vainilla',
     category: 'Postre Saludable',
-    image: 'https://source.unsplash.com/400x300/?mug,cake,vanilla',
+    image: 'https://images.unsplash.com/photo-1578985545062-46c8b362c061?w=400&h=300&fit=crop',
     calories: 160,
     macros: {
       protein: 16,
@@ -1659,7 +1659,7 @@ export const recipes = [
     id: 52,
     name: 'Galletas de Avena y Plátano',
     category: 'Postre Saludable',
-    image: 'https://source.unsplash.com/400x300/?oatmeal,cookies,banana',
+    image: 'https://images.unsplash.com/photo-1604931455669-6c0f7b7ddf1e?w=400&h=300&fit=crop',
     calories: 140,
     macros: {
       protein: 6,
@@ -1691,7 +1691,7 @@ export const recipes = [
     id: 53,
     name: 'Flan Proteico de Vainilla',
     category: 'Postre Saludable',
-    image: 'https://source.unsplash.com/400x300/?flan,custard,vanilla',
+    image: 'https://images.unsplash.com/photo-1488477304112-4944851de03d?w=400&h=300&fit=crop',
     calories: 130,
     macros: {
       protein: 14,
@@ -1723,7 +1723,7 @@ export const recipes = [
     id: 54,
     name: 'Helado de Plátano con Cacao',
     category: 'Postre Saludable',
-    image: 'https://source.unsplash.com/400x300/?banana,ice,cream,chocolate',
+    image: 'https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=400&h=300&fit=crop',
     calories: 140,
     macros: {
       protein: 8,
