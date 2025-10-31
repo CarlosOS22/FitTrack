@@ -14,7 +14,7 @@ function App() {
   return (
     <AuthProvider>
       <AppProvider>
-        <Router>
+        <Router basename="/FitTrack">
           <div className="min-h-screen bg-gray-50">
             <Navigation />
             <Routes>
