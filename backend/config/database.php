@@ -1,10 +1,10 @@
 <?php
 class Database {
-    // Configuración para InfinityFree
-    private $host = "sql304.infinityfree.com";
-    private $database_name = "if0_40300482_fittrack";
-    private $username = "if0_40300482";
-    private $password = "TU_PASSWORD_VPANEL_AQUI"; // IMPORTANTE: Reemplaza esto con tu contraseña de vPanel
+    // Configuración para XAMPP local
+    private $host = "localhost";
+    private $database_name = "fittrack";
+    private $username = "root";
+    private $password = ""; // Sin password en XAMPP por defecto
     public $conn;
 
     // Obtener la conexión a la base de datos
