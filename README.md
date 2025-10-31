@@ -1,6 +1,6 @@
-# FitTrack - Aplicación Web de Dietas y Entrenamientos
+# FitTrack - Aplicación de Fitness y Nutrición
 
-Una aplicación web completa para gestionar tu plan de dieta y entrenamiento, con seguimiento de progreso y recomendaciones personalizadas.
+Aplicación web completa para seguimiento de dietas, rutinas de ejercicio y progreso personal con **backend PHP + MySQL**.
 
 ## 🌐 Demo en Vivo
 
@@ -8,189 +8,305 @@ Una aplicación web completa para gestionar tu plan de dieta y entrenamiento, co
 
 La aplicación se despliega automáticamente en GitHub Pages cada vez que se hace push a la rama principal.
 
-## Características
-
-### 🏠 Página de Inicio
-- Formulario completo de datos personales (peso, altura, edad, género, nivel de actividad)
-- Calculadora automática de plan nutricional personalizado
-- Cálculo de macronutrientes (proteína, carbohidratos, grasas)
-- Estimación de tiempo para alcanzar objetivos
-
-### 🍽️ Apartado de Recetas
-- 10+ recetas saludables clasificadas por categorías:
-  - Desayuno
-  - Almuerzo
-  - Cena
-  - Merienda
-  - Postre Saludable
-  - Batidos
-- Información nutricional completa (calorías y macros)
-- Instrucciones paso a paso para cada receta
-- Sistema de sugerencias para que usuarios propongan nuevas recetas
-- Añadir recetas directamente al plan semanal
-
-### 💪 Apartado de Ejercicios
-- 27+ ejercicios organizados por grupo muscular:
-  - Pecho
-  - Espalda
-  - Hombros
-  - Bíceps
-  - Tríceps
-  - Piernas
-  - Abdominales
-  - Cardio
-- Imágenes y GIFs animados de cada ejercicio
-- Instrucciones detalladas de ejecución
-- Información de series, repeticiones y descanso
-- Consejos de seguridad
-- Añadir ejercicios a la rutina semanal
-
-### 📅 Plan Semanal
-- Vista organizada por días de la semana
-- Resumen diario de macronutrientes
-- Gestión de comidas planificadas por día
-- Gestión de ejercicios planificados por día
-- Tabla de resumen semanal
-- Eliminar comidas o ejercicios del plan
-
-### 📈 Seguimiento de Progreso
-- Registro de peso y grasa corporal
-- Gráfico de evolución temporal
-- Estadísticas de progreso
-- Historial completo de mediciones
-- Notas personales en cada registro
-
-## Tecnologías Utilizadas
-
-- **React 18** - Framework de JavaScript
-- **Vite** - Build tool y dev server
-- **Tailwind CSS** - Framework de estilos
-- **React Router** - Navegación entre páginas
-- **Recharts** - Gráficos de progreso
-- **Lucide React** - Iconos
-- **Context API** - Gestión de estado global
-- **LocalStorage** - Persistencia de datos
-
-## Colores del Diseño
-
-La aplicación utiliza una paleta de colores morados y azules:
-- **Primary (Morado)**: #8b5cf6 → #4c1d95
-- **Secondary (Azul)**: #3b82f6 → #1e3a8a
-
-## Instalación y Ejecución
-
-### Requisitos Previos
-- Node.js 16+ y npm
-
-### Pasos de Instalación
-
-1. Clonar el repositorio:
-```bash
-git clone <url-del-repositorio>
-cd FitTrack
-```
-
-2. Instalar dependencias:
-```bash
-npm install
-```
-
-3. Ejecutar en modo desarrollo:
-```bash
-npm run dev
-```
-
-4. Abrir en el navegador:
-```
-http://localhost:5173
-```
-
-5. Para compilar para producción:
-```bash
-npm run build
-```
-
-## Estructura del Proyecto
+## 📁 Estructura del Proyecto
 
 ```
 FitTrack/
-├── src/
-│   ├── components/
-│   │   └── Navigation.jsx          # Barra de navegación
-│   ├── context/
-│   │   └── AppContext.jsx          # Context API para estado global
-│   ├── data/
-│   │   ├── recipes.js              # Datos de recetas
-│   │   └── exercises.js            # Datos de ejercicios
-│   ├── pages/
-│   │   ├── Home.jsx                # Página de inicio con formulario
-│   │   ├── Recipes.jsx             # Listado de recetas
-│   │   ├── Exercises.jsx           # Listado de ejercicios
-│   │   ├── WeeklyPlan.jsx          # Plan semanal
-│   │   └── Progress.jsx            # Seguimiento de progreso
-│   ├── App.jsx                     # Componente principal
-│   ├── main.jsx                    # Punto de entrada
-│   └── index.css                   # Estilos globales
-├── public/
-├── index.html
-├── package.json
-├── tailwind.config.js
-└── vite.config.js
+├── frontend/          # Aplicación React (Frontend)
+│   ├── src/
+│   │   ├── components/  # Componentes React
+│   │   ├── pages/       # Páginas de la aplicación
+│   │   ├── context/     # Context API
+│   │   ├── data/        # Datos estáticos (recetas, ejercicios)
+│   │   └── services/    # API service
+│   ├── public/
+│   ├── package.json
+│   └── .env            # Variables de entorno
+│
+├── backend/           # API REST PHP + MySQL (Backend)
+│   ├── api/          # Endpoints de la API
+│   ├── config/       # Configuración y conexión DB
+│   ├── database/     # Scripts SQL
+│   └── README.md     # Documentación del backend
+│
+└── README.md         # Este archivo
 ```
 
-## Funcionalidades Destacadas
+## 🚀 Características
 
-### Persistencia de Datos
-Todos los datos se guardan automáticamente en el navegador usando LocalStorage:
-- Datos personales del usuario
-- Plan semanal de comidas y ejercicios
-- Historial de progreso
-- Sugerencias de recetas
+### Frontend (React + Vite)
+- ✅ **54 recetas saludables** con información nutricional completa
+- ✅ **104 ejercicios con GIFs animados** por grupo muscular
+- ✅ **Sistema de autenticación** (Login/Registro)
+- ✅ **Plan semanal personalizable** con recetas y ejercicios
+- ✅ **Seguimiento de progreso** con gráficas interactivas
+- ✅ **Calculadora de macros y calorías** (BMR/TDEE)
+- ✅ **Diseño responsive** (móvil y desktop)
+- ✅ **Tema morado y azul**
+- ✅ **Sistema de sugerencias de recetas**
 
-### Calculadora Nutricional
-La aplicación calcula automáticamente:
-- Tasa Metabólica Basal (BMR) usando la fórmula de Mifflin-St Jeor
-- Gasto Energético Diario Total (TDEE) basado en nivel de actividad
-- Calorías diarias recomendadas según objetivo (perder, mantener o ganar peso)
-- Distribución de macronutrientes optimizada
+### Backend (PHP + MySQL)
+- ✅ **API REST completa**
+- ✅ **Base de datos MySQL/MariaDB** persistente
+- ✅ **Autenticación segura** (passwords hasheadas con BCRYPT)
+- ✅ **CRUD completo** para usuarios, planes, progreso
+- ✅ **Sistema de sugerencias** de recetas
+- ✅ **Protección contra SQL injection** (PDO prepared statements)
+- ✅ **CORS configurado**
 
-### Responsive Design
-La aplicación es completamente responsive y se adapta a:
-- Escritorio
-- Tablets
-- Móviles
+## 📋 Requisitos
 
-## Próximas Mejoras Sugeridas
+### Frontend
+- Node.js 18+ y npm
 
-- [ ] Backend con base de datos real
-- [ ] Sistema de autenticación de usuarios
-- [ ] Panel de administración para aprobar sugerencias
-- [ ] Más recetas y ejercicios
-- [ ] Integración con wearables para tracking automático
-- [ ] Compartir planes con otros usuarios
-- [ ] Modo oscuro
-- [ ] Exportar plan semanal a PDF
-- [ ] Notificaciones de recordatorio
+### Backend
+- PHP 7.4+
+- MySQL 5.7+ o MariaDB 10.3+
+- Apache o Nginx con mod_rewrite
+- XAMPP (recomendado para desarrollo local)
 
-## 🚀 Despliegue en GitHub Pages
+## 🔧 Instalación
 
-La aplicación se despliega automáticamente usando GitHub Actions. El workflow se activa:
-- Automáticamente al hacer push a la rama `main` o `master`
-- Manualmente desde la pestaña "Actions" en GitHub
+### 1. Clonar el Repositorio
 
-### Pasos para habilitar GitHub Pages:
+```bash
+git clone https://github.com/CarlosOS22/FitTrack.git
+cd FitTrack
+```
 
-1. Ve a la configuración del repositorio en GitHub
-2. En el menú lateral, selecciona "Pages"
-3. En "Source", selecciona "GitHub Actions"
-4. El workflow `.github/workflows/deploy.yml` se ejecutará automáticamente
+### 2. Configurar el Backend
 
-La aplicación estará disponible en: `https://carlosos22.github.io/FitTrack/`
+📖 Ver instrucciones detalladas en [backend/README.md](backend/README.md)
 
-## Licencia
+**Resumen rápido:**
+
+```bash
+# 1. Instalar XAMPP desde: https://www.apachefriends.org/
+
+# 2. Copiar la carpeta backend a:
+#    C:\xampp\htdocs\fittrack-backend\
+
+# 3. Crear la base de datos:
+#    - Abrir phpMyAdmin: http://localhost/phpmyadmin
+#    - Click en "SQL"
+#    - Copiar y ejecutar: backend/database/schema.sql
+
+# 4. Configurar credenciales (si es necesario):
+#    Editar: backend/config/database.php
+
+# 5. Probar el backend:
+#    http://localhost/fittrack-backend/api/test.php
+```
+
+### 3. Configurar el Frontend
+
+```bash
+cd frontend
+
+# Instalar dependencias
+npm install
+
+# El archivo .env ya está configurado para localhost
+# VITE_API_URL=http://localhost/fittrack-backend/api
+```
+
+### 4. Ejecutar en Desarrollo
+
+```bash
+# Asegúrate de estar en la carpeta frontend/
+cd frontend
+
+# Ejecutar el servidor de desarrollo
+npm run dev
+```
+
+Abre http://localhost:5173 en tu navegador
+
+## 📊 Funcionalidades Detalladas
+
+### 🏠 Página de Inicio
+- Formulario completo de datos personales
+- Calculadora automática de plan nutricional personalizado
+- Cálculo de macronutrientes usando fórmula de Mifflin-St Jeor
+- Estimación de tiempo para alcanzar objetivos
+
+### 🔐 Autenticación
+- Registro de nuevos usuarios
+- Inicio de sesión seguro
+- Sesión persistente
+- Perfil de usuario editable
+
+### 🍽️ Recetas (54 recetas)
+- **Desayuno**: 10 recetas
+- **Almuerzo**: 12 recetas
+- **Cena**: 12 recetas
+- **Merienda**: 8 recetas
+- **Batidos**: 6 recetas
+- **Postres Saludables**: 6 recetas
+
+Cada receta incluye:
+- Información nutricional completa (calorías, proteínas, carbohidratos, grasas)
+- Lista de ingredientes
+- Instrucciones paso a paso
+- Tiempo de preparación y dificultad
+- Botón para añadir al plan semanal
+
+### 💪 Ejercicios (104 ejercicios)
+- **Pecho**: 15 ejercicios
+- **Espalda**: 15 ejercicios
+- **Hombros**: 12 ejercicios
+- **Bíceps**: 10 ejercicios
+- **Tríceps**: 10 ejercicios
+- **Piernas**: 12 ejercicios
+- **Glúteos**: 8 ejercicios
+- **Abdominales**: 12 ejercicios
+- **Cardio**: 10 ejercicios
+
+Cada ejercicio incluye:
+- GIF animado de ejecución correcta
+- Descripción detallada
+- Instrucciones paso a paso
+- Nivel de dificultad
+- Equipo necesario
+- Series, repeticiones y tiempo de descanso
+- Botón para añadir a la rutina semanal
+
+### 📅 Plan Semanal
+- Vista organizada por días (Lunes a Domingo)
+- Resumen diario de macronutrientes
+- Lista de comidas planificadas por día
+- Lista de ejercicios planificados por día
+- Tabla de resumen semanal
+- Eliminar comidas o ejercicios del plan
+- **Guardado en base de datos MySQL** (persistente entre dispositivos)
+
+### 📈 Seguimiento de Progreso
+- Registro de peso y grasa corporal
+- Gráfico de evolución temporal (Recharts)
+- Estadísticas de progreso (peso actual, objetivo, cambio)
+- Historial completo de mediciones
+- Notas personales en cada registro
+- **Guardado en base de datos MySQL**
+
+## 🗄️ Base de Datos
+
+### Tablas principales:
+- `users` - Usuarios registrados (con contraseñas hasheadas)
+- `user_data` - Datos personales (peso, altura, objetivos)
+- `weekly_plan_recipes` - Recetas del plan semanal
+- `weekly_plan_exercises` - Ejercicios del plan semanal
+- `progress` - Seguimiento de progreso
+- `recipe_suggestions` - Sugerencias de usuarios
+
+📖 Ver esquema completo en: `backend/database/schema.sql`
+
+## 🌐 Despliegue
+
+### Frontend (GitHub Pages) ✅
+El frontend se despliega automáticamente a GitHub Pages:
+- **URL**: https://carlosos22.github.io/FitTrack/
+- **Trigger**: Push a rama `main`
+- **Workflow**: `.github/workflows/deploy.yml`
+
+### Backend (Hosting PHP)
+Necesitas subir la carpeta `backend/` a un hosting con PHP + MySQL:
+
+**Opciones gratuitas:**
+- **InfinityFree**: https://infinityfree.net (recomendado)
+- **000webhost**: https://www.000webhost.com
+- **AwardSpace**: https://www.awardspace.com
+
+**Opciones de pago (€2-3/mes):**
+- **Hostinger**: https://www.hostinger.es
+- **SiteGround**: https://www.siteground.es
+
+**Pasos para desplegar el backend:**
+1. Subir carpeta `backend/` vía FTP al hosting
+2. Crear base de datos MySQL en el panel del hosting
+3. Importar `backend/database/schema.sql` en la base de datos
+4. Editar `backend/config/database.php` con credenciales del hosting
+5. Actualizar `backend/config/cors.php` para permitir solo tu dominio
+6. Crear archivo `frontend/.env.production` con la URL de tu backend:
+   ```
+   VITE_API_URL=https://tu-hosting.com/api
+   ```
+
+## 🔒 Seguridad
+
+- ✅ Contraseñas hasheadas con **BCRYPT**
+- ✅ **Prepared statements** (prevención de SQL injection)
+- ✅ Validación de inputs en frontend y backend
+- ✅ CORS configurado
+- ⚠️ **En producción**: Actualizar `backend/config/cors.php` para permitir solo tu dominio
+
+## 🛠️ Tecnologías
+
+### Frontend
+- React 18
+- Vite
+- Tailwind CSS 3
+- React Router v6
+- Context API
+- Recharts (gráficas)
+- Lucide React (iconos)
+
+### Backend
+- PHP 7.4+
+- MySQL/MariaDB
+- PDO (PHP Data Objects)
+- REST API
+- CORS
+- Password Hashing (BCRYPT)
+
+## 📱 Uso de la Aplicación
+
+1. **Registrarse**: Crear una cuenta con email y contraseña
+2. **Iniciar Sesión**: Acceder con tus credenciales
+3. **Completar Perfil**: Ingresar peso, altura, edad, género, nivel de actividad
+4. **Explorar Recetas**: Navegar por 54 recetas saludables
+5. **Explorar Ejercicios**: Ver 104 ejercicios con GIFs animados
+6. **Crear Plan Semanal**: Añadir recetas y ejercicios a cada día
+7. **Registrar Progreso**: Añadir entradas de peso y % de grasa
+8. **Ver Evolución**: Visualizar tu progreso en gráficas
+
+## 🐛 Troubleshooting
+
+### Error: "Failed to fetch"
+- Verifica que XAMPP esté corriendo (Apache + MySQL)
+- Confirma que el backend esté en `C:\xampp\htdocs\fittrack-backend\`
+- Prueba acceder a: `http://localhost/fittrack-backend/api/test.php`
+
+### Error: "Connection refused"
+- Verifica que MySQL esté corriendo en XAMPP
+- Confirma las credenciales en `backend/config/database.php`
+
+### Error: "CORS policy"
+- Verifica `backend/config/cors.php`
+- Asegúrate que permita tu dominio del frontend
+
+## 🤝 Contribuir
+
+1. Fork el proyecto
+2. Crea una rama (`git checkout -b feature/AmazingFeature`)
+3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
+4. Push a la rama (`git push origin feature/AmazingFeature`)
+5. Abre un Pull Request
+
+## 📝 Licencia
 
 Este proyecto es de código abierto y está disponible bajo la licencia MIT.
 
-## Autor
+## 👨‍💻 Autor
 
-Desarrollado con Claude Code - Asistente de IA de Anthropic
+**CarlosOS22**
+- GitHub: [@CarlosOS22](https://github.com/CarlosOS22)
+
+## 🙏 Agradecimientos
+
+- Imágenes de recetas: [Unsplash](https://unsplash.com)
+- GIFs de ejercicios: [FitnessProgramer](https://fitnessprogramer.com)
+- Iconos: [Lucide](https://lucide.dev)
+
+---
+
+⭐ **Si te gusta este proyecto, dale una estrella en GitHub!**
