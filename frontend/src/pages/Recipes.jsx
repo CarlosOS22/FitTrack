@@ -228,18 +228,13 @@ const Recipes = () => {
                   <div>
                     <h3 className="text-lg font-bold text-gray-800 mb-3">Añadir a plan semanal:</h3>
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
-                      {['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'].map((day) => (
+                      {['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'].map((day) => (
                         <button
                           key={day}
                           onClick={() => setSelectedDay(day)}
-                          className="bg-gradient-to-r from-primary-600 to-secondary-600 text-white px-4 py-2 rounded-lg hover:from-primary-700 hover:to-secondary-700 transition-all capitalize"
+                          className="bg-gradient-to-r from-primary-600 to-secondary-600 text-white px-4 py-2 rounded-lg hover:from-primary-700 hover:to-secondary-700 transition-all"
                         >
-                          {day === 'monday' ? 'Lunes' :
-                           day === 'tuesday' ? 'Martes' :
-                           day === 'wednesday' ? 'Miércoles' :
-                           day === 'thursday' ? 'Jueves' :
-                           day === 'friday' ? 'Viernes' :
-                           day === 'saturday' ? 'Sábado' : 'Domingo'}
+                          {day}
                         </button>
                       ))}
                     </div>
@@ -251,12 +246,7 @@ const Recipes = () => {
                       className="flex-1 bg-green-600 text-white px-4 py-3 rounded-lg hover:bg-green-700 transition-all flex items-center justify-center font-semibold"
                     >
                       <Plus className="mr-2 h-5 w-5" />
-                      Confirmar añadir a {selectedDay === 'monday' ? 'Lunes' :
-                                          selectedDay === 'tuesday' ? 'Martes' :
-                                          selectedDay === 'wednesday' ? 'Miércoles' :
-                                          selectedDay === 'thursday' ? 'Jueves' :
-                                          selectedDay === 'friday' ? 'Viernes' :
-                                          selectedDay === 'saturday' ? 'Sábado' : 'Domingo'}
+                      Confirmar añadir a {selectedDay}
                     </button>
                     <button
                       onClick={() => setSelectedDay(null)}

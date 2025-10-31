@@ -4,19 +4,19 @@ import { Calendar, Flame, Activity, Trash2, UtensilsCrossed, Dumbbell } from 'lu
 
 const WeeklyPlan = () => {
   const { weeklyPlan, calculateDailyMacros, removeRecipeFromWeeklyPlan, removeExerciseFromWeeklyPlan } = useApp();
-  const [selectedDay, setSelectedDay] = useState('monday');
+  const [selectedDay, setSelectedDay] = useState('Lunes');
 
   const days = [
-    { key: 'monday', label: 'Lunes' },
-    { key: 'tuesday', label: 'Martes' },
-    { key: 'wednesday', label: 'Miércoles' },
-    { key: 'thursday', label: 'Jueves' },
-    { key: 'friday', label: 'Viernes' },
-    { key: 'saturday', label: 'Sábado' },
-    { key: 'sunday', label: 'Domingo' }
+    { key: 'Lunes', label: 'Lunes' },
+    { key: 'Martes', label: 'Martes' },
+    { key: 'Miércoles', label: 'Miércoles' },
+    { key: 'Jueves', label: 'Jueves' },
+    { key: 'Viernes', label: 'Viernes' },
+    { key: 'Sábado', label: 'Sábado' },
+    { key: 'Domingo', label: 'Domingo' }
   ];
 
-  const currentDayPlan = weeklyPlan[selectedDay];
+  const currentDayPlan = weeklyPlan[selectedDay] || { recipes: [], exercises: [] };
   const dailyMacros = calculateDailyMacros(selectedDay);
 
   return (
@@ -84,45 +84,48 @@ const WeeklyPlan = () => {
               Comidas del Día
             </h2>
 
-            {currentDayPlan?.meals?.length > 0 ? (
+            {currentDayPlan?.recipes?.length > 0 ? (
               <div className="space-y-4">
-                {currentDayPlan.meals.map((meal, index) => (
-                  <div key={index} className="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-all">
-                    <div className="flex justify-between items-start mb-2">
-                      <div>
-                        <h3 className="font-bold text-gray-800">{meal.name}</h3>
-                        <span className="text-xs text-primary-600 bg-primary-100 px-2 py-1 rounded-full">
-                          {meal.category}
-                        </span>
+                {currentDayPlan.recipes.map((meal, index) => {
+                  const recipeData = meal.recipe_data || meal;
+                  return (
+                    <div key={index} className="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-all">
+                      <div className="flex justify-between items-start mb-2">
+                        <div>
+                          <h3 className="font-bold text-gray-800">{recipeData.name}</h3>
+                          <span className="text-xs text-primary-600 bg-primary-100 px-2 py-1 rounded-full">
+                            {recipeData.category}
+                          </span>
+                        </div>
+                        <button
+                          onClick={() => removeRecipeFromWeeklyPlan(selectedDay, meal.recipe_id || meal.id)}
+                          className="text-red-500 hover:text-red-700 p-2"
+                        >
+                          <Trash2 className="h-5 w-5" />
+                        </button>
                       </div>
-                      <button
-                        onClick={() => removeRecipeFromWeeklyPlan(selectedDay, meal.id)}
-                        className="text-red-500 hover:text-red-700 p-2"
-                      >
-                        <Trash2 className="h-5 w-5" />
-                      </button>
-                    </div>
 
-                    <div className="grid grid-cols-4 gap-2 text-center text-sm mt-3">
-                      <div className="bg-orange-50 rounded p-2">
-                        <div className="font-bold text-orange-600">{meal.calories}</div>
-                        <div className="text-xs text-gray-600">kcal</div>
-                      </div>
-                      <div className="bg-primary-50 rounded p-2">
-                        <div className="font-bold text-primary-600">{meal.macros.protein}g</div>
-                        <div className="text-xs text-gray-600">Prot</div>
-                      </div>
-                      <div className="bg-secondary-50 rounded p-2">
-                        <div className="font-bold text-secondary-600">{meal.macros.carbs}g</div>
-                        <div className="text-xs text-gray-600">Carbs</div>
-                      </div>
-                      <div className="bg-primary-50 rounded p-2">
-                        <div className="font-bold text-primary-600">{meal.macros.fat}g</div>
-                        <div className="text-xs text-gray-600">Grasas</div>
+                      <div className="grid grid-cols-4 gap-2 text-center text-sm mt-3">
+                        <div className="bg-orange-50 rounded p-2">
+                          <div className="font-bold text-orange-600">{recipeData.calories}</div>
+                          <div className="text-xs text-gray-600">kcal</div>
+                        </div>
+                        <div className="bg-primary-50 rounded p-2">
+                          <div className="font-bold text-primary-600">{recipeData.macros?.protein || 0}g</div>
+                          <div className="text-xs text-gray-600">Prot</div>
+                        </div>
+                        <div className="bg-secondary-50 rounded p-2">
+                          <div className="font-bold text-secondary-600">{recipeData.macros?.carbs || 0}g</div>
+                          <div className="text-xs text-gray-600">Carbs</div>
+                        </div>
+                        <div className="bg-primary-50 rounded p-2">
+                          <div className="font-bold text-primary-600">{recipeData.macros?.fat || 0}g</div>
+                          <div className="text-xs text-gray-600">Grasas</div>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             ) : (
               <div className="text-center py-12">
@@ -142,43 +145,46 @@ const WeeklyPlan = () => {
 
             {currentDayPlan?.exercises?.length > 0 ? (
               <div className="space-y-4">
-                {currentDayPlan.exercises.map((exercise, index) => (
-                  <div key={index} className="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-all">
-                    <div className="flex justify-between items-start mb-2">
-                      <div>
-                        <h3 className="font-bold text-gray-800">{exercise.name}</h3>
-                        <span className="text-xs text-secondary-600 bg-secondary-100 px-2 py-1 rounded-full">
-                          {exercise.muscleGroup}
-                        </span>
+                {currentDayPlan.exercises.map((exercise, index) => {
+                  const exerciseData = exercise.exercise_data || exercise;
+                  return (
+                    <div key={index} className="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-all">
+                      <div className="flex justify-between items-start mb-2">
+                        <div>
+                          <h3 className="font-bold text-gray-800">{exerciseData.name}</h3>
+                          <span className="text-xs text-secondary-600 bg-secondary-100 px-2 py-1 rounded-full">
+                            {exerciseData.muscleGroup}
+                          </span>
+                        </div>
+                        <button
+                          onClick={() => removeExerciseFromWeeklyPlan(selectedDay, exercise.exercise_id || exercise.id)}
+                          className="text-red-500 hover:text-red-700 p-2"
+                        >
+                          <Trash2 className="h-5 w-5" />
+                        </button>
                       </div>
-                      <button
-                        onClick={() => removeExerciseFromWeeklyPlan(selectedDay, exercise.id)}
-                        className="text-red-500 hover:text-red-700 p-2"
-                      >
-                        <Trash2 className="h-5 w-5" />
-                      </button>
-                    </div>
 
-                    <div className="mt-3 space-y-2 text-sm text-gray-600">
-                      <div className="flex items-center justify-between bg-gray-50 rounded p-2">
-                        <span className="font-medium">Series:</span>
-                        <span className="font-bold text-gray-800">{exercise.sets}</span>
-                      </div>
-                      <div className="flex items-center justify-between bg-gray-50 rounded p-2">
-                        <span className="font-medium">Repeticiones:</span>
-                        <span className="font-bold text-gray-800">{exercise.reps}</span>
-                      </div>
-                      <div className="flex items-center justify-between bg-gray-50 rounded p-2">
-                        <span className="font-medium">Descanso:</span>
-                        <span className="font-bold text-gray-800">{exercise.restTime}s</span>
-                      </div>
-                      <div className="flex items-center justify-between bg-gray-50 rounded p-2">
-                        <span className="font-medium">Equipamiento:</span>
-                        <span className="font-bold text-gray-800">{exercise.equipment}</span>
+                      <div className="mt-3 space-y-2 text-sm text-gray-600">
+                        <div className="flex items-center justify-between bg-gray-50 rounded p-2">
+                          <span className="font-medium">Series:</span>
+                          <span className="font-bold text-gray-800">{exerciseData.sets}</span>
+                        </div>
+                        <div className="flex items-center justify-between bg-gray-50 rounded p-2">
+                          <span className="font-medium">Repeticiones:</span>
+                          <span className="font-bold text-gray-800">{exerciseData.reps}</span>
+                        </div>
+                        <div className="flex items-center justify-between bg-gray-50 rounded p-2">
+                          <span className="font-medium">Descanso:</span>
+                          <span className="font-bold text-gray-800">{exerciseData.restTime}s</span>
+                        </div>
+                        <div className="flex items-center justify-between bg-gray-50 rounded p-2">
+                          <span className="font-medium">Equipamiento:</span>
+                          <span className="font-bold text-gray-800">{exerciseData.equipment}</span>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             ) : (
               <div className="text-center py-12">
@@ -219,7 +225,7 @@ const WeeklyPlan = () => {
                       onClick={() => setSelectedDay(day.key)}
                     >
                       <td className="py-3 px-4 font-medium text-gray-800">{day.label}</td>
-                      <td className="text-center py-3 px-4">{dayPlan?.meals?.length || 0}</td>
+                      <td className="text-center py-3 px-4">{dayPlan?.recipes?.length || 0}</td>
                       <td className="text-center py-3 px-4">{dayPlan?.exercises?.length || 0}</td>
                       <td className="text-center py-3 px-4 font-bold text-orange-600">{macros.calories}</td>
                       <td className="text-center py-3 px-4 font-bold text-primary-600">{macros.protein}g</td>
