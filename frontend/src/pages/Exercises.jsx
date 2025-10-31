@@ -13,12 +13,17 @@ const Exercises = () => {
     ? exercises
     : exercises.filter(exercise => exercise.muscleGroup === selectedMuscle);
 
-  const handleAddToWeeklyPlan = (exercise) => {
+  const handleAddToWeeklyPlan = async (exercise) => {
     if (selectedDay) {
-      addExerciseToWeeklyPlan(selectedDay, exercise);
-      setSelectedDay(null);
-      setSelectedExercise(null);
-      alert(`¡Ejercicio añadido a ${selectedDay}!`);
+      try {
+        await addExerciseToWeeklyPlan(selectedDay, exercise);
+        setSelectedDay(null);
+        setSelectedExercise(null);
+        alert(`¡Ejercicio añadido a ${selectedDay}!`);
+      } catch (error) {
+        console.error('Error:', error);
+        alert('Error al añadir el ejercicio. Por favor, intenta de nuevo.');
+      }
     }
   };
 

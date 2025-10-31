@@ -98,7 +98,7 @@ const WeeklyPlan = () => {
                           </span>
                         </div>
                         <button
-                          onClick={() => removeRecipeFromWeeklyPlan(selectedDay, meal.recipe_id || meal.id)}
+                          onClick={() => removeRecipeFromWeeklyPlan(selectedDay, meal.id)}
                           className="text-red-500 hover:text-red-700 p-2"
                         >
                           <Trash2 className="h-5 w-5" />
@@ -157,7 +157,7 @@ const WeeklyPlan = () => {
                           </span>
                         </div>
                         <button
-                          onClick={() => removeExerciseFromWeeklyPlan(selectedDay, exercise.exercise_id || exercise.id)}
+                          onClick={() => removeExerciseFromWeeklyPlan(selectedDay, exercise.id)}
                           className="text-red-500 hover:text-red-700 p-2"
                         >
                           <Trash2 className="h-5 w-5" />

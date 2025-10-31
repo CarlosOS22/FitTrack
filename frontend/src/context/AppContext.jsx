@@ -182,6 +182,7 @@ export const AppProvider = ({ children }) => {
       await loadWeeklyPlan();
     } catch (error) {
       console.error('Error eliminando receta:', error);
+      alert('Error al eliminar la receta. Por favor, intenta de nuevo.');
       throw error;
     }
   };
@@ -206,6 +207,7 @@ export const AppProvider = ({ children }) => {
       await loadWeeklyPlan();
     } catch (error) {
       console.error('Error eliminando ejercicio:', error);
+      alert('Error al eliminar el ejercicio. Por favor, intenta de nuevo.');
       throw error;
     }
   };

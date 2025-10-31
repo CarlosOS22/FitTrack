@@ -26,12 +26,17 @@ const Recipes = () => {
     ? recipes
     : recipes.filter(recipe => recipe.category === selectedCategory);
 
-  const handleAddToWeeklyPlan = (recipe) => {
+  const handleAddToWeeklyPlan = async (recipe) => {
     if (selectedDay) {
-      addRecipeToWeeklyPlan(selectedDay, recipe);
-      setSelectedDay(null);
-      setSelectedRecipe(null);
-      alert(`¡Receta añadida a ${selectedDay}!`);
+      try {
+        await addRecipeToWeeklyPlan(selectedDay, recipe);
+        setSelectedDay(null);
+        setSelectedRecipe(null);
+        alert(`¡Receta añadida a ${selectedDay}!`);
+      } catch (error) {
+        console.error('Error:', error);
+        alert('Error al añadir la receta. Por favor, intenta de nuevo.');
+      }
     }
   };
 
