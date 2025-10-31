@@ -1,5 +1,5 @@
 // Configuración de la API
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'sql304.infinityfree.com';
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost/fittrack-backend/api';
 
 // Función auxiliar para hacer peticiones
 const fetchAPI = async (endpoint, options = {}) => {

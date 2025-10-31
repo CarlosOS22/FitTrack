@@ -2,11 +2,11 @@
 
 Aplicación web completa para seguimiento de dietas, rutinas de ejercicio y progreso personal con **backend PHP + MySQL**.
 
-## 🌐 Demo en Vivo
+## 🌐 Entorno de Desarrollo
 
-**Accede a la aplicación aquí:** [https://carlosos22.github.io/FitTrack/](https://carlosos22.github.io/FitTrack/)
+Esta aplicación está configurada para correr en **localhost con XAMPP**.
 
-La aplicación se despliega automáticamente en GitHub Pages cada vez que se hace push a la rama principal.
+Para ejecutarla en producción, necesitarás configurar un hosting con PHP + MySQL (ver sección de Despliegue).
 
 ## 📁 Estructura del Proyecto
 
@@ -107,7 +107,7 @@ cd frontend
 npm install
 
 # El archivo .env ya está configurado para localhost
-# VITE_API_URL=http://localhost/fittrack-backend/api
+# Si necesitas cambiar la URL del backend, edita: frontend/.env
 ```
 
 ### 4. Ejecutar en Desarrollo
@@ -121,6 +121,8 @@ npm run dev
 ```
 
 Abre http://localhost:5173 en tu navegador
+
+**IMPORTANTE:** Asegúrate de tener XAMPP corriendo con Apache y MySQL activos antes de ejecutar el frontend.
 
 ## 📊 Funcionalidades Detalladas
 
@@ -200,16 +202,12 @@ Cada ejercicio incluye:
 
 📖 Ver esquema completo en: `backend/database/schema.sql`
 
-## 🌐 Despliegue
+## 🌐 Despliegue en Producción
 
-### Frontend (GitHub Pages) ✅
-El frontend se despliega automáticamente a GitHub Pages:
-- **URL**: https://carlosos22.github.io/FitTrack/
-- **Trigger**: Push a rama `main`
-- **Workflow**: `.github/workflows/deploy.yml`
+⚠️ **Nota:** Actualmente el proyecto está configurado para desarrollo local. Para desplegarlo en producción necesitarás:
 
 ### Backend (Hosting PHP)
-Necesitas subir la carpeta `backend/` a un hosting con PHP + MySQL:
+Subir la carpeta `backend/` a un hosting con PHP + MySQL:
 
 **Opciones gratuitas:**
 - **InfinityFree**: https://infinityfree.net (recomendado)
@@ -226,10 +224,15 @@ Necesitas subir la carpeta `backend/` a un hosting con PHP + MySQL:
 3. Importar `backend/database/schema.sql` en la base de datos
 4. Editar `backend/config/database.php` con credenciales del hosting
 5. Actualizar `backend/config/cors.php` para permitir solo tu dominio
-6. Crear archivo `frontend/.env.production` con la URL de tu backend:
+6. Actualizar `frontend/.env` con la URL de tu backend en producción:
    ```
    VITE_API_URL=https://tu-hosting.com/api
    ```
+
+### Frontend (GitHub Pages)
+Para desplegar el frontend en GitHub Pages:
+- El frontend se puede desplegar automáticamente con el workflow en `.github/workflows/deploy.yml`
+- Asegúrate de actualizar la URL del backend en `frontend/.env` antes de hacer el build
 
 ## 🔒 Seguridad
 
