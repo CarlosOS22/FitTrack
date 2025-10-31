@@ -9,7 +9,72 @@ Backend REST API para la aplicación FitTrack construido con PHP y MySQL/MariaDB
 - Apache o Nginx con mod_rewrite habilitado
 - Extensión PDO de PHP habilitada
 
-## 🚀 Instalación
+## 🌐 Despliegue en InfinityFree (Hosting Gratuito)
+
+### Configuración Actual
+El backend está configurado para funcionar con InfinityFree:
+- **Dominio**: https://fittrackapp.kesug.com
+- **Base de datos**: if0_40300482_fittrack
+- **Host MySQL**: sql304.infinityfree.com
+
+### Pasos para Subir el Backend a InfinityFree
+
+1. **Acceder al File Manager de InfinityFree**
+   - Inicia sesión en tu cuenta de InfinityFree
+   - Ve al Control Panel (vPanel)
+   - Abre el Online File Manager
+
+2. **Subir Archivos del Backend**
+   - Navega a la carpeta `htdocs` (esta es la raíz de tu sitio web)
+   - Sube TODOS los archivos dentro de la carpeta `backend/` a `htdocs/`:
+     ```
+     htdocs/
+     ├── api/
+     │   ├── auth.php
+     │   ├── user-data.php
+     │   ├── weekly-plan.php
+     │   ├── progress.php
+     │   ├── recipe-suggestions.php
+     │   └── .htaccess
+     └── config/
+         ├── database.php
+         └── cors.php
+     ```
+   - ⚠️ NO subas la carpeta llamada "backend", sube su CONTENIDO directamente a htdocs
+
+3. **Configurar las Credenciales de la Base de Datos**
+   - Abre el archivo `config/database.php` en el File Manager
+   - Reemplaza `TU_PASSWORD_VPANEL_AQUI` con tu contraseña real de vPanel
+   - Las credenciales ya están preconfiguradas:
+     ```php
+     private $host = "sql304.infinityfree.com";
+     private $database_name = "if0_40300482_fittrack";
+     private $username = "if0_40300482";
+     private $password = "TU_PASSWORD_VPANEL_AQUI"; // ← CAMBIAR AQUÍ
+     ```
+
+4. **Crear las Tablas en MySQL**
+   - En vPanel, ve a "MySQL Databases"
+   - Haz clic en "phpMyAdmin"
+   - Selecciona la base de datos `if0_40300482_fittrack`
+   - Ve a la pestaña "SQL"
+   - Copia y pega el contenido completo de `database/schema.sql`
+   - Haz clic en "Ejecutar"
+
+5. **Verificar la Conexión**
+   - Abre en tu navegador: https://fittrackapp.kesug.com/api/test.php
+   - Deberías ver: `{"success":true,"message":"✅ Conexión a la base de datos exitosa"}`
+
+### ⚠️ Importante sobre InfinityFree
+
+- **Límites**: InfinityFree tiene límites de requests (hits) diarios. Si excedes el límite, el sitio será suspendido temporalmente.
+- **Velocidad**: El hosting gratuito puede ser más lento que el hosting premium.
+- **SSL**: InfinityFree proporciona SSL gratuito, usa siempre `https://` en producción.
+- **MySQL**: El servidor MySQL puede tener latencia. Optimiza tus queries.
+
+---
+
+## 🚀 Instalación Local (Desarrollo)
 
 ### 1. Configurar la Base de Datos
 

@@ -78,11 +78,14 @@ const Exercises = () => {
               className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all cursor-pointer"
               onClick={() => setSelectedExercise(exercise)}
             >
-              <div className="relative">
+              <div className="relative bg-gray-100 flex items-center justify-center">
                 <img
-                  src={exercise.image}
+                  src={exercise.gifUrl || exercise.image}
                   alt={exercise.name}
-                  className="w-full h-48 object-cover"
+                  className="w-full h-48 object-contain"
+                  onError={(e) => {
+                    e.target.src = exercise.image;
+                  }}
                 />
                 <div className="absolute top-2 right-2">
                   <span className={`text-xs font-semibold px-3 py-1 rounded-full ${getDifficultyColor(exercise.difficulty)}`}>
