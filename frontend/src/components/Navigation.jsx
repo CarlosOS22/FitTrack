@@ -1,5 +1,5 @@
 import { Link, useLocation } from 'react-router-dom';
-import { Home, UtensilsCrossed, Dumbbell, Calendar, TrendingUp, LogIn, UserPlus, LogOut, User } from 'lucide-react';
+import { Home, UtensilsCrossed, Dumbbell, Calendar, TrendingUp, ShoppingCart, LogIn, UserPlus, LogOut, User } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 
 const Navigation = () => {
@@ -11,6 +11,7 @@ const Navigation = () => {
     { path: '/recipes', icon: UtensilsCrossed, label: 'Recetas' },
     { path: '/exercises', icon: Dumbbell, label: 'Ejercicios' },
     { path: '/weekly-plan', icon: Calendar, label: 'Plan Semanal' },
+    { path: '/shopping-list', icon: ShoppingCart, label: 'Lista Compra' },
     { path: '/progress', icon: TrendingUp, label: 'Progreso' },
   ];
 
