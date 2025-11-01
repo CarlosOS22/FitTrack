@@ -216,7 +216,7 @@ const WeeklyPlan = () => {
                             referrerPolicy="no-referrer"
                             crossOrigin="anonymous"
                             onError={(e) => {
-                              // Si falla, mostrar placeholder
+                              // Si falla, mostrar placeholder con botón de YouTube
                               if (!e.target.dataset.failed) {
                                 e.target.dataset.failed = 'true';
                                 e.target.style.opacity = '0';
@@ -224,12 +224,20 @@ const WeeklyPlan = () => {
                                 const placeholder = document.createElement('div');
                                 placeholder.className = 'absolute inset-0 flex flex-col items-center justify-center text-gray-400 p-4';
                                 placeholder.innerHTML = `
-                                  <svg class="w-16 h-16 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <svg class="w-12 h-12 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path>
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                   </svg>
-                                  <p class="text-sm font-medium text-center">${exerciseData.name}</p>
-                                  <p class="text-xs text-gray-400 mt-1">Ver Ejercicios para animación</p>
+                                  <p class="text-sm font-medium text-center mb-2">${exerciseData.name}</p>
+                                  <button
+                                    onclick="window.open('https://www.youtube.com/results?search_query=${encodeURIComponent(exerciseData.name + ' ejercicio técnica correcta')}', '_blank')"
+                                    class="bg-red-600 hover:bg-red-700 text-white px-3 py-1.5 rounded-lg text-xs font-medium transition-colors flex items-center gap-1.5"
+                                  >
+                                    <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
+                                      <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                                    </svg>
+                                    Ver en YouTube
+                                  </button>
                                 `;
                                 e.target.parentElement.appendChild(placeholder);
                               }
