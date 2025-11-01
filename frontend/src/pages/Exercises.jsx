@@ -16,10 +16,11 @@ const Exercises = () => {
   const handleAddToWeeklyPlan = async (exercise) => {
     if (selectedDay) {
       try {
+        const dayName = selectedDay; // Guardar el nombre del día antes de limpiar el estado
         await addExerciseToWeeklyPlan(selectedDay, exercise);
+        alert(`¡Ejercicio añadido a ${dayName}!`);
         setSelectedDay(null);
         setSelectedExercise(null);
-        alert(`¡Ejercicio añadido a ${selectedDay}!`);
       } catch (error) {
         console.error('Error:', error);
         alert('Error al añadir el ejercicio. Por favor, intenta de nuevo.');

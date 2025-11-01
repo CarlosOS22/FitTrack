@@ -29,10 +29,11 @@ const Recipes = () => {
   const handleAddToWeeklyPlan = async (recipe) => {
     if (selectedDay) {
       try {
+        const dayName = selectedDay; // Guardar el nombre del día antes de limpiar el estado
         await addRecipeToWeeklyPlan(selectedDay, recipe);
+        alert(`¡Receta añadida a ${dayName}!`);
         setSelectedDay(null);
         setSelectedRecipe(null);
-        alert(`¡Receta añadida a ${selectedDay}!`);
       } catch (error) {
         console.error('Error:', error);
         alert('Error al añadir la receta. Por favor, intenta de nuevo.');
