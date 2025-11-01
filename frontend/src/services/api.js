@@ -115,6 +115,14 @@ export const weeklyPlanAPI = {
       body: JSON.stringify({ user_id: userId, day, exercise_id: exerciseId }),
     });
   },
+
+  // Actualizar ejercicio del plan
+  updateExercise: async (userId, exerciseId, exerciseData) => {
+    return fetchAPI('/weekly-plan.php?action=update-exercise', {
+      method: 'PUT',
+      body: JSON.stringify({ user_id: userId, exercise_id: exerciseId, exercise_data: exerciseData }),
+    });
+  },
 };
 
 // ========== PROGRESO ==========
