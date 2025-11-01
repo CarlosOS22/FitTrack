@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react';
 import { useApp } from '../context/AppContext';
-import { Calculator, TrendingDown, Activity, Calendar } from 'lucide-react';
+import { Calculator, TrendingDown, Activity, Calendar, Sparkles } from 'lucide-react';
+import { recipes } from '../data/recipes';
+import { exercises } from '../data/exercises';
 
 const Home = () => {
-  const { userData, setUserData } = useApp();
+  const { userData, setUserData, addRecipeToWeeklyPlan, addExerciseToWeeklyPlan, currentUser } = useApp();
   const [formData, setFormData] = useState({
     name: '',
     age: '',
@@ -15,6 +17,7 @@ const Home = () => {
     goal: 'lose'
   });
   const [calculatedPlan, setCalculatedPlan] = useState(null);
+  const [isGeneratingPlan, setIsGeneratingPlan] = useState(false);
 
   useEffect(() => {
     if (userData) {
@@ -111,6 +114,167 @@ const Home = () => {
     e.preventDefault();
     setUserData(formData);
     calculatePlan(formData);
+  };
+
+  // Generar plan de dieta automático
+  const generateAutomaticDietPlan = async (plan) => {
+    const days = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'];
+    const targetCaloriesPerDay = plan.dailyCalories;
+    const targetProtein = plan.macros.protein;
+    const targetCarbs = plan.macros.carbs;
+    const targetFat = plan.macros.fat;
+
+    // Distribuir calorías por comida
+    const caloriesBreakfast = targetCaloriesPerDay * 0.25;
+    const caloriesLunch = targetCaloriesPerDay * 0.35;
+    const caloriesDinner = targetCaloriesPerDay * 0.30;
+    const caloriesSnack = targetCaloriesPerDay * 0.10;
+
+    for (const day of days) {
+      try {
+        // Seleccionar desayuno
+        const breakfastOptions = recipes.filter(r => r.category === 'Desayuno' && r.calories <= caloriesBreakfast + 50);
+        if (breakfastOptions.length > 0) {
+          const breakfast = breakfastOptions[Math.floor(Math.random() * breakfastOptions.length)];
+          await addRecipeToWeeklyPlan(day, breakfast);
+        }
+
+        // Seleccionar almuerzo
+        const lunchOptions = recipes.filter(r => r.category === 'Almuerzo' && r.calories <= caloriesLunch + 100);
+        if (lunchOptions.length > 0) {
+          const lunch = lunchOptions[Math.floor(Math.random() * lunchOptions.length)];
+          await addRecipeToWeeklyPlan(day, lunch);
+        }
+
+        // Seleccionar cena
+        const dinnerOptions = recipes.filter(r => r.category === 'Cena' && r.calories <= caloriesDinner + 100);
+        if (dinnerOptions.length > 0) {
+          const dinner = dinnerOptions[Math.floor(Math.random() * dinnerOptions.length)];
+          await addRecipeToWeeklyPlan(day, dinner);
+        }
+
+        // Seleccionar merienda o batido
+        const snackOptions = recipes.filter(r =>
+          (r.category === 'Merienda' || r.category === 'Batidos') &&
+          r.calories <= caloriesSnack + 50
+        );
+        if (snackOptions.length > 0) {
+          const snack = snackOptions[Math.floor(Math.random() * snackOptions.length)];
+          await addRecipeToWeeklyPlan(day, snack);
+        }
+
+        // Pequeña pausa para no saturar el servidor
+        await new Promise(resolve => setTimeout(resolve, 100));
+      } catch (error) {
+        console.error(`Error generando plan para ${day}:`, error);
+      }
+    }
+  };
+
+  // Generar plan de entrenamiento automático
+  const generateAutomaticWorkoutPlan = async (plan) => {
+    const days = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'];
+    const workoutDays = plan.weeklyWorkouts;
+    const goal = formData.goal;
+
+    // Definir grupos musculares según el objetivo
+    let muscleGroupSchedule = [];
+
+    if (goal === 'lose') {
+      // Pérdida de peso: Más cardio y circuito completo
+      muscleGroupSchedule = [
+        ['Cardio', 'Abdominales'],
+        ['Piernas', 'Glúteos'],
+        ['Pecho', 'Tríceps'],
+        ['Espalda', 'Bíceps'],
+        ['Cardio', 'Abdominales'],
+        ['Piernas', 'Hombros'],
+        ['Cardio']
+      ];
+    } else if (goal === 'gain') {
+      // Ganancia de músculo: Más trabajo de fuerza
+      muscleGroupSchedule = [
+        ['Pecho', 'Tríceps'],
+        ['Espalda', 'Bíceps'],
+        ['Piernas', 'Glúteos'],
+        ['Hombros', 'Abdominales'],
+        ['Pecho', 'Espalda'],
+        ['Piernas', 'Abdominales'],
+        ['Cardio']
+      ];
+    } else {
+      // Mantenimiento: Equilibrado
+      muscleGroupSchedule = [
+        ['Pecho', 'Abdominales'],
+        ['Piernas', 'Glúteos'],
+        ['Espalda', 'Bíceps'],
+        ['Cardio', 'Abdominales'],
+        ['Pecho', 'Tríceps'],
+        ['Piernas', 'Hombros'],
+        ['Cardio']
+      ];
+    }
+
+    // Seleccionar días de entrenamiento
+    const trainingDays = [];
+    const dayIndices = [0, 2, 4, 1, 3, 5, 6]; // Lunes, Miércoles, Viernes, Martes, Jueves, Sábado, Domingo
+    for (let i = 0; i < Math.min(workoutDays, 7); i++) {
+      trainingDays.push(days[dayIndices[i]]);
+    }
+
+    for (let i = 0; i < trainingDays.length; i++) {
+      const day = trainingDays[i];
+      const muscleGroups = muscleGroupSchedule[i % muscleGroupSchedule.length];
+
+      try {
+        for (const muscleGroup of muscleGroups) {
+          // Seleccionar 2-3 ejercicios por grupo muscular
+          const exerciseOptions = exercises.filter(ex => ex.muscleGroup === muscleGroup);
+          const numExercises = muscleGroup === 'Cardio' ? 1 : 2;
+
+          for (let j = 0; j < numExercises && j < exerciseOptions.length; j++) {
+            const exercise = exerciseOptions[Math.floor(Math.random() * exerciseOptions.length)];
+            await addExerciseToWeeklyPlan(day, exercise);
+            // Remover el ejercicio seleccionado para no repetirlo
+            const index = exerciseOptions.indexOf(exercise);
+            if (index > -1) exerciseOptions.splice(index, 1);
+          }
+        }
+
+        // Pequeña pausa para no saturar el servidor
+        await new Promise(resolve => setTimeout(resolve, 100));
+      } catch (error) {
+        console.error(`Error generando entrenamiento para ${day}:`, error);
+      }
+    }
+  };
+
+  // Generar plan completo automático
+  const handleGenerateAutomaticPlan = async () => {
+    if (!calculatedPlan || !currentUser) {
+      alert('Por favor, calcula tu plan personalizado primero e inicia sesión');
+      return;
+    }
+
+    const confirmGenerate = window.confirm(
+      '¿Quieres generar un plan automático de dieta y entrenamiento?\n\n' +
+      'Esto añadirá recetas y ejercicios a tu plan semanal basándose en tus objetivos.\n' +
+      'Podrás editar y personalizar todo después.'
+    );
+
+    if (!confirmGenerate) return;
+
+    setIsGeneratingPlan(true);
+    try {
+      await generateAutomaticDietPlan(calculatedPlan);
+      await generateAutomaticWorkoutPlan(calculatedPlan);
+      alert('¡Plan generado exitosamente! Ve al Plan Semanal para ver y editar tu plan personalizado.');
+    } catch (error) {
+      console.error('Error generando plan automático:', error);
+      alert('Hubo un error al generar el plan. Por favor, intenta de nuevo.');
+    } finally {
+      setIsGeneratingPlan(false);
+    }
   };
 
   return (
@@ -340,6 +504,22 @@ const Home = () => {
                   Consulta con un profesional de la salud antes de comenzar cualquier programa de dieta o ejercicio.
                 </p>
               </div>
+
+              {currentUser && (
+                <div className="mt-6">
+                  <button
+                    onClick={handleGenerateAutomaticPlan}
+                    disabled={isGeneratingPlan}
+                    className="w-full bg-gradient-to-r from-secondary-600 to-primary-600 text-white py-4 px-6 rounded-lg font-bold text-lg hover:from-secondary-700 hover:to-primary-700 transition-all shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
+                  >
+                    <Sparkles className="mr-2 h-6 w-6" />
+                    {isGeneratingPlan ? 'Generando Plan Automático...' : 'Generar Plan Automático de Dieta y Entrenamiento'}
+                  </button>
+                  <p className="text-xs text-gray-500 mt-2 text-center">
+                    Esto creará un plan semanal completo basado en tus objetivos. Podrás editarlo después.
+                  </p>
+                </div>
+              )}
             </div>
           )}
         </div>
