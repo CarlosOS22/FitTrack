@@ -1,12 +1,13 @@
 import { useState } from 'react';
 import { useApp } from '../context/AppContext';
-import { Calendar, Flame, Activity, Trash2, UtensilsCrossed, Dumbbell, Edit2, Save, X } from 'lucide-react';
+import { Calendar, Flame, Activity, Trash2, UtensilsCrossed, Dumbbell, Edit2, Save, X, Eye, Clock, ChefHat } from 'lucide-react';
 
 const WeeklyPlan = () => {
   const { weeklyPlan, calculateDailyMacros, removeRecipeFromWeeklyPlan, removeExerciseFromWeeklyPlan, updateExerciseInWeeklyPlan } = useApp();
   const [selectedDay, setSelectedDay] = useState('Lunes');
   const [editingExerciseId, setEditingExerciseId] = useState(null);
   const [editingSets, setEditingSets] = useState('');
+  const [selectedRecipe, setSelectedRecipe] = useState(null);
 
   const days = [
     { key: 'Lunes', label: 'Lunes' },
@@ -120,18 +121,28 @@ const WeeklyPlan = () => {
                   return (
                     <div key={index} className="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-all">
                       <div className="flex justify-between items-start mb-2">
-                        <div>
+                        <div className="flex-1">
                           <h3 className="font-bold text-gray-800">{recipeData.name}</h3>
                           <span className="text-xs text-primary-600 bg-primary-100 px-2 py-1 rounded-full">
                             {recipeData.category}
                           </span>
                         </div>
-                        <button
-                          onClick={() => removeRecipeFromWeeklyPlan(selectedDay, meal.id)}
-                          className="text-red-500 hover:text-red-700 p-2"
-                        >
-                          <Trash2 className="h-5 w-5" />
-                        </button>
+                        <div className="flex gap-2">
+                          <button
+                            onClick={() => setSelectedRecipe(recipeData)}
+                            className="text-blue-500 hover:text-blue-700 p-2"
+                            title="Ver receta"
+                          >
+                            <Eye className="h-5 w-5" />
+                          </button>
+                          <button
+                            onClick={() => removeRecipeFromWeeklyPlan(selectedDay, meal.id)}
+                            className="text-red-500 hover:text-red-700 p-2"
+                            title="Eliminar"
+                          >
+                            <Trash2 className="h-5 w-5" />
+                          </button>
+                        </div>
                       </div>
 
                       <div className="grid grid-cols-4 gap-2 text-center text-sm mt-3">
@@ -202,6 +213,15 @@ const WeeklyPlan = () => {
                             alt={exerciseData.name}
                             className="w-full h-48 object-contain"
                             loading="lazy"
+                            referrerPolicy="no-referrer"
+                            onError={(e) => {
+                              // Si falla, intentar cargar desde fuente alternativa
+                              if (!e.target.dataset.tried) {
+                                e.target.dataset.tried = 'true';
+                                // Mostrar placeholder si no se puede cargar
+                                e.target.style.display = 'none';
+                              }
+                            }}
                           />
                         </div>
                       )}
@@ -313,6 +333,119 @@ const WeeklyPlan = () => {
             </table>
           </div>
         </div>
+
+        {/* Modal de Receta */}
+        {selectedRecipe && (
+          <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4" onClick={() => setSelectedRecipe(null)}>
+            <div className="bg-white rounded-2xl shadow-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto" onClick={(e) => e.stopPropagation()}>
+              {/* Header */}
+              <div className="sticky top-0 bg-gradient-to-r from-primary-600 to-secondary-600 text-white p-6 rounded-t-2xl">
+                <div className="flex justify-between items-start">
+                  <div className="flex-1">
+                    <h2 className="text-3xl font-bold mb-2">{selectedRecipe.name}</h2>
+                    <div className="flex items-center gap-4 text-sm">
+                      <span className="bg-white/20 px-3 py-1 rounded-full flex items-center gap-1">
+                        <Clock className="h-4 w-4" />
+                        {selectedRecipe.prepTime} min
+                      </span>
+                      <span className="bg-white/20 px-3 py-1 rounded-full flex items-center gap-1">
+                        <ChefHat className="h-4 w-4" />
+                        {selectedRecipe.difficulty}
+                      </span>
+                      <span className="bg-white/20 px-3 py-1 rounded-full">
+                        {selectedRecipe.category}
+                      </span>
+                    </div>
+                  </div>
+                  <button
+                    onClick={() => setSelectedRecipe(null)}
+                    className="text-white hover:bg-white/20 rounded-full p-2 transition-all"
+                  >
+                    <X className="h-6 w-6" />
+                  </button>
+                </div>
+              </div>
+
+              {/* Imagen */}
+              {selectedRecipe.image && (
+                <div className="w-full h-64 overflow-hidden">
+                  <img
+                    src={selectedRecipe.image}
+                    alt={selectedRecipe.name}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              )}
+
+              {/* Macros */}
+              <div className="p-6 bg-gray-50">
+                <h3 className="font-bold text-gray-800 mb-3 text-lg">Información Nutricional</h3>
+                <div className="grid grid-cols-4 gap-3">
+                  <div className="bg-white rounded-lg p-4 text-center shadow">
+                    <div className="text-2xl font-bold text-orange-600">{selectedRecipe.calories}</div>
+                    <div className="text-xs text-gray-600 mt-1">Calorías</div>
+                  </div>
+                  <div className="bg-white rounded-lg p-4 text-center shadow">
+                    <div className="text-2xl font-bold text-primary-600">{selectedRecipe.macros?.protein || 0}g</div>
+                    <div className="text-xs text-gray-600 mt-1">Proteína</div>
+                  </div>
+                  <div className="bg-white rounded-lg p-4 text-center shadow">
+                    <div className="text-2xl font-bold text-secondary-600">{selectedRecipe.macros?.carbs || 0}g</div>
+                    <div className="text-xs text-gray-600 mt-1">Carbohidratos</div>
+                  </div>
+                  <div className="bg-white rounded-lg p-4 text-center shadow">
+                    <div className="text-2xl font-bold text-primary-600">{selectedRecipe.macros?.fat || 0}g</div>
+                    <div className="text-xs text-gray-600 mt-1">Grasas</div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Ingredientes */}
+              <div className="p-6">
+                <h3 className="font-bold text-gray-800 mb-3 text-lg flex items-center">
+                  <UtensilsCrossed className="mr-2 h-5 w-5 text-primary-600" />
+                  Ingredientes
+                </h3>
+                <ul className="space-y-2">
+                  {selectedRecipe.ingredients?.map((ingredient, idx) => (
+                    <li key={idx} className="flex items-start">
+                      <span className="text-primary-600 mr-2">•</span>
+                      <span className="text-gray-700">{ingredient}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Instrucciones */}
+              <div className="p-6 bg-gray-50">
+                <h3 className="font-bold text-gray-800 mb-3 text-lg flex items-center">
+                  <ChefHat className="mr-2 h-5 w-5 text-secondary-600" />
+                  Instrucciones
+                </h3>
+                <ol className="space-y-3">
+                  {selectedRecipe.instructions?.map((instruction, idx) => (
+                    <li key={idx} className="flex items-start">
+                      <span className="bg-secondary-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 flex-shrink-0 mt-0.5">
+                        {idx + 1}
+                      </span>
+                      <span className="text-gray-700 leading-relaxed">{instruction}</span>
+                    </li>
+                  ))}
+                </ol>
+              </div>
+
+              {/* Footer */}
+              <div className="p-6 border-t border-gray-200">
+                <button
+                  onClick={() => setSelectedRecipe(null)}
+                  className="w-full bg-gradient-to-r from-primary-600 to-secondary-600 text-white py-3 px-6 rounded-lg font-bold hover:from-primary-700 hover:to-secondary-700 transition-all"
+                >
+                  Cerrar
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

@@ -89,6 +89,7 @@ const Exercises = () => {
                   src={exercise.gifUrl || exercise.image}
                   alt={exercise.name}
                   className="w-full h-48 object-contain"
+                  referrerPolicy="no-referrer"
                   onError={(e) => {
                     e.target.src = exercise.image;
                   }}
@@ -150,6 +151,7 @@ const Exercises = () => {
                     src={selectedExercise.gifUrl}
                     alt={`${selectedExercise.name} animation`}
                     className="w-full h-64 object-contain"
+                    referrerPolicy="no-referrer"
                     onError={(e) => {
                       e.target.src = selectedExercise.image;
                     }}
