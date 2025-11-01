@@ -212,6 +212,36 @@ export const AppProvider = ({ children }) => {
     }
   };
 
+  // Update exercise in weekly plan (for sets, reps, etc.)
+  const updateExerciseInWeeklyPlan = async (exerciseId, updatedExerciseData) => {
+    if (!isAuthenticated) {
+      // Si no hay sesión, solo actualizar localmente
+      setWeeklyPlan(prev => {
+        const newPlan = { ...prev };
+        for (const day in newPlan) {
+          newPlan[day] = {
+            ...newPlan[day],
+            exercises: newPlan[day].exercises.map(ex =>
+              ex.id === exerciseId ? { ...ex, exercise_data: updatedExerciseData } : ex
+            )
+          };
+        }
+        return newPlan;
+      });
+      return;
+    }
+
+    try {
+      await api.weeklyPlan.updateExercise(currentUser.id, exerciseId, updatedExerciseData);
+      // Recargar el plan completo desde la API
+      await loadWeeklyPlan();
+    } catch (error) {
+      console.error('Error actualizando ejercicio:', error);
+      alert('Error al actualizar el ejercicio. Por favor, intenta de nuevo.');
+      throw error;
+    }
+  };
+
   // Add progress entry
   const addProgressEntry = async (entry) => {
     if (!isAuthenticated) {
@@ -412,6 +442,7 @@ export const AppProvider = ({ children }) => {
     addExerciseToWeeklyPlan,
     removeRecipeFromWeeklyPlan,
     removeExerciseFromWeeklyPlan,
+    updateExerciseInWeeklyPlan,
     addProgressEntry,
     addRecipeSuggestion,
     updateRecipeSuggestionStatus,

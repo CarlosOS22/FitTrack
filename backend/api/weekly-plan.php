@@ -149,6 +149,34 @@ elseif ($method === 'DELETE' && strpos($_SERVER['REQUEST_URI'], '/remove-recipe'
     }
 }
 
+// ACTUALIZAR EJERCICIO DEL PLAN
+elseif ($method === 'PUT' && strpos($_SERVER['REQUEST_URI'], '/update-exercise') !== false) {
+    $data = json_decode(file_get_contents("php://input"));
+
+    if (empty($data->user_id) || empty($data->exercise_id) || empty($data->exercise_data)) {
+        http_response_code(400);
+        echo json_encode(array("success" => false, "message" => "Datos incompletos"));
+        exit();
+    }
+
+    $query = "UPDATE weekly_plan_exercises SET exercise_data = :exercise_data WHERE user_id = :user_id AND id = :id";
+    $stmt = $db->prepare($query);
+
+    $exercise_data_json = json_encode($data->exercise_data);
+
+    $stmt->bindParam(":user_id", $data->user_id);
+    $stmt->bindParam(":id", $data->exercise_id);
+    $stmt->bindParam(":exercise_data", $exercise_data_json);
+
+    if ($stmt->execute()) {
+        http_response_code(200);
+        echo json_encode(array("success" => true, "message" => "Ejercicio actualizado"));
+    } else {
+        http_response_code(500);
+        echo json_encode(array("success" => false, "message" => "Error al actualizar ejercicio"));
+    }
+}
+
 // ELIMINAR EJERCICIO DEL PLAN
 elseif ($method === 'DELETE' && strpos($_SERVER['REQUEST_URI'], '/remove-exercise') !== false) {
     $data = json_decode(file_get_contents("php://input"));

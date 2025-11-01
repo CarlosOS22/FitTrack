@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import { useApp } from '../context/AppContext';
-import { Calendar, Flame, Activity, Trash2, UtensilsCrossed, Dumbbell } from 'lucide-react';
+import { Calendar, Flame, Activity, Trash2, UtensilsCrossed, Dumbbell, Edit2, Save, X } from 'lucide-react';
 
 const WeeklyPlan = () => {
-  const { weeklyPlan, calculateDailyMacros, removeRecipeFromWeeklyPlan, removeExerciseFromWeeklyPlan } = useApp();
+  const { weeklyPlan, calculateDailyMacros, removeRecipeFromWeeklyPlan, removeExerciseFromWeeklyPlan, updateExerciseInWeeklyPlan } = useApp();
   const [selectedDay, setSelectedDay] = useState('Lunes');
+  const [editingExerciseId, setEditingExerciseId] = useState(null);
+  const [editingSets, setEditingSets] = useState('');
 
   const days = [
     { key: 'Lunes', label: 'Lunes' },
@@ -18,6 +20,33 @@ const WeeklyPlan = () => {
 
   const currentDayPlan = weeklyPlan[selectedDay] || { recipes: [], exercises: [] };
   const dailyMacros = calculateDailyMacros(selectedDay);
+
+  const handleStartEditSets = (exercise) => {
+    const exerciseData = exercise.exercise_data || exercise;
+    setEditingExerciseId(exercise.id);
+    setEditingSets(exerciseData.sets || '');
+  };
+
+  const handleSaveSets = async (exercise) => {
+    const exerciseData = exercise.exercise_data || exercise;
+    const updatedData = {
+      ...exerciseData,
+      sets: parseInt(editingSets) || exerciseData.sets
+    };
+
+    try {
+      await updateExerciseInWeeklyPlan(exercise.id, updatedData);
+      setEditingExerciseId(null);
+      setEditingSets('');
+    } catch (error) {
+      console.error('Error actualizando series:', error);
+    }
+  };
+
+  const handleCancelEdit = () => {
+    setEditingExerciseId(null);
+    setEditingSets('');
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-primary-50 via-secondary-50 to-primary-50 py-8">
@@ -147,11 +176,12 @@ const WeeklyPlan = () => {
               <div className="space-y-4">
                 {currentDayPlan.exercises.map((exercise, index) => {
                   const exerciseData = exercise.exercise_data || exercise;
+                  const isEditing = editingExerciseId === exercise.id;
                   return (
                     <div key={index} className="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-all">
-                      <div className="flex justify-between items-start mb-2">
-                        <div>
-                          <h3 className="font-bold text-gray-800">{exerciseData.name}</h3>
+                      <div className="flex justify-between items-start mb-3">
+                        <div className="flex-1">
+                          <h3 className="font-bold text-gray-800 mb-1">{exerciseData.name}</h3>
                           <span className="text-xs text-secondary-600 bg-secondary-100 px-2 py-1 rounded-full">
                             {exerciseData.muscleGroup}
                           </span>
@@ -164,10 +194,55 @@ const WeeklyPlan = () => {
                         </button>
                       </div>
 
+                      {/* GIF del ejercicio */}
+                      {exerciseData.gifUrl && (
+                        <div className="mb-3 rounded-lg overflow-hidden bg-gray-100">
+                          <img
+                            src={exerciseData.gifUrl}
+                            alt={exerciseData.name}
+                            className="w-full h-48 object-contain"
+                            loading="lazy"
+                          />
+                        </div>
+                      )}
+
                       <div className="mt-3 space-y-2 text-sm text-gray-600">
                         <div className="flex items-center justify-between bg-gray-50 rounded p-2">
                           <span className="font-medium">Series:</span>
-                          <span className="font-bold text-gray-800">{exerciseData.sets}</span>
+                          {isEditing ? (
+                            <div className="flex items-center gap-2">
+                              <input
+                                type="number"
+                                value={editingSets}
+                                onChange={(e) => setEditingSets(e.target.value)}
+                                className="w-16 px-2 py-1 border border-gray-300 rounded text-center font-bold"
+                                min="1"
+                                max="10"
+                              />
+                              <button
+                                onClick={() => handleSaveSets(exercise)}
+                                className="text-green-600 hover:text-green-700 p-1"
+                              >
+                                <Save className="h-4 w-4" />
+                              </button>
+                              <button
+                                onClick={handleCancelEdit}
+                                className="text-gray-600 hover:text-gray-700 p-1"
+                              >
+                                <X className="h-4 w-4" />
+                              </button>
+                            </div>
+                          ) : (
+                            <div className="flex items-center gap-2">
+                              <span className="font-bold text-gray-800">{exerciseData.sets}</span>
+                              <button
+                                onClick={() => handleStartEditSets(exercise)}
+                                className="text-blue-600 hover:text-blue-700 p-1"
+                              >
+                                <Edit2 className="h-4 w-4" />
+                              </button>
+                            </div>
+                          )}
                         </div>
                         <div className="flex items-center justify-between bg-gray-50 rounded p-2">
                           <span className="font-medium">Repeticiones:</span>
