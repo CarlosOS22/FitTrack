@@ -84,14 +84,34 @@ const Exercises = () => {
               className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all cursor-pointer"
               onClick={() => setSelectedExercise(exercise)}
             >
-              <div className="relative bg-gray-100 flex items-center justify-center">
+              <div className="relative bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center min-h-[192px]">
                 <img
                   src={exercise.gifUrl || exercise.image}
                   alt={exercise.name}
                   className="w-full h-48 object-contain"
                   referrerPolicy="no-referrer"
+                  crossOrigin="anonymous"
                   onError={(e) => {
-                    e.target.src = exercise.image;
+                    // Intentar fallback a imagen estática
+                    if (!e.target.dataset.triedFallback && exercise.image && e.target.src !== exercise.image) {
+                      e.target.dataset.triedFallback = 'true';
+                      e.target.src = exercise.image;
+                    } else if (!e.target.dataset.failed) {
+                      // Si todo falla, mostrar placeholder elegante
+                      e.target.dataset.failed = 'true';
+                      e.target.style.display = 'none';
+                      const placeholder = document.createElement('div');
+                      placeholder.className = 'flex flex-col items-center justify-center text-gray-400 p-6 absolute inset-0';
+                      placeholder.innerHTML = `
+                        <svg class="w-20 h-20 mb-3 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path>
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                        <p class="text-sm font-medium text-gray-500">${exercise.name}</p>
+                        <p class="text-xs text-gray-400 mt-1">Imagen no disponible</p>
+                      `;
+                      e.target.parentElement.appendChild(placeholder);
+                    }
                   }}
                 />
                 <div className="absolute top-2 right-2">
@@ -145,15 +165,36 @@ const Exercises = () => {
               </div>
 
               {/* GIF Animation */}
-              <div className="bg-gray-100 flex items-center justify-center p-8">
-                <div className="max-w-md w-full bg-white rounded-lg shadow-lg overflow-hidden">
+              <div className="bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center p-8">
+                <div className="max-w-md w-full bg-white rounded-lg shadow-lg overflow-hidden relative min-h-[256px] flex items-center justify-center">
                   <img
                     src={selectedExercise.gifUrl}
                     alt={`${selectedExercise.name} animation`}
-                    className="w-full h-64 object-contain"
+                    className="w-full h-64 object-contain relative z-10"
                     referrerPolicy="no-referrer"
+                    crossOrigin="anonymous"
                     onError={(e) => {
-                      e.target.src = selectedExercise.image;
+                      // Intentar fallback a imagen estática
+                      if (!e.target.dataset.triedFallback && selectedExercise.image && e.target.src !== selectedExercise.image) {
+                        e.target.dataset.triedFallback = 'true';
+                        e.target.src = selectedExercise.image;
+                      } else if (!e.target.dataset.failed) {
+                        // Si todo falla, mostrar placeholder
+                        e.target.dataset.failed = 'true';
+                        e.target.style.display = 'none';
+                        const placeholder = document.createElement('div');
+                        placeholder.className = 'flex flex-col items-center justify-center text-gray-400 p-8 absolute inset-0';
+                        placeholder.innerHTML = `
+                          <svg class="w-24 h-24 mb-4 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                          </svg>
+                          <p class="text-base font-medium text-gray-500">${selectedExercise.name}</p>
+                          <p class="text-sm text-gray-400 mt-2">Animación no disponible</p>
+                          <p class="text-xs text-gray-400 mt-1">Consulta las instrucciones abajo</p>
+                        `;
+                        e.target.parentElement.appendChild(placeholder);
+                      }
                     }}
                   />
                 </div>

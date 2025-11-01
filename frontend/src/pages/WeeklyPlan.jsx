@@ -207,19 +207,31 @@ const WeeklyPlan = () => {
 
                       {/* GIF del ejercicio */}
                       {exerciseData.gifUrl && (
-                        <div className="mb-3 rounded-lg overflow-hidden bg-gray-100">
+                        <div className="mb-3 rounded-lg overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200 relative">
                           <img
                             src={exerciseData.gifUrl}
                             alt={exerciseData.name}
-                            className="w-full h-48 object-contain"
+                            className="w-full h-48 object-contain relative z-10"
                             loading="lazy"
                             referrerPolicy="no-referrer"
+                            crossOrigin="anonymous"
                             onError={(e) => {
-                              // Si falla, intentar cargar desde fuente alternativa
-                              if (!e.target.dataset.tried) {
-                                e.target.dataset.tried = 'true';
-                                // Mostrar placeholder si no se puede cargar
-                                e.target.style.display = 'none';
+                              // Si falla, mostrar placeholder
+                              if (!e.target.dataset.failed) {
+                                e.target.dataset.failed = 'true';
+                                e.target.style.opacity = '0';
+                                // Crear y mostrar placeholder
+                                const placeholder = document.createElement('div');
+                                placeholder.className = 'absolute inset-0 flex flex-col items-center justify-center text-gray-400 p-4';
+                                placeholder.innerHTML = `
+                                  <svg class="w-16 h-16 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                  </svg>
+                                  <p class="text-sm font-medium text-center">${exerciseData.name}</p>
+                                  <p class="text-xs text-gray-400 mt-1">Ver Ejercicios para animación</p>
+                                `;
+                                e.target.parentElement.appendChild(placeholder);
                               }
                             }}
                           />
