@@ -269,8 +269,20 @@ async function addExerciseToDay(day) {
     });
 
     if (result.success) {
-        showAlert(`Ejercicio agregado al ${day}`, 'success');
+        showAlert(`✓ Ejercicio agregado al ${day}. ¡Ve al plan semanal para organizar tu semana!`, 'success');
         closeModal('addToPlanModal');
+
+        // Show link to weekly plan
+        setTimeout(() => {
+            const alertDiv = document.querySelector('.alert');
+            if (alertDiv) {
+                const link = document.createElement('a');
+                link.href = 'weekly-plan.php';
+                link.style.cssText = 'display: inline-block; margin-top: 0.5rem; color: var(--primary); font-weight: 600; text-decoration: underline;';
+                link.textContent = '→ Ir al Plan Semanal';
+                alertDiv.appendChild(link);
+            }
+        }, 100);
     } else {
         showAlert(result.message || 'Error al agregar el ejercicio', 'error');
     }

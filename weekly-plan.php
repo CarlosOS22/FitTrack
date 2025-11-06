@@ -120,9 +120,21 @@ include 'includes/nav.php';
 .calories-summary {
     background: white;
     border-radius: var(--radius-lg);
-    box-shadow: var(--shadow);
+    box-shadow: var(--shadow-lg);
     padding: 1.5rem;
     margin-bottom: 1.5rem;
+    border: 2px solid var(--primary);
+}
+
+.calories-summary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
 }
 
 .calories-bar {
@@ -216,24 +228,56 @@ include 'includes/nav.php';
         <p>Organiza tus comidas y entrenamientos para cada día</p>
     </div>
 
-    <!-- Calories Summary -->
-    <div class="calories-summary" id="caloriesSummary" style="display: none;">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+    <!-- Today's Summary -->
+    <div class="calories-summary" id="todaySummary" style="display: none;">
+        <div style="border-bottom: 2px solid var(--border); padding-bottom: 1rem; margin-bottom: 1rem;">
+            <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--primary);">
+                📅 Resumen de Hoy - <span id="todayName"></span>
+            </h3>
+            <p style="color: var(--text-secondary); font-size: 0.875rem;">
+                Sigue añadiendo comidas para alcanzar tus objetivos diarios
+            </p>
+        </div>
+
+        <div class="grid grid-2" style="gap: 1.5rem; margin-bottom: 1.5rem;">
             <div>
-                <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.25rem;">Objetivo Calórico Diario</h3>
-                <p style="color: var(--text-secondary); font-size: 0.875rem;">Meta: <span id="targetCalories">0</span> kcal</p>
-            </div>
-            <div style="text-align: right;">
-                <div style="font-size: 1.5rem; font-weight: 700; color: var(--primary);">
-                    <span id="weeklyAverage">0</span> kcal
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                    <span style="font-weight: 600;">Calorías</span>
+                    <span style="font-size: 0.875rem; color: var(--text-secondary);">
+                        <span id="todayCalories">0</span> / <span id="todayTargetCalories">0</span> kcal
+                    </span>
                 </div>
-                <p style="color: var(--text-secondary); font-size: 0.875rem;">Promedio Semanal</p>
+                <div class="calories-bar">
+                    <div class="calories-fill" id="todayCaloriesFill" style="width: 0%;">
+                        <span id="todayCaloriesPercent">0%</span>
+                    </div>
+                </div>
+                <div style="margin-top: 0.5rem; text-align: center; font-weight: 600; color: var(--warning);" id="todayCaloriesRemaining">
+                    Faltan 0 kcal
+                </div>
+            </div>
+
+            <div class="grid grid-3" style="gap: 0.75rem;">
+                <div style="text-align: center; padding: 0.75rem; background: var(--bg-secondary); border-radius: var(--radius);">
+                    <div style="font-size: 1.25rem; font-weight: 700; color: #8b5cf6;" id="todayProtein">0</div>
+                    <div style="font-size: 0.75rem; color: var(--text-secondary); margin-top: 0.25rem;">Proteína</div>
+                    <div style="font-size: 0.7rem; color: var(--text-light); margin-top: 0.25rem;" id="todayProteinTarget">/ 0g</div>
+                </div>
+                <div style="text-align: center; padding: 0.75rem; background: var(--bg-secondary); border-radius: var(--radius);">
+                    <div style="font-size: 1.25rem; font-weight: 700; color: #f59e0b;" id="todayCarbs">0</div>
+                    <div style="font-size: 0.75rem; color: var(--text-secondary); margin-top: 0.25rem;">Carbos</div>
+                    <div style="font-size: 0.7rem; color: var(--text-light); margin-top: 0.25rem;" id="todayCarbsTarget">/ 0g</div>
+                </div>
+                <div style="text-align: center; padding: 0.75rem; background: var(--bg-secondary); border-radius: var(--radius);">
+                    <div style="font-size: 1.25rem; font-weight: 700; color: #ef4444;" id="todayFat">0</div>
+                    <div style="font-size: 0.75rem; color: var(--text-secondary); margin-top: 0.25rem;">Grasas</div>
+                    <div style="font-size: 0.7rem; color: var(--text-light); margin-top: 0.25rem;" id="todayFatTarget">/ 0g</div>
+                </div>
             </div>
         </div>
-        <div class="calories-bar">
-            <div class="calories-fill" id="caloriesFill" style="width: 0%;">
-                <span id="caloriesPercent">0%</span>
-            </div>
+
+        <div style="font-size: 0.875rem; color: var(--text-secondary); text-align: center;">
+            <strong>Promedio Semanal:</strong> <span id="weeklyAverage">0</span> kcal
         </div>
     </div>
 
@@ -309,12 +353,20 @@ document.addEventListener('DOMContentLoaded', function() {
             fat: Math.round((targetCalories * 0.30) / 9)       // 9 cal per gram
         };
 
-        document.getElementById('targetCalories').textContent = targetCalories;
-        document.getElementById('caloriesSummary').style.display = 'block';
+        document.getElementById('todayTargetCalories').textContent = targetCalories;
+        document.getElementById('todayProteinTarget').textContent = `/ ${targetMacros.protein}g`;
+        document.getElementById('todayCarbsTarget').textContent = `/ ${targetMacros.carbs}g`;
+        document.getElementById('todayFatTarget').textContent = `/ ${targetMacros.fat}g`;
+        document.getElementById('todaySummary').style.display = 'block';
     }
     <?php endif; ?>
 
     loadWeeklyPlan();
+
+    // Auto-refresh every 30 seconds to keep counts updated
+    setInterval(() => {
+        loadWeeklyPlan();
+    }, 30000);
 });
 
 async function loadWeeklyPlan() {
@@ -324,6 +376,7 @@ async function loadWeeklyPlan() {
         weeklyPlanData = result.weeklyPlan;
         displayWeeklyPlan();
         updateCaloriesSummary();
+        updateTodaySummary();
     } else {
         showAlert('Error al cargar el plan semanal', 'error');
     }
@@ -346,18 +399,55 @@ function updateCaloriesSummary() {
 
     const weeklyAverage = daysWithMeals > 0 ? Math.round(totalCalories / daysWithMeals) : 0;
     document.getElementById('weeklyAverage').textContent = weeklyAverage;
+}
 
-    // Update progress bar
-    const percentage = targetCalories > 0 ? Math.round((weeklyAverage / targetCalories) * 100) : 0;
-    const fill = document.getElementById('caloriesFill');
-    fill.style.width = Math.min(percentage, 100) + '%';
-    document.getElementById('caloriesPercent').textContent = percentage + '%';
+function updateTodaySummary() {
+    if (targetCalories === 0) return;
 
-    if (percentage > 100) {
+    // Get current day
+    const today = new Date();
+    const dayIndex = today.getDay(); // 0 = Sunday, 1 = Monday, etc.
+    const dayMapping = ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'];
+    const todayName = dayMapping[dayIndex];
+
+    document.getElementById('todayName').textContent = todayName;
+
+    // Get today's data
+    const todayData = weeklyPlanData[todayName] || { recipes: [], exercises: [] };
+    const totalCalories = todayData.recipes.reduce((sum, r) => sum + (r.calories || 0), 0);
+    const totalProtein = todayData.recipes.reduce((sum, r) => sum + (r.macros?.protein || 0), 0);
+    const totalCarbs = todayData.recipes.reduce((sum, r) => sum + (r.macros?.carbs || 0), 0);
+    const totalFat = todayData.recipes.reduce((sum, r) => sum + (r.macros?.fat || 0), 0);
+
+    // Update calories
+    document.getElementById('todayCalories').textContent = Math.round(totalCalories);
+    const caloriesRemaining = Math.max(0, targetCalories - totalCalories);
+    document.getElementById('todayCaloriesRemaining').textContent = caloriesRemaining > 0
+        ? `Faltan ${caloriesRemaining} kcal`
+        : '¡Objetivo alcanzado! ✓';
+
+    if (caloriesRemaining === 0) {
+        document.getElementById('todayCaloriesRemaining').style.color = 'var(--success)';
+    } else {
+        document.getElementById('todayCaloriesRemaining').style.color = 'var(--warning)';
+    }
+
+    // Update calories progress bar
+    const caloriesPercent = targetCalories > 0 ? Math.min(100, Math.round((totalCalories / targetCalories) * 100)) : 0;
+    const fill = document.getElementById('todayCaloriesFill');
+    fill.style.width = caloriesPercent + '%';
+    document.getElementById('todayCaloriesPercent').textContent = caloriesPercent + '%';
+
+    if (caloriesPercent >= 100) {
         fill.classList.add('over');
     } else {
         fill.classList.remove('over');
     }
+
+    // Update macros
+    document.getElementById('todayProtein').textContent = Math.round(totalProtein) + 'g';
+    document.getElementById('todayCarbs').textContent = Math.round(totalCarbs) + 'g';
+    document.getElementById('todayFat').textContent = Math.round(totalFat) + 'g';
 }
 
 function displayWeeklyPlan() {
