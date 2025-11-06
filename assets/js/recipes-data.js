@@ -5036,7 +5036,7 @@ const recipes = [
     id: 233,
     name: 'Macedonia de Frutas',
     category: 'Merienda',
-    image: 'https://images.unsplash.com/photo-1559847844-5315695dadae?w=600&h=400&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1564093436563-17f52dd1bc29?w=600&h=400&fit=crop&q=80',
     calories: 200,
     macros: {
       protein: 6,
@@ -5164,7 +5164,7 @@ const recipes = [
     id: 241,
     name: 'Palitos de Zanahoria y Hummus',
     category: 'Merienda',
-    image: 'https://images.unsplash.com/photo-1590301157890-4810ed352733?w=600&h=400&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1588137378633-dea1336ce1e2?w=600&h=400&fit=crop&q=80',
     calories: 190,
     macros: {
       protein: 8,
@@ -5276,7 +5276,7 @@ const recipes = [
     id: 248,
     name: 'Edamame con Sal Marina',
     category: 'Merienda',
-    image: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=600&h=400&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1584278502003-17ac3c2fb7e3?w=600&h=400&fit=crop&q=80',
     calories: 180,
     macros: {
       protein: 18,
@@ -7041,7 +7041,7 @@ const recipes = [
     id: 358,
     name: 'Batido de Açaí',
     category: 'Batidos',
-    image: 'https://images.unsplash.com/photo-1590301157890-4810ed352733?w=600&h=400&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1590440779792-436f09a48e8b?w=600&h=400&fit=crop&q=80',
     calories: 280,
     macros: {
       protein: 20,
