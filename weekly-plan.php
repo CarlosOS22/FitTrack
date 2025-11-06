@@ -149,6 +149,63 @@ include 'includes/nav.php';
 .calories-fill.over {
     background: linear-gradient(90deg, var(--error) 0%, var(--warning) 100%);
 }
+
+.macro-bars {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 1rem;
+    padding: 1rem;
+    background: var(--bg-secondary);
+    border-radius: var(--radius);
+}
+
+.macro-bar-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.macro-label {
+    min-width: 100px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.macro-progress {
+    flex: 1;
+    height: 20px;
+    background: var(--bg-tertiary);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+    position: relative;
+}
+
+.macro-progress-fill {
+    height: 100%;
+    transition: width 0.3s ease;
+    border-radius: var(--radius-full);
+}
+
+.macro-progress-fill.protein {
+    background: linear-gradient(90deg, #8b5cf6 0%, #a78bfa 100%);
+}
+
+.macro-progress-fill.carbs {
+    background: linear-gradient(90deg, #f59e0b 0%, #fbbf24 100%);
+}
+
+.macro-progress-fill.fat {
+    background: linear-gradient(90deg, #ef4444 0%, #f87171 100%);
+}
+
+.macro-values {
+    min-width: 120px;
+    text-align: right;
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+}
 </style>
 
 <div class="main-content">
@@ -229,6 +286,7 @@ include 'includes/nav.php';
 const days = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'];
 let weeklyPlanData = {};
 let targetCalories = 0;
+let targetMacros = { protein: 0, carbs: 0, fat: 0 };
 
 document.addEventListener('DOMContentLoaded', function() {
     // Calculate target calories
@@ -243,6 +301,14 @@ document.addEventListener('DOMContentLoaded', function() {
         const bmr = calculateBMR(weight, height, age, gender);
         const tdee = calculateTDEE(bmr, activityLevel);
         targetCalories = Math.round(tdee);
+
+        // Calculate target macros (30% protein, 40% carbs, 30% fat)
+        targetMacros = {
+            protein: Math.round((targetCalories * 0.30) / 4),  // 4 cal per gram
+            carbs: Math.round((targetCalories * 0.40) / 4),    // 4 cal per gram
+            fat: Math.round((targetCalories * 0.30) / 9)       // 9 cal per gram
+        };
+
         document.getElementById('targetCalories').textContent = targetCalories;
         document.getElementById('caloriesSummary').style.display = 'block';
     }
@@ -305,6 +371,13 @@ function displayWeeklyPlan() {
         const totalFat = dayData.recipes.reduce((sum, r) => sum + (r.macros?.fat || 0), 0);
 
         const remaining = targetCalories - totalCalories;
+        const remainingProtein = targetMacros.protein - totalProtein;
+        const remainingCarbs = targetMacros.carbs - totalCarbs;
+        const remainingFat = targetMacros.fat - totalFat;
+
+        const proteinPercent = targetMacros.protein > 0 ? Math.min(100, Math.round((totalProtein / targetMacros.protein) * 100)) : 0;
+        const carbsPercent = targetMacros.carbs > 0 ? Math.min(100, Math.round((totalCarbs / targetMacros.carbs) * 100)) : 0;
+        const fatPercent = targetMacros.fat > 0 ? Math.min(100, Math.round((totalFat / targetMacros.fat) * 100)) : 0;
 
         return `
             <div class="day-card">
@@ -320,6 +393,44 @@ function displayWeeklyPlan() {
                     </div>
                 </div>
                 <div class="day-content">
+                    ${targetCalories > 0 ? `
+                        <div class="macro-bars">
+                            <div style="margin-bottom: 0.5rem; font-weight: 600; color: var(--text-primary);">
+                                Objetivos Nutricionales Diarios
+                            </div>
+                            <div class="macro-bar-item">
+                                <div class="macro-label">Proteína</div>
+                                <div class="macro-progress">
+                                    <div class="macro-progress-fill protein" style="width: ${proteinPercent}%;"></div>
+                                </div>
+                                <div class="macro-values">
+                                    ${Math.round(totalProtein)}g / ${targetMacros.protein}g
+                                    ${remainingProtein > 0 ? `<br><span style="color: var(--warning);">Faltan ${Math.round(remainingProtein)}g</span>` : ''}
+                                </div>
+                            </div>
+                            <div class="macro-bar-item">
+                                <div class="macro-label">Carbohidratos</div>
+                                <div class="macro-progress">
+                                    <div class="macro-progress-fill carbs" style="width: ${carbsPercent}%;"></div>
+                                </div>
+                                <div class="macro-values">
+                                    ${Math.round(totalCarbs)}g / ${targetMacros.carbs}g
+                                    ${remainingCarbs > 0 ? `<br><span style="color: var(--warning);">Faltan ${Math.round(remainingCarbs)}g</span>` : ''}
+                                </div>
+                            </div>
+                            <div class="macro-bar-item">
+                                <div class="macro-label">Grasas</div>
+                                <div class="macro-progress">
+                                    <div class="macro-progress-fill fat" style="width: ${fatPercent}%;"></div>
+                                </div>
+                                <div class="macro-values">
+                                    ${Math.round(totalFat)}g / ${targetMacros.fat}g
+                                    ${remainingFat > 0 ? `<br><span style="color: var(--warning);">Faltan ${Math.round(remainingFat)}g</span>` : ''}
+                                </div>
+                            </div>
+                        </div>
+                    ` : ''}
+
                     <div class="section">
                         <div class="section-title">🍽️ Comidas</div>
                         <div class="item-list" id="recipes-${day}">
