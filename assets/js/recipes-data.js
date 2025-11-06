@@ -2598,7 +2598,7 @@ const recipes = [
     id: 81,
     name: 'Porridge de Avena con Manzana Canela',
     category: 'Desayuno',
-    image: 'https://images.unsplash.com/photo-1590301157890-4810ed352733?w=600&h=400&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1621303837174-89787a7d4729?w=600&h=400&fit=crop&q=80',
     calories: 310,
     macros: {
       protein: 12,
@@ -2614,7 +2614,7 @@ const recipes = [
     id: 82,
     name: 'Crepes Proteicos de Plátano',
     category: 'Desayuno',
-    image: 'https://images.unsplash.com/photo-1528207776546-365bb710ee93?w=600&h=400&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1574085733277-851d9d856a3a?w=600&h=400&fit=crop&q=80',
     calories: 280,
     macros: {
       protein: 24,
