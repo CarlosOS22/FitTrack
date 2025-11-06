@@ -6,6 +6,12 @@ requireLogin();
 
 $pageTitle = 'Progreso - FitTrack';
 
+// Get user data
+$userId = getUserId();
+$stmt = $pdo->prepare("SELECT * FROM user_data WHERE user_id = ?");
+$stmt->execute([$userId]);
+$userData = $stmt->fetch();
+
 include 'includes/header.php';
 include 'includes/nav.php';
 ?>
@@ -17,6 +23,40 @@ include 'includes/nav.php';
         <h1>Mi Progreso</h1>
         <p>Registra y visualiza tu progreso en el tiempo</p>
     </div>
+
+    <!-- Progress Summary -->
+    <?php if ($userData && $userData['weight'] && $userData['goal_weight']): ?>
+    <div class="card mb-4">
+        <div class="card-body">
+            <div class="grid grid-3">
+                <div style="text-align: center;">
+                    <div style="font-size: 2rem; font-weight: 700; color: var(--primary);">
+                        <?php echo $userData['weight']; ?> kg
+                    </div>
+                    <p style="color: var(--text-secondary); margin-top: 0.5rem;">Peso Actual</p>
+                </div>
+                <div style="text-align: center;">
+                    <div style="font-size: 2rem; font-weight: 700; color: var(--secondary);">
+                        <?php echo $userData['goal_weight']; ?> kg
+                    </div>
+                    <p style="color: var(--text-secondary); margin-top: 0.5rem;">Peso Objetivo</p>
+                </div>
+                <div style="text-align: center;">
+                    <?php
+                    $difference = $userData['weight'] - $userData['goal_weight'];
+                    $differenceAbs = abs($difference);
+                    ?>
+                    <div style="font-size: 2rem; font-weight: 700; color: var(--warning);">
+                        <?php echo number_format($differenceAbs, 1); ?> kg
+                    </div>
+                    <p style="color: var(--text-secondary); margin-top: 0.5rem;">
+                        <?php echo $difference > 0 ? 'Por perder' : 'Por ganar'; ?>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <?php endif; ?>
 
     <!-- Add Progress Form -->
     <div class="card mb-4">
@@ -32,7 +72,7 @@ include 'includes/nav.php';
                     </div>
                     <div class="form-group">
                         <label for="weight">Peso (kg)</label>
-                        <input type="number" id="weight" step="0.1" required placeholder="70.5">
+                        <input type="number" id="weight" step="0.1" required placeholder="70.5" value="<?php echo $userData['weight'] ?? ''; ?>">
                     </div>
                     <div class="form-group">
                         <label for="bodyFat">Grasa Corporal (%)</label>
@@ -96,6 +136,7 @@ include 'includes/nav.php';
 <script>
 let progressData = [];
 let chart = null;
+const goalWeight = <?php echo $userData['goal_weight'] ?? 'null'; ?>;
 
 document.addEventListener('DOMContentLoaded', function() {
     // Set today's date as default
@@ -120,8 +161,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
         if (result.success) {
             showAlert('Progreso registrado', 'success');
+            // Keep weight value for convenience
+            const currentWeight = document.getElementById('weight').value;
             document.getElementById('progressForm').reset();
             document.getElementById('date').valueAsDate = new Date();
+            document.getElementById('weight').value = currentWeight;
             loadProgress();
         } else {
             showAlert(result.message || 'Error al registrar progreso', 'error');
@@ -179,18 +223,34 @@ function displayChart() {
         chart.destroy();
     }
 
+    const datasets = [{
+        label: 'Peso (kg)',
+        data: sortedData.map(p => p.weight),
+        borderColor: '#8b5cf6',
+        backgroundColor: 'rgba(139, 92, 246, 0.1)',
+        tension: 0.4,
+        fill: true
+    }];
+
+    // Add goal line if available
+    if (goalWeight) {
+        datasets.push({
+            label: 'Peso Objetivo',
+            data: sortedData.map(() => goalWeight),
+            borderColor: '#10b981',
+            backgroundColor: 'transparent',
+            borderDash: [5, 5],
+            tension: 0,
+            fill: false,
+            pointRadius: 0
+        });
+    }
+
     chart = new Chart(ctx, {
         type: 'line',
         data: {
             labels: sortedData.map(p => formatDate(p.date)),
-            datasets: [{
-                label: 'Peso (kg)',
-                data: sortedData.map(p => p.weight),
-                borderColor: '#8b5cf6',
-                backgroundColor: 'rgba(139, 92, 246, 0.1)',
-                tension: 0.4,
-                fill: true
-            }]
+            datasets: datasets
         },
         options: {
             responsive: true,
