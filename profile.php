@@ -110,6 +110,38 @@ include 'includes/nav.php';
         </div>
     </div>
 
+    <!-- Change Password -->
+    <div class="card mt-4">
+        <div class="card-header">
+            <h2>Cambiar Contraseña</h2>
+        </div>
+        <div class="card-body">
+            <form id="passwordForm">
+                <div class="grid grid-3">
+                    <div class="form-group">
+                        <label for="currentPassword">Contraseña Actual</label>
+                        <input type="password" id="currentPassword" required placeholder="••••••••">
+                    </div>
+                    <div class="form-group">
+                        <label for="newPassword">Nueva Contraseña</label>
+                        <input type="password" id="newPassword" required placeholder="••••••••" minlength="6">
+                    </div>
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirmar Contraseña</label>
+                        <input type="password" id="confirmPassword" required placeholder="••••••••" minlength="6">
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary mt-2">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                    </svg>
+                    Cambiar Contraseña
+                </button>
+            </form>
+        </div>
+    </div>
+
     <!-- Account Stats -->
     <div class="card mt-4">
         <div class="card-header">
@@ -206,6 +238,39 @@ async function savePhysicalData() {
         showAlert(result.message || 'Error al guardar los datos', 'error');
     }
 }
+
+document.getElementById('passwordForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+
+    const currentPassword = document.getElementById('currentPassword').value;
+    const newPassword = document.getElementById('newPassword').value;
+    const confirmPassword = document.getElementById('confirmPassword').value;
+
+    // Validate passwords match
+    if (newPassword !== confirmPassword) {
+        showAlert('Las contraseñas no coinciden', 'error');
+        return;
+    }
+
+    // Validate password length
+    if (newPassword.length < 6) {
+        showAlert('La contraseña debe tener al menos 6 caracteres', 'error');
+        return;
+    }
+
+    const result = await API.post('api/change-password.php', {
+        user_id: <?php echo getUserId(); ?>,
+        current_password: currentPassword,
+        new_password: newPassword
+    });
+
+    if (result.success) {
+        showAlert('Contraseña cambiada exitosamente', 'success');
+        document.getElementById('passwordForm').reset();
+    } else {
+        showAlert(result.message || 'Error al cambiar la contraseña', 'error');
+    }
+});
 </script>
 
 <?php include 'includes/footer.php'; ?>
