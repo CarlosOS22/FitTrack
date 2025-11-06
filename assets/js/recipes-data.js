@@ -7404,6 +7404,688 @@ const recipes = [
     difficulty: 'Fácil',
     ingredients: ["Té matcha", "1 scoop proteína vainilla", "Leche de almendras", "Extracto de vainilla", "Miel", "Hielo"],
     instructions: ["Disolver matcha", "Añadir vainilla", "Batir todo", "Ajustar dulzor", "Servir muy frío"]
+  },
+
+  // ========== RECETAS ALTAS EN CALORÍAS PARA GANAR PESO (20 recetas) ==========
+  {
+    id: 381,
+    name: 'Pancakes Proteicos con Mantequilla de Maní',
+    category: 'Desayuno',
+    image: 'https://images.unsplash.com/photo-1528207776546-365bb710ee93?w=600&h=400&fit=crop&q=80',
+    calories: 650,
+    macros: {
+      protein: 42,
+      carbs: 68,
+      fat: 22
+    },
+    prepTime: 20,
+    difficulty: 'Media',
+    ingredients: [
+      '100g de harina de avena',
+      '2 scoops de proteína de vainilla',
+      '3 huevos enteros',
+      '150ml de leche entera',
+      '1 plátano maduro',
+      '3 cucharadas de mantequilla de maní',
+      '2 cucharadas de miel',
+      '1 cucharadita de aceite de coco',
+      'Canela al gusto'
+    ],
+    instructions: [
+      'Mezclar la harina de avena, proteína y canela en un bowl.',
+      'En otro bowl, batir los huevos, leche y plátano machacado.',
+      'Combinar ambas mezclas hasta obtener una masa homogénea.',
+      'Calentar una sartén con aceite de coco a fuego medio.',
+      'Verter porciones de masa y cocinar 2-3 minutos por lado.',
+      'Apilar los pancakes y cubrir con mantequilla de maní derretida.',
+      'Añadir miel por encima y decorar con rodajas de plátano.'
+    ]
+  },
+  {
+    id: 382,
+    name: 'Bowl de Avena con Frutos Secos y Semillas',
+    category: 'Desayuno',
+    image: 'https://images.unsplash.com/photo-1525351484163-7529414344d8?w=600&h=400&fit=crop&q=80',
+    calories: 580,
+    macros: {
+      protein: 28,
+      carbs: 65,
+      fat: 24
+    },
+    prepTime: 15,
+    difficulty: 'Fácil',
+    ingredients: [
+      '80g de avena integral',
+      '300ml de leche entera',
+      '1 scoop de proteína de chocolate',
+      '30g de nueces',
+      '20g de almendras',
+      '15g de semillas de chía',
+      '1 plátano',
+      '2 cucharadas de mantequilla de almendras',
+      '1 cucharada de cacao puro',
+      'Miel al gusto'
+    ],
+    instructions: [
+      'Cocinar la avena con la leche durante 5-7 minutos.',
+      'Dejar enfriar 2 minutos y mezclar la proteína.',
+      'Picar las nueces y almendras groseramente.',
+      'Servir la avena en un bowl y cubrir con mantequilla de almendras.',
+      'Añadir el plátano en rodajas, frutos secos y semillas de chía.',
+      'Espolvorear cacao puro y añadir miel al gusto.',
+      'Mezclar bien antes de comer.'
+    ]
+  },
+  {
+    id: 383,
+    name: 'Tortilla de 4 Huevos con Aguacate y Queso',
+    category: 'Desayuno',
+    image: 'https://images.unsplash.com/photo-1606787366850-de6330128bfc?w=600&h=400&fit=crop&q=80',
+    calories: 520,
+    macros: {
+      protein: 38,
+      carbs: 12,
+      fat: 36
+    },
+    prepTime: 15,
+    difficulty: 'Fácil',
+    ingredients: [
+      '4 huevos enteros',
+      '1 aguacate maduro',
+      '60g de queso cheddar',
+      '50g de jamón de pavo',
+      '1/2 cebolla',
+      '1 cucharada de aceite de oliva',
+      'Sal y pimienta',
+      'Tomates cherry'
+    ],
+    instructions: [
+      'Batir los huevos con sal y pimienta.',
+      'Calentar aceite de oliva en una sartén grande.',
+      'Saltear la cebolla picada hasta que esté dorada.',
+      'Añadir el jamón picado y cocinar 1 minuto.',
+      'Verter los huevos y cocinar a fuego medio.',
+      'Cuando esté casi lista, añadir el queso rallado.',
+      'Doblar la tortilla y servir con aguacate en láminas y tomates.'
+    ]
+  },
+  {
+    id: 384,
+    name: 'Pasta Integral con Pollo y Salsa Cremosa',
+    category: 'Comida',
+    image: 'https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=600&h=400&fit=crop&q=80',
+    calories: 720,
+    macros: {
+      protein: 52,
+      carbs: 78,
+      fat: 22
+    },
+    prepTime: 30,
+    difficulty: 'Media',
+    ingredients: [
+      '150g de pasta integral',
+      '200g de pechuga de pollo',
+      '100ml de nata para cocinar (15% grasa)',
+      '50g de queso parmesano',
+      '2 dientes de ajo',
+      '100g de espinacas frescas',
+      '1 cucharada de aceite de oliva',
+      'Sal, pimienta y nuez moscada',
+      'Tomates cherry'
+    ],
+    instructions: [
+      'Cocinar la pasta según las instrucciones del paquete.',
+      'Cortar el pollo en tiras y sazonar con sal y pimienta.',
+      'Calentar aceite en una sartén y cocinar el pollo hasta dorarlo.',
+      'Apartar el pollo y en la misma sartén saltear el ajo picado.',
+      'Añadir la nata, parmesano, nuez moscada y espinacas.',
+      'Cocinar hasta que las espinacas se ablanden.',
+      'Mezclar la pasta escurrida con la salsa y el pollo.',
+      'Servir con tomates cherry y más parmesano.'
+    ]
+  },
+  {
+    id: 385,
+    name: 'Arroz Integral con Salmón y Aguacate',
+    category: 'Comida',
+    image: 'https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=600&h=400&fit=crop&q=80',
+    calories: 680,
+    macros: {
+      protein: 38,
+      carbs: 62,
+      fat: 28
+    },
+    prepTime: 35,
+    difficulty: 'Media',
+    ingredients: [
+      '120g de arroz integral',
+      '180g de filete de salmón',
+      '1 aguacate grande',
+      '100g de edamame',
+      '1 cucharada de aceite de sésamo',
+      '2 cucharadas de salsa de soja',
+      'Semillas de sésamo',
+      'Jengibre fresco',
+      'Limón'
+    ],
+    instructions: [
+      'Cocinar el arroz integral según instrucciones (20-25 minutos).',
+      'Marinar el salmón con salsa de soja, jengibre rallado y limón.',
+      'Cocinar el edamame en agua hirviendo durante 5 minutos.',
+      'Calentar una sartén y cocinar el salmón 4 minutos por lado.',
+      'Cortar el aguacate en láminas.',
+      'Montar el bowl con arroz como base.',
+      'Añadir el salmón desmenuzado, aguacate y edamame.',
+      'Rociar con aceite de sésamo y semillas de sésamo.'
+    ]
+  },
+  {
+    id: 386,
+    name: 'Hamburguesa de Ternera con Boniato',
+    category: 'Comida',
+    image: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600&h=400&fit=crop&q=80',
+    calories: 750,
+    macros: {
+      protein: 48,
+      carbs: 65,
+      fat: 32
+    },
+    prepTime: 40,
+    difficulty: 'Media',
+    ingredients: [
+      '200g de carne picada de ternera (15% grasa)',
+      '1 boniato grande (300g)',
+      '1 pan integral para hamburguesa',
+      '50g de queso cheddar',
+      'Lechuga, tomate y cebolla',
+      '1 cucharada de aceite de oliva',
+      'Sal, pimienta y especias',
+      'Mostaza y ketchup light'
+    ],
+    instructions: [
+      'Precalentar el horno a 200°C.',
+      'Cortar el boniato en gajos, sazonar y hornear 30 minutos.',
+      'Formar la hamburguesa con la carne, sal, pimienta y especias.',
+      'Cocinar la hamburguesa en una sartén 4-5 minutos por lado.',
+      'Añadir el queso encima al final para que se derrita.',
+      'Tostar el pan ligeramente.',
+      'Montar la hamburguesa con lechuga, tomate, cebolla y salsas.',
+      'Servir con los gajos de boniato.'
+    ]
+  },
+  {
+    id: 387,
+    name: 'Quinoa con Pollo Teriyaki y Vegetales',
+    category: 'Comida',
+    image: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=600&h=400&fit=crop&q=80',
+    calories: 620,
+    macros: {
+      protein: 45,
+      carbs: 70,
+      fat: 16
+    },
+    prepTime: 30,
+    difficulty: 'Media',
+    ingredients: [
+      '100g de quinoa',
+      '180g de pechuga de pollo',
+      '3 cucharadas de salsa teriyaki',
+      '1 pimiento rojo',
+      '1 zanahoria',
+      '100g de brócoli',
+      '1 cucharada de aceite de sésamo',
+      'Semillas de sésamo',
+      'Cebollino fresco'
+    ],
+    instructions: [
+      'Cocinar la quinoa según las instrucciones del paquete.',
+      'Cortar el pollo en dados y marinar con 2 cucharadas de teriyaki.',
+      'Cortar las verduras en trozos medianos.',
+      'Calentar aceite de sésamo en un wok o sartén grande.',
+      'Saltear el pollo hasta que esté dorado (5-6 minutos).',
+      'Añadir las verduras y saltear 4-5 minutos más.',
+      'Agregar la quinoa y la salsa teriyaki restante.',
+      'Servir con semillas de sésamo y cebollino picado.'
+    ]
+  },
+  {
+    id: 388,
+    name: 'Wrap de Atún con Hummus y Frutos Secos',
+    category: 'Almuerzo',
+    image: 'https://images.unsplash.com/photo-1626700051175-6818013e1d4f?w=600&h=400&fit=crop&q=80',
+    calories: 560,
+    macros: {
+      protein: 38,
+      carbs: 48,
+      fat: 24
+    },
+    prepTime: 15,
+    difficulty: 'Fácil',
+    ingredients: [
+      '1 tortilla integral grande',
+      '150g de atún en conserva (al natural)',
+      '4 cucharadas de hummus',
+      '30g de nueces picadas',
+      'Lechuga, tomate y pepino',
+      '1/2 aguacate',
+      '20g de queso feta',
+      'Aceite de oliva y limón'
+    ],
+    instructions: [
+      'Calentar ligeramente la tortilla para que sea más flexible.',
+      'Untar el hummus por toda la superficie de la tortilla.',
+      'Escurrir bien el atún y colocarlo en el centro.',
+      'Añadir la lechuga, tomate y pepino en rodajas.',
+      'Agregar el aguacate en láminas, queso feta y nueces.',
+      'Rociar con un poco de aceite de oliva y zumo de limón.',
+      'Enrollar firmemente y cortar por la mitad.',
+      'Servir inmediatamente o envolver para llevar.'
+    ]
+  },
+  {
+    id: 389,
+    name: 'Batido Hipercalórico de Chocolate y Plátano',
+    category: 'Batidos',
+    image: 'https://images.unsplash.com/photo-1638176066666-ffb2f013c7dd?w=600&h=400&fit=crop&q=80',
+    calories: 720,
+    macros: {
+      protein: 48,
+      carbs: 82,
+      fat: 22
+    },
+    prepTime: 5,
+    difficulty: 'Muy Fácil',
+    ingredients: [
+      '2 scoops de proteína de chocolate',
+      '2 plátanos grandes',
+      '50g de avena',
+      '3 cucharadas de mantequilla de maní',
+      '400ml de leche entera',
+      '1 cucharada de miel',
+      '1 cucharada de cacao puro',
+      '5-6 cubitos de hielo'
+    ],
+    instructions: [
+      'Añadir todos los ingredientes en la batidora.',
+      'Batir a alta velocidad durante 60 segundos.',
+      'Si está muy espeso, añadir un poco más de leche.',
+      'Probar y ajustar dulzor con más miel si es necesario.',
+      'Servir inmediatamente en un vaso grande.',
+      'Decorar con cacao en polvo por encima.'
+    ]
+  },
+  {
+    id: 390,
+    name: 'Sándwich de Pollo con Aguacate y Queso',
+    category: 'Almuerzo',
+    image: 'https://images.unsplash.com/photo-1528735602780-2552fd46c7af?w=600&h=400&fit=crop&q=80',
+    calories: 590,
+    macros: {
+      protein: 42,
+      carbs: 48,
+      fat: 26
+    },
+    prepTime: 20,
+    difficulty: 'Fácil',
+    ingredients: [
+      '2 rebanadas de pan integral',
+      '150g de pechuga de pollo cocida',
+      '1 aguacate',
+      '50g de queso suizo',
+      'Lechuga y tomate',
+      '2 cucharadas de mayonesa light',
+      '1 cucharada de mostaza',
+      'Sal y pimienta'
+    ],
+    instructions: [
+      'Tostar ligeramente el pan integral.',
+      'Mezclar la mayonesa con la mostaza.',
+      'Untar la mezcla en ambas rebanadas de pan.',
+      'Colocar el pollo en lonchas sobre una rebanada.',
+      'Añadir el aguacate machacado, queso, lechuga y tomate.',
+      'Sazonar con sal y pimienta al gusto.',
+      'Cerrar el sándwich y presionar ligeramente.',
+      'Cortar en diagonal y servir.'
+    ]
+  },
+  {
+    id: 391,
+    name: 'Risotto de Champiñones y Pollo',
+    category: 'Cena',
+    image: 'https://images.unsplash.com/photo-1476124369491-c4cc9b73d0b7?w=600&h=400&fit=crop&q=80',
+    calories: 680,
+    macros: {
+      protein: 38,
+      carbs: 76,
+      fat: 24
+    },
+    prepTime: 45,
+    difficulty: 'Alta',
+    ingredients: [
+      '120g de arroz arborio',
+      '150g de pechuga de pollo',
+      '200g de champiñones',
+      '50g de queso parmesano',
+      '500ml de caldo de pollo',
+      '1/2 cebolla',
+      '2 cucharadas de aceite de oliva',
+      '50ml de vino blanco',
+      'Perejil fresco'
+    ],
+    instructions: [
+      'Calentar el caldo de pollo y mantener caliente.',
+      'Picar la cebolla finamente y saltear en aceite de oliva.',
+      'Añadir el arroz y tostar 2 minutos removiendo.',
+      'Agregar el vino blanco y dejar evaporar.',
+      'Ir añadiendo caldo poco a poco mientras remueves constantemente.',
+      'A mitad de cocción, añadir champiñones laminados y pollo en tiras.',
+      'Cocinar 18-20 minutos hasta que el arroz esté cremoso.',
+      'Terminar con parmesano rallado y perejil picado.'
+    ]
+  },
+  {
+    id: 392,
+    name: 'Ensalada César con Pollo Doble',
+    category: 'Comida',
+    image: 'https://images.unsplash.com/photo-1546793665-c74683f339c1?w=600&h=400&fit=crop&q=80',
+    calories: 640,
+    macros: {
+      protein: 54,
+      carbs: 32,
+      fat: 32
+    },
+    prepTime: 25,
+    difficulty: 'Media',
+    ingredients: [
+      '250g de pechuga de pollo',
+      'Lechuga romana',
+      '50g de queso parmesano',
+      '60g de crutones integrales',
+      '3 cucharadas de salsa césar',
+      '2 cucharadas de aceite de oliva',
+      'Tomates cherry',
+      'Bacon de pavo (opcional)',
+      'Limón'
+    ],
+    instructions: [
+      'Cortar el pollo en tiras y sazonar con sal y pimienta.',
+      'Cocinar el pollo en una sartén con aceite hasta que esté dorado.',
+      'Lavar y cortar la lechuga romana en trozos.',
+      'En un bowl grande, mezclar la lechuga con la salsa césar.',
+      'Añadir el pollo cocido, crutones y parmesano en láminas.',
+      'Agregar los tomates cherry cortados por la mitad.',
+      'Si usas bacon, añadirlo crujiente por encima.',
+      'Rociar con limón y servir inmediatamente.'
+    ]
+  },
+  {
+    id: 393,
+    name: 'Tacos de Ternera con Guacamole',
+    category: 'Cena',
+    image: 'https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=600&h=400&fit=crop&q=80',
+    calories: 700,
+    macros: {
+      protein: 42,
+      carbs: 58,
+      fat: 34
+    },
+    prepTime: 30,
+    difficulty: 'Media',
+    ingredients: [
+      '200g de carne picada de ternera',
+      '4 tortillas de maíz',
+      '2 aguacates',
+      '100g de queso rallado',
+      '1 tomate',
+      '1/2 cebolla',
+      'Cilantro fresco',
+      'Especias para tacos',
+      'Crema agria'
+    ],
+    instructions: [
+      'Preparar el guacamole: machacar aguacate con tomate, cebolla y cilantro.',
+      'Cocinar la carne con las especias para tacos hasta dorar.',
+      'Calentar las tortillas en una sartén o microondas.',
+      'Rellenar cada tortilla con la carne.',
+      'Añadir queso rallado, guacamole y crema agria.',
+      'Decorar con cilantro fresco picado.',
+      'Servir inmediatamente con limón a un lado.'
+    ]
+  },
+  {
+    id: 394,
+    name: 'Bowl de Proteína con Boniato y Pollo',
+    category: 'Comida',
+    image: 'https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=600&h=400&fit=crop&q=80',
+    calories: 690,
+    macros: {
+      protein: 52,
+      carbs: 68,
+      fat: 22
+    },
+    prepTime: 35,
+    difficulty: 'Media',
+    ingredients: [
+      '200g de pechuga de pollo',
+      '200g de boniato',
+      '100g de garbanzos cocidos',
+      '1 aguacate',
+      '50g de queso feta',
+      'Espinacas frescas',
+      '2 cucharadas de aceite de oliva',
+      'Tahini',
+      'Limón y especias'
+    ],
+    instructions: [
+      'Precalentar el horno a 200°C.',
+      'Cortar el boniato en dados, sazonar y hornear 25 minutos.',
+      'Cocinar el pollo a la plancha con especias.',
+      'Tostar los garbanzos en una sartén con un poco de aceite.',
+      'Preparar una base con espinacas frescas en un bowl.',
+      'Añadir el boniato asado, pollo en tiras y garbanzos.',
+      'Agregar aguacate en láminas y queso feta desmenuzado.',
+      'Rociar con tahini diluido en limón y aceite de oliva.'
+    ]
+  },
+  {
+    id: 395,
+    name: 'Pasta Carbonara Proteica',
+    category: 'Cena',
+    image: 'https://images.unsplash.com/photo-1612874742237-6526221588e3?w=600&h=400&fit=crop&q=80',
+    calories: 740,
+    macros: {
+      protein: 48,
+      carbs: 72,
+      fat: 28
+    },
+    prepTime: 25,
+    difficulty: 'Media',
+    ingredients: [
+      '150g de pasta integral',
+      '150g de bacon de pavo',
+      '3 huevos enteros',
+      '50g de queso parmesano',
+      '1 diente de ajo',
+      'Pimienta negra recién molida',
+      'Sal',
+      'Perejil fresco'
+    ],
+    instructions: [
+      'Cocinar la pasta en agua con sal según instrucciones.',
+      'Cortar el bacon en tiras y dorar en una sartén sin aceite.',
+      'En un bowl, batir los huevos con el parmesano rallado.',
+      'Añadir pimienta negra abundante a la mezcla de huevo.',
+      'Escurrir la pasta reservando un poco del agua de cocción.',
+      'Mezclar rápidamente la pasta caliente con la mezcla de huevo.',
+      'Añadir el bacon y un poco de agua de pasta si está seco.',
+      'Servir con más parmesano y perejil picado.'
+    ]
+  },
+  {
+    id: 396,
+    name: 'Batido de Fresa y Mantequilla de Almendra',
+    category: 'Batidos',
+    image: 'https://images.unsplash.com/photo-1553530666-ba11a7da3888?w=600&h=400&fit=crop&q=80',
+    calories: 580,
+    macros: {
+      protein: 38,
+      carbs: 58,
+      fat: 20
+    },
+    prepTime: 5,
+    difficulty: 'Muy Fácil',
+    ingredients: [
+      '2 scoops de proteína de fresa',
+      '200g de fresas frescas',
+      '40g de avena',
+      '2 cucharadas de mantequilla de almendra',
+      '300ml de leche entera',
+      '1 plátano',
+      'Miel al gusto',
+      'Hielo'
+    ],
+    instructions: [
+      'Lavar las fresas y quitar los tallos.',
+      'Añadir todos los ingredientes en la batidora.',
+      'Batir a alta velocidad hasta obtener textura cremosa.',
+      'Si es necesario, añadir más leche para ajustar consistencia.',
+      'Probar y endulzar con miel si lo prefieres.',
+      'Servir inmediatamente decorado con fresas.'
+    ]
+  },
+  {
+    id: 397,
+    name: 'Pizza Proteica con Pollo y Vegetales',
+    category: 'Cena',
+    image: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?w=600&h=400&fit=crop&q=80',
+    calories: 720,
+    macros: {
+      protein: 52,
+      carbs: 68,
+      fat: 26
+    },
+    prepTime: 40,
+    difficulty: 'Alta',
+    ingredients: [
+      '1 base de pizza integral (200g)',
+      '200g de pechuga de pollo cocida',
+      '100g de queso mozzarella',
+      '100ml de salsa de tomate',
+      '1 pimiento',
+      'Champiñones',
+      '1/2 cebolla morada',
+      'Aceitunas negras',
+      'Orégano y albahaca'
+    ],
+    instructions: [
+      'Precalentar el horno a 220°C.',
+      'Extender la salsa de tomate sobre la base de pizza.',
+      'Distribuir el pollo cortado en tiras pequeñas.',
+      'Añadir el pimiento, champiñones laminados y cebolla.',
+      'Cubrir con queso mozzarella rallado.',
+      'Añadir aceitunas negras y espolvorear orégano.',
+      'Hornear 15-18 minutos hasta que el queso esté dorado.',
+      'Decorar con albahaca fresca y servir caliente.'
+    ]
+  },
+  {
+    id: 398,
+    name: 'Batido Verde Energético con Espinacas',
+    category: 'Batidos',
+    image: 'https://images.unsplash.com/photo-1610970881699-44a5587cabec?w=600&h=400&fit=crop&q=80',
+    calories: 520,
+    macros: {
+      protein: 32,
+      carbs: 62,
+      fat: 16
+    },
+    prepTime: 5,
+    difficulty: 'Muy Fácil',
+    ingredients: [
+      '1 scoop de proteína de vainilla',
+      '2 tazas de espinacas frescas',
+      '1 plátano',
+      '1 manzana verde',
+      '2 cucharadas de mantequilla de maní',
+      '1 cucharada de semillas de lino',
+      '300ml de leche de almendras',
+      'Hielo'
+    ],
+    instructions: [
+      'Lavar bien las espinacas.',
+      'Pelar y cortar el plátano y la manzana.',
+      'Añadir todos los ingredientes en la batidora.',
+      'Batir a máxima potencia durante 60 segundos.',
+      'Verificar consistencia y añadir más líquido si es necesario.',
+      'Servir inmediatamente en un vaso grande.'
+    ]
+  },
+  {
+    id: 399,
+    name: 'Pollo al Curry con Arroz Basmati',
+    category: 'Cena',
+    image: 'https://images.unsplash.com/photo-1588166524941-3bf61a9c41db?w=600&h=400&fit=crop&q=80',
+    calories: 710,
+    macros: {
+      protein: 46,
+      carbs: 82,
+      fat: 20
+    },
+    prepTime: 35,
+    difficulty: 'Media',
+    ingredients: [
+      '200g de pechuga de pollo',
+      '120g de arroz basmati',
+      '200ml de leche de coco',
+      '2 cucharadas de pasta de curry',
+      '1 cebolla',
+      '2 tomates',
+      '1 pimiento',
+      'Cilantro fresco',
+      'Aceite de coco'
+    ],
+    instructions: [
+      'Cocinar el arroz basmati según instrucciones.',
+      'Cortar el pollo en dados y sazonar.',
+      'Calentar aceite de coco y dorar el pollo.',
+      'Añadir cebolla picada y cocinar hasta que esté transparente.',
+      'Agregar pasta de curry y cocinar 1 minuto.',
+      'Incorporar tomate picado, pimiento y leche de coco.',
+      'Cocinar a fuego lento 15 minutos.',
+      'Servir sobre el arroz y decorar con cilantro.'
+    ]
+  },
+  {
+    id: 400,
+    name: 'Merienda Power: Tostada con Queso y Nueces',
+    category: 'Merienda',
+    image: 'https://images.unsplash.com/photo-1525351484163-7529414344d8?w=600&h=400&fit=crop&q=80',
+    calories: 550,
+    macros: {
+      protein: 28,
+      carbs: 48,
+      fat: 28
+    },
+    prepTime: 10,
+    difficulty: 'Muy Fácil',
+    ingredients: [
+      '3 rebanadas de pan integral',
+      '100g de queso cottage',
+      '30g de nueces',
+      '2 cucharadas de mantequilla de maní',
+      '1 plátano',
+      'Miel',
+      'Canela'
+    ],
+    instructions: [
+      'Tostar el pan integral hasta que esté crujiente.',
+      'Untar cada rebanada con mantequilla de maní.',
+      'Añadir una capa generosa de queso cottage.',
+      'Cortar el plátano en rodajas y distribuir.',
+      'Picar las nueces y espolvorear por encima.',
+      'Rociar con miel y espolvorear canela.',
+      'Servir inmediatamente.'
+    ]
   }
 
 ];
