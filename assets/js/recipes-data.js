@@ -1318,7 +1318,7 @@ const recipes = [
     id: 41,
     name: 'Requesón con Fruta Fresca',
     category: 'Almuerzo',
-    image: 'https://images.unsplash.com/photo-1471193945509-9ad0617afabf?w=600&h=400&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1488477181946-6428a0291777?w=600&h=400&fit=crop&q=80',
     calories: 150,
     macros: {
       protein: 16,
@@ -1347,7 +1347,7 @@ const recipes = [
     id: 42,
     name: 'Crackers Integrales con Aguacate',
     category: 'Merienda',
-    image: 'https://images.unsplash.com/photo-1541519227354-08fa5d50c44d?w=600&h=400&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1505253304499-671c55fb57fe?w=600&h=400&fit=crop&q=80',
     calories: 210,
     macros: {
       protein: 6,
@@ -1379,7 +1379,7 @@ const recipes = [
     id: 43,
     name: 'Batido Proteico de Chocolate y Plátano',
     category: 'Batidos',
-    image: 'https://images.unsplash.com/photo-1553530666-ba11a7da3888?w=600&h=400&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1579954115545-a95591f28bfc?w=600&h=400&fit=crop&q=80',
     calories: 280,
     macros: {
       protein: 30,
@@ -1409,7 +1409,7 @@ const recipes = [
     id: 44,
     name: 'Batido Verde Detox',
     category: 'Batidos',
-    image: 'https://images.unsplash.com/photo-1610970881699-44a5587cabec?w=600&h=400&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1552820728-8b83bb6b773f?w=600&h=400&fit=crop&q=80',
     calories: 160,
     macros: {
       protein: 8,
@@ -1440,7 +1440,7 @@ const recipes = [
     id: 45,
     name: 'Batido de Fresas y Vainilla',
     category: 'Batidos',
-    image: 'https://images.unsplash.com/photo-1505252585461-04db1eb84625?w=600&h=400&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1622484210591-88f5329c7c10?w=600&h=400&fit=crop&q=80',
     calories: 240,
     macros: {
       protein: 28,
@@ -1469,7 +1469,7 @@ const recipes = [
     id: 46,
     name: 'Batido Tropical Energético',
     category: 'Batidos',
-    image: 'https://images.unsplash.com/photo-1501200291289-c5a76c232e5f?w=600&h=400&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1546173159-315724a31696?w=600&h=400&fit=crop&q=80',
     calories: 250,
     macros: {
       protein: 22,
@@ -1500,7 +1500,7 @@ const recipes = [
     id: 47,
     name: 'Batido de Café y Chocolate',
     category: 'Batidos',
-    image: 'https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=600&h=400&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1517487881594-2787fef5ebf7?w=600&h=400&fit=crop&q=80',
     calories: 200,
     macros: {
       protein: 26,
@@ -1530,7 +1530,7 @@ const recipes = [
     id: 48,
     name: 'Batido de Arándanos y Avena',
     category: 'Batidos',
-    image: 'https://images.unsplash.com/photo-1502741338009-cac2772e18bc?w=600&h=400&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1623065422902-30a2d299bbe4?w=600&h=400&fit=crop&q=80',
     calories: 290,
     macros: {
       protein: 24,
@@ -1563,7 +1563,7 @@ const recipes = [
     id: 49,
     name: 'Brownie Proteico Saludable',
     category: 'Merienda',
-    image: 'https://images.unsplash.com/photo-1606312619070-d48b4863acc0?w=600&h=400&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1590841609987-4ac211afdde1?w=600&h=400&fit=crop&q=80',
     calories: 180,
     macros: {
       protein: 15,
@@ -1596,7 +1596,7 @@ const recipes = [
     id: 50,
     name: 'Mousse de Chocolate Proteico',
     category: 'Merienda',
-    image: 'https://images.unsplash.com/photo-1488477181946-6428a0291777?w=600&h=400&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1607920591413-4ec007e70023?w=600&h=400&fit=crop&q=80',
     calories: 150,
     macros: {
       protein: 18,
@@ -1628,7 +1628,7 @@ const recipes = [
     id: 51,
     name: 'Mug Cake de Vainilla',
     category: 'Almuerzo',
-    image: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=600&h=400&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=600&h=400&fit=crop&q=80',
     calories: 160,
     macros: {
       protein: 16,
@@ -1659,7 +1659,7 @@ const recipes = [
     id: 52,
     name: 'Galletas de Avena y Plátano',
     category: 'Almuerzo',
-    image: 'https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=600&h=400&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=600&h=400&fit=crop&q=80',
     calories: 140,
     macros: {
       protein: 6,
@@ -1691,7 +1691,7 @@ const recipes = [
     id: 53,
     name: 'Flan Proteico de Vainilla',
     category: 'Merienda',
-    image: 'https://images.unsplash.com/photo-1587241321921-91a834d82e76?w=600&h=400&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1626804235015-38a7de0b129f?w=600&h=400&fit=crop&q=80',
     calories: 130,
     macros: {
       protein: 14,
@@ -1723,7 +1723,7 @@ const recipes = [
     id: 54,
     name: 'Helado de Plátano con Cacao',
     category: 'Merienda',
-    image: 'https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=600&h=400&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1501443762994-82bd5dace89a?w=600&h=400&fit=crop&q=80',
     calories: 140,
     macros: {
       protein: 8,
@@ -1755,7 +1755,7 @@ const recipes = [
     id: 55,
     name: 'Huevos Benedictinos Fit',
     category: 'Desayuno',
-    image: 'https://images.unsplash.com/photo-1608039829572-78524f79c4c7?w=600&h=400&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1574672280600-4accfa5b6f98?w=600&h=400&fit=crop&q=80',
     calories: 340,
     macros: {
       protein: 28,
@@ -1788,7 +1788,7 @@ const recipes = [
     id: 56,
     name: 'Bowl de Açaí Energético',
     category: 'Desayuno',
-    image: 'https://images.unsplash.com/photo-1590301157890-4810ed352733?w=600&h=400&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1590440779792-436f09a48e8b?w=600&h=400&fit=crop&q=80',
     calories: 380,
     macros: {
       protein: 18,
@@ -1816,7 +1816,7 @@ const recipes = [
     id: 57,
     name: 'Tostada Francesa Proteica',
     category: 'Desayuno',
-    image: 'https://images.unsplash.com/photo-1484723091739-30a097e8f929?w=600&h=400&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1605528506680-1ca5fcaa3e3d?w=600&h=400&fit=crop&q=80',
     calories: 320,
     macros: {
       protein: 26,
@@ -1848,7 +1848,7 @@ const recipes = [
     id: 58,
     name: 'Wrap de Desayuno Mexicano',
     category: 'Desayuno',
-    image: 'https://images.unsplash.com/photo-1626700051175-6818013e1d4f?w=600&h=400&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1599974815066-a7321d9db05b?w=600&h=400&fit=crop&q=80',
     calories: 390,
     macros: {
       protein: 28,
