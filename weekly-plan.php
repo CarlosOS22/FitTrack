@@ -456,7 +456,10 @@ function showExerciseDetail(exerciseId) {
     document.getElementById('modalExerciseName').textContent = exercise.name;
     document.getElementById('modalExerciseContent').innerHTML = `
         <div style="display: flex; flex-direction: column; gap: 1.5rem;">
-            <img src="${exercise.gifUrl}" alt="${exercise.name}" style="width: 100%; max-height: 400px; object-fit: contain; border-radius: var(--radius); background: var(--bg-tertiary);">
+            <img src="${exercise.gifUrl}"
+                 alt="${exercise.name}"
+                 style="width: 100%; max-height: 400px; object-fit: contain; border-radius: var(--radius); background: var(--bg-tertiary);"
+                 onerror="this.onerror=null; this.src='${exercise.image}';">
 
             <p style="color: var(--text-secondary); line-height: 1.8;">${exercise.description}</p>
 
