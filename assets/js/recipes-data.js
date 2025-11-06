@@ -269,7 +269,7 @@ const recipes = [
     id: 9,
     name: 'Tortitas de Avena y Manzana',
     category: 'Desayuno',
-    image: 'https://images.unsplash.com/photo-1506084868230-bb9d95c24759?w=600&h=400&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1554520735-0a6b8b6ce8b7?w=600&h=400&fit=crop&q=80',
     calories: 280,
     macros: {
       protein: 16,
@@ -301,7 +301,7 @@ const recipes = [
     id: 10,
     name: 'Creps de Proteína Rellenos',
     category: 'Desayuno',
-    image: 'https://images.unsplash.com/photo-1519676867240-f03562e64548?w=600&h=400&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1519315901367-f34ff9154487?w=600&h=400&fit=crop&q=80',
     calories: 340,
     macros: {
       protein: 35,
@@ -334,7 +334,7 @@ const recipes = [
     id: 11,
     name: 'Pollo a la Plancha con Arroz Integral',
     category: 'Comida',
-    image: 'https://images.unsplash.com/photo-1598103442097-8b74394b95c6?w=600&h=400&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1532550907401-a500c9a57435?w=600&h=400&fit=crop&q=80',
     calories: 450,
     macros: {
       protein: 45,
@@ -366,7 +366,7 @@ const recipes = [
     id: 12,
     name: 'Ensalada de Atún con Quinoa',
     category: 'Comida',
-    image: 'https://images.unsplash.com/photo-1505253758473-96b7015fcd40?w=600&h=400&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=600&h=400&fit=crop&q=80',
     calories: 380,
     macros: {
       protein: 30,
@@ -431,7 +431,7 @@ const recipes = [
     id: 14,
     name: 'Pasta Integral con Pesto de Espinacas y Pollo',
     category: 'Comida',
-    image: 'https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=600&h=400&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1563379926898-05f4575a45d8?w=600&h=400&fit=crop&q=80',
     calories: 480,
     macros: {
       protein: 38,
@@ -464,7 +464,7 @@ const recipes = [
     id: 15,
     name: 'Bowl de Arroz con Teriyaki de Pollo',
     category: 'Comida',
-    image: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=600&h=400&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600&h=400&fit=crop&q=80',
     calories: 465,
     macros: {
       protein: 42,
@@ -497,7 +497,7 @@ const recipes = [
     id: 16,
     name: 'Ensalada César con Pollo a la Parrilla',
     category: 'Comida',
-    image: 'https://images.unsplash.com/photo-1546793665-c74683f339c1?w=600&h=400&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1550304943-4f24f54ddde9?w=600&h=400&fit=crop&q=80',
     calories: 380,
     macros: {
       protein: 40,
@@ -529,7 +529,7 @@ const recipes = [
     id: 17,
     name: 'Lentejas con Verduras al Curry',
     category: 'Comida',
-    image: 'https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?w=600&h=400&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=600&h=400&fit=crop&q=80',
     calories: 360,
     macros: {
       protein: 20,
@@ -595,7 +595,7 @@ const recipes = [
     id: 19,
     name: 'Buddha Bowl Mediterráneo',
     category: 'Comida',
-    image: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600&h=400&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=600&h=400&fit=crop&q=80',
     calories: 420,
     macros: {
       protein: 22,
