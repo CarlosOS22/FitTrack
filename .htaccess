@@ -1,0 +1,51 @@
+# FitTrack - Apache Configuration
+
+# Enable Rewrite Engine
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /fittrackapp/
+
+    # Si el archivo o directorio existe, mostrarlo directamente
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+
+    # Redirigir todo lo demás a index.php
+    RewriteRule ^(.*)$ index.php [L]
+</IfModule>
+
+# Configuración de PHP
+<IfModule mod_php.c>
+    php_value upload_max_filesize 10M
+    php_value post_max_size 10M
+    php_value max_execution_time 300
+    php_value memory_limit 256M
+</IfModule>
+
+# Prevenir listado de directorios
+Options -Indexes
+
+# Forzar codificación UTF-8
+AddDefaultCharset UTF-8
+
+# Tipos MIME para archivos estáticos
+<IfModule mod_mime.c>
+    AddType text/html .php
+    AddType text/css .css
+    AddType application/javascript .js
+    AddType application/json .json
+</IfModule>
+
+# Compresión GZIP si está disponible
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css application/javascript
+</IfModule>
+
+# Cache para archivos estáticos
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType text/css "access plus 1 week"
+    ExpiresByType application/javascript "access plus 1 week"
+    ExpiresByType image/jpeg "access plus 1 month"
+    ExpiresByType image/png "access plus 1 month"
+    ExpiresByType image/gif "access plus 1 month"
+</IfModule>
