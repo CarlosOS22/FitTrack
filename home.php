@@ -128,6 +128,15 @@ include 'includes/nav.php';
                         </svg>
                         Guardar Datos
                     </button>
+                    <a href="weekly-plan.php" id="goToPlanBtn" class="btn btn-success" style="display: none;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                            <line x1="16" y1="2" x2="16" y2="6"></line>
+                            <line x1="8" y1="2" x2="8" y2="6"></line>
+                            <line x1="3" y1="10" x2="21" y2="10"></line>
+                        </svg>
+                        Ver Plan Semanal
+                    </a>
                 </div>
             </form>
         </div>
@@ -240,6 +249,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         resultsContainer.style.display = 'block';
         saveDataBtn.style.display = 'inline-flex';
+        document.getElementById('goToPlanBtn').style.display = 'inline-flex';
 
         // Automatically save weight to progress
         await saveWeightToProgress(weight);
@@ -262,7 +272,12 @@ document.addEventListener('DOMContentLoaded', function() {
         const result = await API.post('api/user-data.php', data);
 
         if (result.success) {
-            showAlert('Datos guardados exitosamente', 'success');
+            showAlert('✓ Datos guardados exitosamente. Recargando página...', 'success');
+
+            // Reload page after 1 second to show updated data
+            setTimeout(() => {
+                window.location.reload();
+            }, 1000);
         } else {
             showAlert(result.message || 'Error al guardar los datos', 'error');
         }

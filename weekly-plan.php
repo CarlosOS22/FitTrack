@@ -360,6 +360,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const gender = '<?php echo $userData['gender'] ?? 'male'; ?>';
     const activityLevel = '<?php echo $userData['activity_level'] ?? 'moderate'; ?>';
 
+    console.log('User data:', { weight, height, age, gender, activityLevel });
+
     if (weight && height && age) {
         const bmr = calculateBMR(weight, height, age, gender);
         const tdee = calculateTDEE(bmr, activityLevel);
@@ -372,10 +374,14 @@ document.addEventListener('DOMContentLoaded', function() {
             fat: Math.round((targetCalories * 0.30) / 9)       // 9 cal per gram
         };
 
+        console.log('Calculated targets:', { targetCalories, targetMacros });
+
         document.getElementById('todayTargetCalories').textContent = targetCalories;
         document.getElementById('todayProteinTarget').textContent = `/ ${targetMacros.protein}g`;
         document.getElementById('todayCarbsTarget').textContent = `/ ${targetMacros.carbs}g`;
         document.getElementById('todayFatTarget').textContent = `/ ${targetMacros.fat}g`;
+    } else {
+        console.log('Missing user data, cannot calculate targets');
     }
     <?php endif; ?>
 
@@ -420,13 +426,18 @@ function updateCaloriesSummary() {
 }
 
 function updateTodaySummary() {
-    if (targetCalories === 0) return;
+    if (targetCalories === 0) {
+        console.log('Cannot update today summary: targetCalories is 0');
+        return;
+    }
 
     // Get current day
     const today = new Date();
     const dayIndex = today.getDay(); // 0 = Sunday, 1 = Monday, etc.
     const dayMapping = ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'];
     const todayName = dayMapping[dayIndex];
+
+    console.log('Today is:', todayName);
 
     document.getElementById('todayName').textContent = todayName;
 
@@ -436,6 +447,8 @@ function updateTodaySummary() {
     const totalProtein = todayData.recipes.reduce((sum, r) => sum + (r.macros?.protein || 0), 0);
     const totalCarbs = todayData.recipes.reduce((sum, r) => sum + (r.macros?.carbs || 0), 0);
     const totalFat = todayData.recipes.reduce((sum, r) => sum + (r.macros?.fat || 0), 0);
+
+    console.log('Today totals:', { totalCalories, totalProtein, totalCarbs, totalFat });
 
     // Update calories
     document.getElementById('todayCalories').textContent = Math.round(totalCalories);
