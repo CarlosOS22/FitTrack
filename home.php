@@ -204,7 +204,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const resultsContainer = document.getElementById('resultsContainer');
     const saveDataBtn = document.getElementById('saveDataBtn');
 
-    form.addEventListener('submit', function(e) {
+    form.addEventListener('submit', async function(e) {
         e.preventDefault();
 
         const weight = parseFloat(document.getElementById('weight').value);
@@ -240,6 +240,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
         resultsContainer.style.display = 'block';
         saveDataBtn.style.display = 'inline-flex';
+
+        // Automatically save weight to progress
+        await saveWeightToProgress(weight);
 
         // Scroll to results
         resultsContainer.scrollIntoView({ behavior: 'smooth' });
@@ -315,6 +318,27 @@ document.addEventListener('DOMContentLoaded', function() {
 
         html += '</div>';
         container.innerHTML = html;
+    }
+
+    async function saveWeightToProgress(weight) {
+        try {
+            const progressData = {
+                user_id: <?php echo getUserId(); ?>,
+                date: new Date().toISOString().split('T')[0],
+                weight: weight,
+                body_fat: null,
+                notes: 'Peso registrado automáticamente desde calculadora de macros'
+            };
+
+            const result = await API.post('api/progress.php', progressData);
+
+            if (result.success) {
+                showAlert('Peso guardado en progreso automáticamente', 'success');
+            }
+        } catch (error) {
+            // Silent fail - don't interrupt the macro calculation
+            console.error('Error saving weight to progress:', error);
+        }
     }
 });
 </script>
