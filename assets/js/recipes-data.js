@@ -13,7 +13,7 @@ const recipes = [
     id: 1,
     name: 'Tortilla de Claras con Verduras',
     category: 'Desayuno',
-    image: 'https://images.unsplash.com/photo-1525351484163-7529414344d8?w=600&h=400&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1525351326368-efbb5cb6814d?w=600&h=400&fit=crop&q=80',
     calories: 180,
     macros: {
       protein: 20,
@@ -174,7 +174,7 @@ const recipes = [
     id: 6,
     name: 'Revuelto de Claras con Salmón Ahumado',
     category: 'Desayuno',
-    image: 'https://images.unsplash.com/photo-1608039829572-78524f79c4c7?w=600w=400&h=300&fit=croph=400w=400&h=300&fit=cropfit=cropw=400&h=300&fit=cropq=80',
+    image: 'https://images.unsplash.com/photo-1608039829572-78524f79c4c7?w=600&h=400&fit=crop&q=80',
     calories: 260,
     macros: {
       protein: 32,
@@ -206,7 +206,7 @@ const recipes = [
     id: 7,
     name: 'Burrito Bowl de Desayuno',
     category: 'Desayuno',
-    image: 'https://images.unsplash.com/photo-1626700051175-6818013e1d4f?w=600w=400&h=300&fit=croph=400w=400&h=300&fit=cropfit=cropw=400&h=300&fit=cropq=80',
+    image: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=600&h=400&fit=crop&q=80',
     calories: 420,
     macros: {
       protein: 30,
@@ -239,7 +239,7 @@ const recipes = [
     id: 8,
     name: 'Smoothie Bowl Tropical',
     category: 'Desayuno',
-    image: 'https://images.unsplash.com/photo-1590301157890-4810ed352733?w=600w=400&h=300&fit=croph=400w=400&h=300&fit=cropfit=cropw=400&h=300&fit=cropq=80',
+    image: 'https://images.unsplash.com/photo-1590301157890-4810ed352733?w=600&h=400&fit=crop&q=80',
     calories: 310,
     macros: {
       protein: 20,
@@ -269,7 +269,7 @@ const recipes = [
     id: 9,
     name: 'Tortitas de Avena y Manzana',
     category: 'Desayuno',
-    image: 'https://images.unsplash.com/photo-1506084868230-bb9d95c24759?w=600w=400&h=300&fit=croph=400w=400&h=300&fit=cropfit=cropw=400&h=300&fit=cropq=80',
+    image: 'https://images.unsplash.com/photo-1554520735-0a6b8b6ce8b7?w=600&h=400&fit=crop&q=80',
     calories: 280,
     macros: {
       protein: 16,
@@ -301,7 +301,7 @@ const recipes = [
     id: 10,
     name: 'Creps de Proteína Rellenos',
     category: 'Desayuno',
-    image: 'https://images.unsplash.com/photo-1519676867240-f03562e64548?w=600w=400&h=300&fit=croph=400w=400&h=300&fit=cropfit=cropw=400&h=300&fit=cropq=80',
+    image: 'https://images.unsplash.com/photo-1519315901367-f34ff9154487?w=600&h=400&fit=crop&q=80',
     calories: 340,
     macros: {
       protein: 35,
@@ -334,7 +334,7 @@ const recipes = [
     id: 11,
     name: 'Pollo a la Plancha con Arroz Integral',
     category: 'Comida',
-    image: 'https://images.unsplash.com/photo-1598103442097-8b74394b95c6?w=600w=400&h=300&fit=croph=400w=400&h=300&fit=cropfit=cropw=400&h=300&fit=cropq=80',
+    image: 'https://images.unsplash.com/photo-1532550907401-a500c9a57435?w=600&h=400&fit=crop&q=80',
     calories: 450,
     macros: {
       protein: 45,
@@ -366,7 +366,7 @@ const recipes = [
     id: 12,
     name: 'Ensalada de Atún con Quinoa',
     category: 'Comida',
-    image: 'https://images.unsplash.com/photo-1505253758473-96b7015fcd40?w=600w=400&h=300&fit=croph=400w=400&h=300&fit=cropfit=cropw=400&h=300&fit=cropq=80',
+    image: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=600&h=400&fit=crop&q=80',
     calories: 380,
     macros: {
       protein: 30,
@@ -399,7 +399,7 @@ const recipes = [
     id: 13,
     name: 'Wrap de Hummus y Verduras',
     category: 'Comida',
-    image: 'https://images.unsplash.com/photo-1626700051175-6818013e1d4f?w=600w=400&h=300&fit=croph=400w=400&h=300&fit=cropfit=cropw=400&h=300&fit=cropq=80',
+    image: 'https://images.unsplash.com/photo-1626700051175-6818013e1d4f?w=600&h=400&fit=crop&q=80',
     calories: 300,
     macros: {
       protein: 12,
@@ -431,7 +431,7 @@ const recipes = [
     id: 14,
     name: 'Pasta Integral con Pesto de Espinacas y Pollo',
     category: 'Comida',
-    image: 'https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=600w=400&h=300&fit=croph=400w=400&h=300&fit=cropfit=cropw=400&h=300&fit=cropq=80',
+    image: 'https://images.unsplash.com/photo-1563379926898-05f4575a45d8?w=600&h=400&fit=crop&q=80',
     calories: 480,
     macros: {
       protein: 38,
@@ -464,7 +464,7 @@ const recipes = [
     id: 15,
     name: 'Bowl de Arroz con Teriyaki de Pollo',
     category: 'Comida',
-    image: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=600w=400&h=300&fit=croph=400w=400&h=300&fit=cropfit=cropw=400&h=300&fit=cropq=80',
+    image: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600&h=400&fit=crop&q=80',
     calories: 465,
     macros: {
       protein: 42,
@@ -497,7 +497,7 @@ const recipes = [
     id: 16,
     name: 'Ensalada César con Pollo a la Parrilla',
     category: 'Comida',
-    image: 'https://images.unsplash.com/photo-1546793665-c74683f339c1?w=600w=400&h=300&fit=croph=400w=400&h=300&fit=cropfit=cropw=400&h=300&fit=cropq=80',
+    image: 'https://images.unsplash.com/photo-1550304943-4f24f54ddde9?w=600&h=400&fit=crop&q=80',
     calories: 380,
     macros: {
       protein: 40,
@@ -529,7 +529,7 @@ const recipes = [
     id: 17,
     name: 'Lentejas con Verduras al Curry',
     category: 'Comida',
-    image: 'https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?w=600w=400&h=300&fit=croph=400w=400&h=300&fit=cropfit=cropw=400&h=300&fit=cropq=80',
+    image: 'https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=600&h=400&fit=crop&q=80',
     calories: 360,
     macros: {
       protein: 20,
@@ -562,7 +562,7 @@ const recipes = [
     id: 18,
     name: 'Fajitas de Pavo con Pimientos',
     category: 'Comida',
-    image: 'https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=600w=400&h=300&fit=croph=400w=400&h=300&fit=cropfit=cropw=400&h=300&fit=cropq=80',
+    image: 'https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=600&h=400&fit=crop&q=80',
     calories: 395,
     macros: {
       protein: 38,
@@ -595,7 +595,7 @@ const recipes = [
     id: 19,
     name: 'Buddha Bowl Mediterráneo',
     category: 'Comida',
-    image: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600w=400&h=300&fit=croph=400w=400&h=300&fit=cropfit=cropw=400&h=300&fit=cropq=80',
+    image: 'https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=600&h=400&fit=crop&q=80',
     calories: 420,
     macros: {
       protein: 22,
@@ -630,7 +630,7 @@ const recipes = [
     id: 20,
     name: 'Poke Bowl de Atún',
     category: 'Comida',
-    image: 'https://images.unsplash.com/photo-1546069901-eacef0df6022?w=600w=400&h=300&fit=croph=400w=400&h=300&fit=cropfit=cropw=400&h=300&fit=cropq=80',
+    image: 'https://images.unsplash.com/photo-1546069901-eacef0df6022?w=600&h=400&fit=crop&q=80',
     calories: 440,
     macros: {
       protein: 35,
@@ -665,7 +665,7 @@ const recipes = [
     id: 21,
     name: 'Wok de Ternera con Vegetales',
     category: 'Comida',
-    image: 'https://images.unsplash.com/photo-1603360946369-dc9bb6258143?w=600w=400&h=300&fit=croph=400w=400&h=300&fit=cropfit=cropw=400&h=300&fit=cropq=80',
+    image: 'https://images.unsplash.com/photo-1603360946369-dc9bb6258143?w=600&h=400&fit=crop&q=80',
     calories: 455,
     macros: {
       protein: 40,
@@ -700,7 +700,7 @@ const recipes = [
     id: 22,
     name: 'Ensalada de Garbanzos Especiados',
     category: 'Comida',
-    image: 'https://images.unsplash.com/photo-1505576399279-565b52d4ac71?w=600w=400&h=300&fit=croph=400w=400&h=300&fit=cropfit=cropw=400&h=300&fit=cropq=80',
+    image: 'https://images.unsplash.com/photo-1505576399279-565b52d4ac71?w=600&h=400&fit=crop&q=80',
     calories: 370,
     macros: {
       protein: 18,
@@ -736,7 +736,7 @@ const recipes = [
     id: 23,
     name: 'Salmón con Batata y Espárragos',
     category: 'Cena',
-    image: 'https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=600w=400&h=300&fit=croph=400w=400&h=300&fit=cropfit=cropw=400&h=300&fit=cropq=80',
+    image: 'https://images.unsplash.com/photo-1485704686097-ed47f7263ca4?w=600&h=400&fit=crop&q=80',
     calories: 420,
     macros: {
       protein: 35,
@@ -769,7 +769,7 @@ const recipes = [
     id: 24,
     name: 'Tacos de Pavo con Vegetales',
     category: 'Cena',
-    image: 'https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?w=600w=400&h=300&fit=croph=400w=400&h=300&fit=cropfit=cropw=400&h=300&fit=cropq=80',
+    image: 'https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?w=600&h=400&fit=crop&q=80',
     calories: 340,
     macros: {
       protein: 35,
@@ -802,7 +802,7 @@ const recipes = [
     id: 25,
     name: 'Merluza al Horno con Verduras',
     category: 'Cena',
-    image: 'https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=600w=400&h=300&fit=croph=400w=400&h=300&fit=cropfit=cropw=400&h=300&fit=cropq=80',
+    image: 'https://images.unsplash.com/photo-1580959375944-1ab5b8e24c30?w=600&h=400&fit=crop&q=80',
     calories: 310,
     macros: {
       protein: 38,
@@ -837,7 +837,7 @@ const recipes = [
     id: 26,
     name: 'Pechuga de Pollo Rellena de Espinacas',
     category: 'Cena',
-    image: 'https://images.unsplash.com/photo-1598103442097-8b74394b95c6?w=600w=400&h=300&fit=croph=400w=400&h=300&fit=cropfit=cropw=400&h=300&fit=cropq=80',
+    image: 'https://images.unsplash.com/photo-1588347818036-013b0c1b8fc7?w=600&h=400&fit=crop&q=80',
     calories: 380,
     macros: {
       protein: 45,
@@ -871,7 +871,7 @@ const recipes = [
     id: 27,
     name: 'Revuelto de Claras con Champiñones',
     category: 'Cena',
-    image: 'https://images.unsplash.com/photo-1432139555190-58524dae6a55?w=600w=400&h=300&fit=croph=400w=400&h=300&fit=cropfit=cropw=400&h=300&fit=cropq=80',
+    image: 'https://images.unsplash.com/photo-1525351484163-7529414344d8?w=600&h=400&fit=crop&q=80',
     calories: 190,
     macros: {
       protein: 24,
@@ -905,7 +905,7 @@ const recipes = [
     id: 28,
     name: 'Hamburguesa de Pavo con Ensalada',
     category: 'Cena',
-    image: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600w=400&h=300&fit=croph=400w=400&h=300&fit=cropfit=cropw=400&h=300&fit=cropq=80',
+    image: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600&h=400&fit=crop&q=80',
     calories: 360,
     macros: {
       protein: 40,
@@ -939,7 +939,7 @@ const recipes = [
     id: 29,
     name: 'Dorada a la Sal con Verduras Asadas',
     category: 'Cena',
-    image: 'https://images.unsplash.com/photo-1559847844-5315695dadae?w=600w=400&h=300&fit=croph=400w=400&h=300&fit=cropfit=cropw=400&h=300&fit=cropq=80',
+    image: 'https://images.unsplash.com/photo-1580476262798-f4f6e0a94b60?w=600&h=400&fit=crop&q=80',
     calories: 350,
     macros: {
       protein: 42,
@@ -973,7 +973,7 @@ const recipes = [
     id: 30,
     name: 'Berenjena Rellena de Carne Magra',
     category: 'Cena',
-    image: 'https://images.unsplash.com/photo-1572453800999-e8d2d1589b7c?w=600w=400&h=300&fit=croph=400w=400&h=300&fit=cropfit=cropw=400&h=300&fit=cropq=80',
+    image: 'https://images.unsplash.com/photo-1621510456681-2330135e5871?w=600&h=400&fit=crop&q=80',
     calories: 320,
     macros: {
       protein: 32,
@@ -1007,7 +1007,7 @@ const recipes = [
     id: 31,
     name: 'Pollo al Limón con Brócoli',
     category: 'Cena',
-    image: 'https://images.unsplash.com/photo-1532550907401-a500c9a57435?w=600w=400&h=300&fit=croph=400w=400&h=300&fit=cropfit=cropw=400&h=300&fit=cropq=80',
+    image: 'https://images.unsplash.com/photo-1626844131082-256783844137?w=600&h=400&fit=crop&q=80',
     calories: 330,
     macros: {
       protein: 42,
@@ -1041,7 +1041,7 @@ const recipes = [
     id: 32,
     name: 'Tortilla de Calabacín al Horno',
     category: 'Cena',
-    image: 'https://images.unsplash.com/photo-1604908815298-8f8daa36bcc6?w=600w=400&h=300&fit=croph=400w=400&h=300&fit=cropfit=cropw=400&h=300&fit=cropq=80',
+    image: 'https://images.unsplash.com/photo-1564671165093-20688ff1f3f9?w=600&h=400&fit=crop&q=80',
     calories: 240,
     macros: {
       protein: 20,
@@ -1075,7 +1075,7 @@ const recipes = [
     id: 33,
     name: 'Bacalao con Tomate y Aceitunas',
     category: 'Cena',
-    image: 'https://images.unsplash.com/photo-1580959375944-1ab5b8e24c30?w=600w=400&h=300&fit=croph=400w=400&h=300&fit=cropfit=cropw=400&h=300&fit=cropq=80',
+    image: 'https://images.unsplash.com/photo-1619899044175-c8ea46c9c32d?w=600&h=400&fit=crop&q=80',
     calories: 290,
     macros: {
       protein: 38,
@@ -1110,7 +1110,7 @@ const recipes = [
     id: 34,
     name: 'Pimientos Rellenos de Quinoa y Verduras',
     category: 'Cena',
-    image: 'https://images.unsplash.com/photo-1587116861161-e2e74e8fa8b7?w=600w=400&h=300&fit=croph=400w=400&h=300&fit=cropfit=cropw=400&h=300&fit=cropq=80',
+    image: 'https://images.unsplash.com/photo-1605348124576-bc3501aa3dd6?w=600&h=400&fit=crop&q=80',
     calories: 280,
     macros: {
       protein: 14,
@@ -1147,7 +1147,7 @@ const recipes = [
     id: 35,
     name: 'Yogur Griego con Frutos Secos',
     category: 'Almuerzo',
-    image: 'https://images.unsplash.com/photo-1488477181946-6428a0291777?w=600w=400&h=300&fit=croph=400w=400&h=300&fit=cropfit=cropw=400&h=300&fit=cropq=80',
+    image: 'https://images.unsplash.com/photo-1563636619-e9143da7973b?w=600&h=400&fit=crop&q=80',
     calories: 220,
     macros: {
       protein: 18,
@@ -1177,7 +1177,7 @@ const recipes = [
     id: 36,
     name: 'Tostadas de Arroz con Mantequilla de Cacahuete',
     category: 'Almuerzo',
-    image: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600w=400&h=300&fit=croph=400w=400&h=300&fit=cropfit=cropw=400&h=300&fit=cropq=80',
+    image: 'https://images.unsplash.com/photo-1526318472351-c0a64ebbf655?w=600&h=400&fit=crop&q=80',
     calories: 250,
     macros: {
       protein: 12,
@@ -1205,7 +1205,7 @@ const recipes = [
     id: 37,
     name: 'Hummus con Crudités',
     category: 'Almuerzo',
-    image: 'https://images.unsplash.com/photo-1622485506387-cbcd14b82d45?w=600w=400&h=300&fit=croph=400w=400&h=300&fit=cropfit=cropw=400&h=300&fit=cropq=80',
+    image: 'https://images.unsplash.com/photo-1588137378633-dea1336ce1e2?w=600&h=400&fit=crop&q=80',
     calories: 180,
     macros: {
       protein: 8,
@@ -1233,7 +1233,7 @@ const recipes = [
     id: 38,
     name: 'Batido de Proteína con Frutas',
     category: 'Merienda',
-    image: 'https://images.unsplash.com/photo-1622484210591-88f5329c7c10?w=600w=400&h=300&fit=croph=400w=400&h=300&fit=cropfit=cropw=400&h=300&fit=cropq=80',
+    image: 'https://images.unsplash.com/photo-1600271886742-f049cd451bba?w=600&h=400&fit=crop&q=80',
     calories: 200,
     macros: {
       protein: 25,
@@ -1259,7 +1259,7 @@ const recipes = [
     id: 39,
     name: 'Rollitos de Pavo y Queso',
     category: 'Almuerzo',
-    image: 'https://images.unsplash.com/photo-1598103442097-8b74394b95c6?w=600w=400&h=300&fit=croph=400w=400&h=300&fit=cropfit=cropw=400&h=300&fit=cropq=80',
+    image: 'https://images.unsplash.com/photo-1540713434306-58505cf70655?w=600&h=400&fit=crop&q=80',
     calories: 160,
     macros: {
       protein: 22,
@@ -1288,7 +1288,7 @@ const recipes = [
     id: 40,
     name: 'Energy Balls de Dátiles',
     category: 'Merienda',
-    image: 'https://images.unsplash.com/photo-1511925284627-c5d37b135fce?w=600w=400&h=300&fit=croph=400w=400&h=300&fit=cropfit=cropw=400&h=300&fit=cropq=80',
+    image: 'https://images.unsplash.com/photo-1587233289227-62f4af41a4b5?w=600&h=400&fit=crop&q=80',
     calories: 180,
     macros: {
       protein: 6,
@@ -1318,7 +1318,7 @@ const recipes = [
     id: 41,
     name: 'Requesón con Fruta Fresca',
     category: 'Almuerzo',
-    image: 'https://images.unsplash.com/photo-1471193945509-9ad0617afabf?w=600w=400&h=300&fit=croph=400w=400&h=300&fit=cropfit=cropw=400&h=300&fit=cropq=80',
+    image: 'https://images.unsplash.com/photo-1488477181946-6428a0291777?w=600&h=400&fit=crop&q=80',
     calories: 150,
     macros: {
       protein: 16,
@@ -1347,7 +1347,7 @@ const recipes = [
     id: 42,
     name: 'Crackers Integrales con Aguacate',
     category: 'Merienda',
-    image: 'https://images.unsplash.com/photo-1541519227354-08fa5d50c44d?w=600w=400&h=300&fit=croph=400w=400&h=300&fit=cropfit=cropw=400&h=300&fit=cropq=80',
+    image: 'https://images.unsplash.com/photo-1505253304499-671c55fb57fe?w=600&h=400&fit=crop&q=80',
     calories: 210,
     macros: {
       protein: 6,
@@ -1379,7 +1379,7 @@ const recipes = [
     id: 43,
     name: 'Batido Proteico de Chocolate y Plátano',
     category: 'Batidos',
-    image: 'https://images.unsplash.com/photo-1553530666-ba11a7da3888?w=600w=400&h=300&fit=croph=400w=400&h=300&fit=cropfit=cropw=400&h=300&fit=cropq=80',
+    image: 'https://images.unsplash.com/photo-1579954115545-a95591f28bfc?w=600&h=400&fit=crop&q=80',
     calories: 280,
     macros: {
       protein: 30,
@@ -1409,7 +1409,7 @@ const recipes = [
     id: 44,
     name: 'Batido Verde Detox',
     category: 'Batidos',
-    image: 'https://images.unsplash.com/photo-1610970881699-44a5587cabec?w=600w=400&h=300&fit=croph=400w=400&h=300&fit=cropfit=cropw=400&h=300&fit=cropq=80',
+    image: 'https://images.unsplash.com/photo-1552820728-8b83bb6b773f?w=600&h=400&fit=crop&q=80',
     calories: 160,
     macros: {
       protein: 8,
@@ -1440,7 +1440,7 @@ const recipes = [
     id: 45,
     name: 'Batido de Fresas y Vainilla',
     category: 'Batidos',
-    image: 'https://images.unsplash.com/photo-1505252585461-04db1eb84625?w=600w=400&h=300&fit=croph=400w=400&h=300&fit=cropfit=cropw=400&h=300&fit=cropq=80',
+    image: 'https://images.unsplash.com/photo-1622484210591-88f5329c7c10?w=600&h=400&fit=crop&q=80',
     calories: 240,
     macros: {
       protein: 28,
@@ -1469,7 +1469,7 @@ const recipes = [
     id: 46,
     name: 'Batido Tropical Energético',
     category: 'Batidos',
-    image: 'https://images.unsplash.com/photo-1501200291289-c5a76c232e5f?w=600w=400&h=300&fit=croph=400w=400&h=300&fit=cropfit=cropw=400&h=300&fit=cropq=80',
+    image: 'https://images.unsplash.com/photo-1546173159-315724a31696?w=600&h=400&fit=crop&q=80',
     calories: 250,
     macros: {
       protein: 22,
@@ -1500,7 +1500,7 @@ const recipes = [
     id: 47,
     name: 'Batido de Café y Chocolate',
     category: 'Batidos',
-    image: 'https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=600w=400&h=300&fit=croph=400w=400&h=300&fit=cropfit=cropw=400&h=300&fit=cropq=80',
+    image: 'https://images.unsplash.com/photo-1517487881594-2787fef5ebf7?w=600&h=400&fit=crop&q=80',
     calories: 200,
     macros: {
       protein: 26,
@@ -1530,7 +1530,7 @@ const recipes = [
     id: 48,
     name: 'Batido de Arándanos y Avena',
     category: 'Batidos',
-    image: 'https://images.unsplash.com/photo-1502741338009-cac2772e18bc?w=600w=400&h=300&fit=croph=400w=400&h=300&fit=cropfit=cropw=400&h=300&fit=cropq=80',
+    image: 'https://images.unsplash.com/photo-1623065422902-30a2d299bbe4?w=600&h=400&fit=crop&q=80',
     calories: 290,
     macros: {
       protein: 24,
@@ -1563,7 +1563,7 @@ const recipes = [
     id: 49,
     name: 'Brownie Proteico Saludable',
     category: 'Merienda',
-    image: 'https://images.unsplash.com/photo-1606312619070-d48b4863acc0?w=600w=400&h=300&fit=croph=400w=400&h=300&fit=cropfit=cropw=400&h=300&fit=cropq=80',
+    image: 'https://images.unsplash.com/photo-1590841609987-4ac211afdde1?w=600&h=400&fit=crop&q=80',
     calories: 180,
     macros: {
       protein: 15,
@@ -1596,7 +1596,7 @@ const recipes = [
     id: 50,
     name: 'Mousse de Chocolate Proteico',
     category: 'Merienda',
-    image: 'https://images.unsplash.com/photo-1488477181946-6428a0291777?w=600w=400&h=300&fit=croph=400w=400&h=300&fit=cropfit=cropw=400&h=300&fit=cropq=80',
+    image: 'https://images.unsplash.com/photo-1607920591413-4ec007e70023?w=600&h=400&fit=crop&q=80',
     calories: 150,
     macros: {
       protein: 18,
@@ -1628,7 +1628,7 @@ const recipes = [
     id: 51,
     name: 'Mug Cake de Vainilla',
     category: 'Almuerzo',
-    image: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=600w=400&h=300&fit=croph=400w=400&h=300&fit=cropfit=cropw=400&h=300&fit=cropq=80',
+    image: 'https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=600&h=400&fit=crop&q=80',
     calories: 160,
     macros: {
       protein: 16,
@@ -1659,7 +1659,7 @@ const recipes = [
     id: 52,
     name: 'Galletas de Avena y Plátano',
     category: 'Almuerzo',
-    image: 'https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=600w=400&h=300&fit=croph=400w=400&h=300&fit=cropfit=cropw=400&h=300&fit=cropq=80',
+    image: 'https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=600&h=400&fit=crop&q=80',
     calories: 140,
     macros: {
       protein: 6,
@@ -1691,7 +1691,7 @@ const recipes = [
     id: 53,
     name: 'Flan Proteico de Vainilla',
     category: 'Merienda',
-    image: 'https://images.unsplash.com/photo-1587241321921-91a834d82e76?w=600w=400&h=300&fit=croph=400w=400&h=300&fit=cropfit=cropw=400&h=300&fit=cropq=80',
+    image: 'https://images.unsplash.com/photo-1626804235015-38a7de0b129f?w=600&h=400&fit=crop&q=80',
     calories: 130,
     macros: {
       protein: 14,
@@ -1723,7 +1723,7 @@ const recipes = [
     id: 54,
     name: 'Helado de Plátano con Cacao',
     category: 'Merienda',
-    image: 'https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=600w=400&h=300&fit=croph=400w=400&h=300&fit=cropfit=cropw=400&h=300&fit=cropq=80',
+    image: 'https://images.unsplash.com/photo-1501443762994-82bd5dace89a?w=600&h=400&fit=crop&q=80',
     calories: 140,
     macros: {
       protein: 8,
@@ -1755,7 +1755,7 @@ const recipes = [
     id: 55,
     name: 'Huevos Benedictinos Fit',
     category: 'Desayuno',
-    image: 'https://images.unsplash.com/photo-1608039829572-78524f79c4c7?w=600&h=400&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1574672280600-4accfa5b6f98?w=600&h=400&fit=crop&q=80',
     calories: 340,
     macros: {
       protein: 28,
@@ -1788,7 +1788,7 @@ const recipes = [
     id: 56,
     name: 'Bowl de Açaí Energético',
     category: 'Desayuno',
-    image: 'https://images.unsplash.com/photo-1590301157890-4810ed352733?w=600&h=400&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1590440779792-436f09a48e8b?w=600&h=400&fit=crop&q=80',
     calories: 380,
     macros: {
       protein: 18,
@@ -1816,7 +1816,7 @@ const recipes = [
     id: 57,
     name: 'Tostada Francesa Proteica',
     category: 'Desayuno',
-    image: 'https://images.unsplash.com/photo-1484723091739-30a097e8f929?w=600&h=400&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1605528506680-1ca5fcaa3e3d?w=600&h=400&fit=crop&q=80',
     calories: 320,
     macros: {
       protein: 26,
@@ -1848,7 +1848,7 @@ const recipes = [
     id: 58,
     name: 'Wrap de Desayuno Mexicano',
     category: 'Desayuno',
-    image: 'https://images.unsplash.com/photo-1626700051175-6818013e1d4f?w=600&h=400&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1599974815066-a7321d9db05b?w=600&h=400&fit=crop&q=80',
     calories: 390,
     macros: {
       protein: 28,
@@ -1914,7 +1914,7 @@ const recipes = [
     id: 60,
     name: 'Salmón Teriyaki con Arroz Integral',
     category: 'Comida',
-    image: 'https://images.unsplash.com/photo-1485921325833-c519f76c4927?w=600&h=400&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=600&h=400&fit=crop&q=80',
     calories: 480,
     macros: {
       protein: 38,
@@ -1948,7 +1948,7 @@ const recipes = [
     id: 61,
     name: 'Tacos de Pescado Baja Style',
     category: 'Comida',
-    image: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=600&h=400&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?w=600&h=400&fit=crop&q=80',
     calories: 420,
     macros: {
       protein: 36,
@@ -1982,7 +1982,7 @@ const recipes = [
     id: 62,
     name: 'Ensalada de Pollo Asiática',
     category: 'Comida',
-    image: 'https://images.unsplash.com/photo-1546793665-c74683f339c1?w=600&h=400&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1580959375944-1ab5b8e24c30?w=600&h=400&fit=crop&q=80',
     calories: 350,
     macros: {
       protein: 38,
@@ -2017,7 +2017,7 @@ const recipes = [
     id: 63,
     name: 'Burrito Bowl de Pollo',
     category: 'Comida',
-    image: 'https://images.unsplash.com/photo-1626700051175-6818013e1d4f?w=600&h=400&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1512236393941-e50b62d88a92?w=600&h=400&fit=crop&q=80',
     calories: 460,
     macros: {
       protein: 42,
@@ -2052,7 +2052,7 @@ const recipes = [
     id: 64,
     name: 'Pasta Primavera Ligera',
     category: 'Comida',
-    image: 'https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=600&h=400&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1563379926898-05f4575a45d8?w=600&h=400&fit=crop&q=80',
     calories: 410,
     macros: {
       protein: 18,
@@ -2122,7 +2122,7 @@ const recipes = [
     id: 66,
     name: 'Atún a la Plancha con Verduras',
     category: 'Cena',
-    image: 'https://images.unsplash.com/photo-1611171711912-e0f8b1b42645?w=600&h=400&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1580476262798-f4f6e0a94b60?w=600&h=400&fit=crop&q=80',
     calories: 340,
     macros: {
       protein: 42,
@@ -2155,7 +2155,7 @@ const recipes = [
     id: 67,
     name: 'Pechuga de Pollo Caprese',
     category: 'Cena',
-    image: 'https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?w=600&h=400&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1588347818036-013b0c1b8fc7?w=600&h=400&fit=crop&q=80',
     calories: 380,
     macros: {
       protein: 46,
@@ -2188,7 +2188,7 @@ const recipes = [
     id: 68,
     name: 'Lubina al Horno con Limón',
     category: 'Cena',
-    image: 'https://images.unsplash.com/photo-1559847844-5315695dadae?w=600&h=400&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=600&h=400&fit=crop&q=80',
     calories: 310,
     macros: {
       protein: 40,
@@ -2255,7 +2255,7 @@ const recipes = [
     id: 70,
     name: 'Brochetas de Pollo Marinado',
     category: 'Cena',
-    image: 'https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?w=600&h=400&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1629629187214-e2f5d623aab9?w=600&h=400&fit=crop&q=80',
     calories: 350,
     macros: {
       protein: 44,
@@ -2292,7 +2292,7 @@ const recipes = [
     id: 71,
     name: 'Edamame con Sal Marina',
     category: 'Almuerzo',
-    image: 'https://images.unsplash.com/photo-1623428187969-5da2dcea5ebf?w=600&h=400&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1584278502003-17ac3c2fb7e3?w=600&h=400&fit=crop&q=80',
     calories: 120,
     macros: {
       protein: 12,
@@ -2320,7 +2320,7 @@ const recipes = [
     id: 72,
     name: 'Manzana con Mantequilla de Almendra',
     category: 'Almuerzo',
-    image: 'https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?w=600&h=400&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1590005354167-6da97870c757?w=600&h=400&fit=crop&q=80',
     calories: 200,
     macros: {
       protein: 6,
@@ -2379,7 +2379,7 @@ const recipes = [
     id: 74,
     name: 'Palitos de Apio con Queso',
     category: 'Almuerzo',
-    image: 'https://images.unsplash.com/photo-1622485506387-cbcd14b82d45?w=600&h=400&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1562007908-17c67e878c88?w=600&h=400&fit=crop&q=80',
     calories: 150,
     macros: {
       protein: 14,
@@ -2439,7 +2439,7 @@ const recipes = [
     id: 76,
     name: 'Batido de Mango y Cúrcuma',
     category: 'Batidos',
-    image: 'https://images.unsplash.com/photo-1623428187969-5da2dcea5ebf?w=600&h=400&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1600271886742-f049cd451bba?w=600&h=400&fit=crop&q=80',
     calories: 240,
     macros: {
       protein: 20,
@@ -2532,7 +2532,7 @@ const recipes = [
     id: 79,
     name: 'Cheesecake Proteico Sin Horno',
     category: 'Merienda',
-    image: 'https://images.unsplash.com/photo-1567327510194-9b6ff7b512f7?w=600&h=400&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1524351199678-941a58a3df50?w=600&h=400&fit=crop&q=80',
     calories: 190,
     macros: {
       protein: 20,
@@ -2564,7 +2564,7 @@ const recipes = [
     id: 80,
     name: 'Pudding de Chía con Chocolate',
     category: 'Merienda',
-    image: 'https://images.unsplash.com/photo-1517673132405-a56a62b18caf?w=600&h=400&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1488477181946-6428a0291777?w=600&h=400&fit=crop&q=80',
     calories: 180,
     macros: {
       protein: 14,
@@ -2598,7 +2598,7 @@ const recipes = [
     id: 81,
     name: 'Porridge de Avena con Manzana Canela',
     category: 'Desayuno',
-    image: 'https://images.unsplash.com/photo-1590301157890-4810ed352733?w=600&h=400&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1621303837174-89787a7d4729?w=600&h=400&fit=crop&q=80',
     calories: 310,
     macros: {
       protein: 12,
@@ -2614,7 +2614,7 @@ const recipes = [
     id: 82,
     name: 'Crepes Proteicos de Plátano',
     category: 'Desayuno',
-    image: 'https://images.unsplash.com/photo-1528207776546-365bb710ee93?w=600&h=400&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1574085733277-851d9d856a3a?w=600&h=400&fit=crop&q=80',
     calories: 280,
     macros: {
       protein: 24,
@@ -5036,7 +5036,7 @@ const recipes = [
     id: 233,
     name: 'Macedonia de Frutas',
     category: 'Merienda',
-    image: 'https://images.unsplash.com/photo-1559847844-5315695dadae?w=600&h=400&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1564093436563-17f52dd1bc29?w=600&h=400&fit=crop&q=80',
     calories: 200,
     macros: {
       protein: 6,
@@ -5164,7 +5164,7 @@ const recipes = [
     id: 241,
     name: 'Palitos de Zanahoria y Hummus',
     category: 'Merienda',
-    image: 'https://images.unsplash.com/photo-1590301157890-4810ed352733?w=600&h=400&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1588137378633-dea1336ce1e2?w=600&h=400&fit=crop&q=80',
     calories: 190,
     macros: {
       protein: 8,
@@ -5276,7 +5276,7 @@ const recipes = [
     id: 248,
     name: 'Edamame con Sal Marina',
     category: 'Merienda',
-    image: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=600&h=400&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1584278502003-17ac3c2fb7e3?w=600&h=400&fit=crop&q=80',
     calories: 180,
     macros: {
       protein: 18,
@@ -7041,7 +7041,7 @@ const recipes = [
     id: 358,
     name: 'Batido de Açaí',
     category: 'Batidos',
-    image: 'https://images.unsplash.com/photo-1590301157890-4810ed352733?w=600&h=400&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1590440779792-436f09a48e8b?w=600&h=400&fit=crop&q=80',
     calories: 280,
     macros: {
       protein: 20,
@@ -7411,7 +7411,7 @@ const recipes = [
     id: 381,
     name: 'Pancakes Proteicos con Mantequilla de Maní',
     category: 'Desayuno',
-    image: 'https://images.unsplash.com/photo-1528207776546-365bb710ee93?w=600&h=400&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=600&h=400&fit=crop&q=80',
     calories: 650,
     macros: {
       protein: 42,
@@ -7445,7 +7445,7 @@ const recipes = [
     id: 382,
     name: 'Bowl de Avena con Frutos Secos y Semillas',
     category: 'Desayuno',
-    image: 'https://images.unsplash.com/photo-1525351484163-7529414344d8?w=600&h=400&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1517673132405-a56a62b18caf?w=600&h=400&fit=crop&q=80',
     calories: 580,
     macros: {
       protein: 28,
@@ -7480,7 +7480,7 @@ const recipes = [
     id: 383,
     name: 'Tortilla de 4 Huevos con Aguacate y Queso',
     category: 'Desayuno',
-    image: 'https://images.unsplash.com/photo-1606787366850-de6330128bfc?w=600&h=400&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1525351326368-efbb5cb6814d?w=600&h=400&fit=crop&q=80',
     calories: 520,
     macros: {
       protein: 38,
@@ -7513,7 +7513,7 @@ const recipes = [
     id: 384,
     name: 'Pasta Integral con Pollo y Salsa Cremosa',
     category: 'Comida',
-    image: 'https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=600&h=400&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1645112411341-6c4fd023714a?w=600&h=400&fit=crop&q=80',
     calories: 720,
     macros: {
       protein: 52,
@@ -7548,7 +7548,7 @@ const recipes = [
     id: 385,
     name: 'Arroz Integral con Salmón y Aguacate',
     category: 'Comida',
-    image: 'https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=600&h=400&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?w=600&h=400&fit=crop&q=80',
     calories: 680,
     macros: {
       protein: 38,
@@ -7583,7 +7583,7 @@ const recipes = [
     id: 386,
     name: 'Hamburguesa de Ternera con Boniato',
     category: 'Comida',
-    image: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600&h=400&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1550547660-d9450f859349?w=600&h=400&fit=crop&q=80',
     calories: 750,
     macros: {
       protein: 48,
@@ -7617,7 +7617,7 @@ const recipes = [
     id: 387,
     name: 'Quinoa con Pollo Teriyaki y Vegetales',
     category: 'Comida',
-    image: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=600&h=400&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600&h=400&fit=crop&q=80',
     calories: 620,
     macros: {
       protein: 45,
@@ -7686,7 +7686,7 @@ const recipes = [
     id: 389,
     name: 'Batido Hipercalórico de Chocolate y Plátano',
     category: 'Batidos',
-    image: 'https://images.unsplash.com/photo-1638176066666-ffb2f013c7dd?w=600&h=400&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1577805947697-89e18249d767?w=600&h=400&fit=crop&q=80',
     calories: 720,
     macros: {
       protein: 48,
@@ -7752,7 +7752,7 @@ const recipes = [
     id: 391,
     name: 'Risotto de Champiñones y Pollo',
     category: 'Cena',
-    image: 'https://images.unsplash.com/photo-1476124369491-c4cc9b73d0b7?w=600&h=400&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1637806930600-37fa8892069d?w=600&h=400&fit=crop&q=80',
     calories: 680,
     macros: {
       protein: 38,
@@ -7787,7 +7787,7 @@ const recipes = [
     id: 392,
     name: 'Ensalada César con Pollo Doble',
     category: 'Comida',
-    image: 'https://images.unsplash.com/photo-1546793665-c74683f339c1?w=600&h=400&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1550304943-4f24f54ddde9?w=600&h=400&fit=crop&q=80',
     calories: 640,
     macros: {
       protein: 54,
@@ -7891,7 +7891,7 @@ const recipes = [
     id: 395,
     name: 'Pasta Carbonara Proteica',
     category: 'Cena',
-    image: 'https://images.unsplash.com/photo-1612874742237-6526221588e3?w=600&h=400&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1588013273468-315fd88ea34c?w=600&h=400&fit=crop&q=80',
     calories: 740,
     macros: {
       protein: 48,
@@ -7925,7 +7925,7 @@ const recipes = [
     id: 396,
     name: 'Batido de Fresa y Mantequilla de Almendra',
     category: 'Batidos',
-    image: 'https://images.unsplash.com/photo-1553530666-ba11a7da3888?w=600&h=400&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1623065422902-30a2d299bbe4?w=600&h=400&fit=crop&q=80',
     calories: 580,
     macros: {
       protein: 38,
@@ -7992,7 +7992,7 @@ const recipes = [
     id: 398,
     name: 'Batido Verde Energético con Espinacas',
     category: 'Batidos',
-    image: 'https://images.unsplash.com/photo-1610970881699-44a5587cabec?w=600&h=400&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1600718374662-0483d2b0da23?w=600&h=400&fit=crop&q=80',
     calories: 520,
     macros: {
       protein: 32,
@@ -8024,7 +8024,7 @@ const recipes = [
     id: 399,
     name: 'Pollo al Curry con Arroz Basmati',
     category: 'Cena',
-    image: 'https://images.unsplash.com/photo-1588166524941-3bf61a9c41db?w=600&h=400&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=600&h=400&fit=crop&q=80',
     calories: 710,
     macros: {
       protein: 46,
@@ -8059,7 +8059,7 @@ const recipes = [
     id: 400,
     name: 'Merienda Power: Tostada con Queso y Nueces',
     category: 'Merienda',
-    image: 'https://images.unsplash.com/photo-1525351484163-7529414344d8?w=600&h=400&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1484723091739-30a097e8f929?w=600&h=400&fit=crop&q=80',
     calories: 550,
     macros: {
       protein: 28,
