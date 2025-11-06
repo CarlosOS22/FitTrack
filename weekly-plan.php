@@ -229,7 +229,8 @@ include 'includes/nav.php';
     </div>
 
     <!-- Today's Summary -->
-    <div class="calories-summary" id="todaySummary" style="display: none;">
+    <div class="calories-summary" id="todaySummary">
+        <?php if ($userData && $userData['weight'] && $userData['height'] && $userData['age']): ?>
         <div style="border-bottom: 2px solid var(--border); padding-bottom: 1rem; margin-bottom: 1rem;">
             <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--primary);">
                 📅 Resumen de Hoy - <span id="todayName"></span>
@@ -279,6 +280,24 @@ include 'includes/nav.php';
         <div style="font-size: 0.875rem; color: var(--text-secondary); text-align: center;">
             <strong>Promedio Semanal:</strong> <span id="weeklyAverage">0</span> kcal
         </div>
+        <?php else: ?>
+        <div style="text-align: center; padding: 2rem;">
+            <div style="font-size: 3rem; margin-bottom: 1rem;">⚠️</div>
+            <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--primary);">
+                Completa tu Perfil Primero
+            </h3>
+            <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+                Para ver tus objetivos diarios de calorías y macros, necesitas completar tu información básica (peso, altura, edad)
+            </p>
+            <a href="home.php" class="btn btn-primary">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <path d="m21 21-4.35-4.35"></path>
+                </svg>
+                Calcular Mis Macros
+            </a>
+        </div>
+        <?php endif; ?>
     </div>
 
     <div id="weeklyPlan" class="weekly-plan">
@@ -357,7 +376,6 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('todayProteinTarget').textContent = `/ ${targetMacros.protein}g`;
         document.getElementById('todayCarbsTarget').textContent = `/ ${targetMacros.carbs}g`;
         document.getElementById('todayFatTarget').textContent = `/ ${targetMacros.fat}g`;
-        document.getElementById('todaySummary').style.display = 'block';
     }
     <?php endif; ?>
 
