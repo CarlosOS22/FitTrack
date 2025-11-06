@@ -204,19 +204,21 @@ document.getElementById('profileForm').addEventListener('submit', async function
     const gender = document.getElementById('gender').value;
 
     // Update user table
-    const response = await fetch('api/user-update.php', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-            user_id: <?php echo getUserId(); ?>,
-            name: name,
-            email: email,
-            age: age,
-            gender: gender
-        })
+    const result = await API.post('api/user-update.php', {
+        user_id: <?php echo getUserId(); ?>,
+        name: name,
+        email: email,
+        age: age,
+        gender: gender
     });
 
-    showAlert('Información actualizada', 'success');
+    if (result.success) {
+        showAlert('Información actualizada', 'success');
+        // Update displayed name if needed
+        setTimeout(() => window.location.reload(), 1000);
+    } else {
+        showAlert(result.message || 'Error al actualizar la información', 'error');
+    }
 });
 
 async function savePhysicalData() {
@@ -234,6 +236,8 @@ async function savePhysicalData() {
 
     if (result.success) {
         showAlert('Datos físicos actualizados', 'success');
+        // Reload to update all views with new data
+        setTimeout(() => window.location.reload(), 1000);
     } else {
         showAlert(result.message || 'Error al guardar los datos', 'error');
     }

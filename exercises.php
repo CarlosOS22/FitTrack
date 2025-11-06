@@ -158,7 +158,8 @@ function displayExercises(exercisesToDisplay) {
 
     grid.innerHTML = exercisesToDisplay.map(exercise => `
         <div class="item-card" onclick="showExerciseDetail(${exercise.id})">
-            <div class="item-card-image" style="background-image: url('${exercise.image}'); background-size: cover; background-position: center;">
+            <div class="item-card-image" style="background: var(--bg-secondary); display: flex; align-items: center; justify-content: center; overflow: hidden;">
+                <img src="${exercise.gifUrl}" alt="${exercise.name}" style="width: 100%; height: 100%; object-fit: contain;">
             </div>
             <div class="item-card-content">
                 <div class="item-card-header">
